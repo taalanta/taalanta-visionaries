@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taalanta Visionaries - Empowering Communities Through Talent Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(rgba(211, 47, 47, 0.7), rgba(56, 142, 60, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f9a825" width="1200" height="600"/><path fill="%23d32f2f" opacity="0.3" d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z"/><path fill="%23388e3c" opacity="0.3" d="M0,400 Q300,200 600,400 T1200,400 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f9a825;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #d32f2f;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            background: #f5f5f5;
+        }
+
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #f9a825;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .mv-card h3 {
+            color: #388e3c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .value-item {
+            background: linear-gradient(135deg, #d32f2f, #f9a825);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .value-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Programs Section */
+        #programs {
+            background: #f5f5f5;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-card h3 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #388e3c;
+        }
+
+        .team-card h3 {
+            color: #d32f2f;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            color: #f9a825;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .team-card .contact {
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Taalanta Visionaries</div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#values">Values</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Taalanta Visionaries</h1>
+        <p>Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
+        <a href="#contact" class="cta-button">Get Involved</a>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section id="about" class="mission-vision">
+        <h2>Our Purpose</h2>
+        <div class="mv-container">
+            <div class="mv-card">
+                <h3>🎯 Our Mission</h3>
+                <p>To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
+            </div>
+            <div class="mv-card">
+                <h3>🌟 Our Vision</h3>
+                <p>Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-item">Integrity</div>
+            <div class="value-item">Responsibility</div>
+            <div class="value-item">Accountability</div>
+            <div class="value-item">Teamwork</div>
+            <div class="value-item">Innovation</div>
+            <div class="value-item">Respect</div>
+            <div class="value-item">Inclusivity</div>
+            <div class="value-item">Commitment</div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs">
+        <h2>Our Programs</h2>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon">🤝</div>
+                <h3>Integration</h3>
+                <p>Building bridges within communities and fostering social cohesion through inclusive programs.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">🌍</div>
+                <h3>Climate Work</h3>
+                <p>Taking action against climate change through education and community-based initiatives.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">♻️</div>
+                <h3>Garbage Collection & Recycling</h3>
+                <p>Promoting environmental sustainability through waste management and recycling programs.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">🎨</div>
+                <h3>Art & Culture Development</h3>
+                <p>Preserving and promoting local arts and culture while creating economic opportunities.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">🌱</div>
+                <h3>Environment Conservation</h3>
+                <p>Protecting natural resources and promoting sustainable environmental practices.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">💼</div>
+                <h3>Entrepreneurship & Sustainability</h3>
+                <p>Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">⭐</div>
+                <h3>Talent Development</h3>
+                <p>Identifying and nurturing individual talents to unlock potential and create opportunities.</p>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">💪</div>
+                <h3>Youth Empowerment</h3>
+                <p>Equipping young people with skills, knowledge, and confidence to shape their futures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <h2>Our Leadership Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>Benedicto Momanyi</h3>
+                <div class="role">Chairman</div>
+                <div class="contact">📞 0716704347</div>
+            </div>
+            <div class="team-card">
+                <h3>Martin Mwenda</h3>
+                <div class="role">Secretary</div>
+                <div class="contact">📞 0708884038</div>
+            </div>
+            <div class="team-card">
+                <h3>Mercy Mwangi</h3>
+                <div class="role">Treasurer</div>
+                <div class="contact">📞 0711141894</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <p><strong>Ready to make a difference?</strong></p>
+            <p>Contact us to learn more about our programs or to get involved!</p>
+            <p><strong>Chairman:</strong> Benedicto Momanyi - 0716704347</p>
+            <p><strong>Secretary:</strong> Martin Mwenda - 0708884038</p>
+            <p><strong>Treasurer:</strong> Mercy Mwangi - 0711141894</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Taalanta Visionaries. All rights reserved.</p>
+        <p>Empowering Communities | Building Futures | Creating Change</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
