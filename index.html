@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya through talent development, employment creation, and sustainable projects">
+    <meta name="keywords" content="CBO Kenya, Nairobi community projects, youth empowerment Kenya, talent development, environmental conservation Kenya">
     <title>Taalanta Visionaries - Empowering Communities Through Talent Development</title>
+    
     <style>
         * {
             margin: 0;
@@ -61,13 +64,26 @@
             opacity: 0.8;
         }
 
+        .admin-btn {
+            background: #fff;
+            color: #d32f2f;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .admin-btn:hover {
+            transform: scale(1.05);
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 70px;
             background: linear-gradient(rgba(211, 47, 47, 0.7), rgba(56, 142, 60, 0.7)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f9a825" width="1200" height="600"/><path fill="%23d32f2f" opacity="0.3" d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z"/><path fill="%23388e3c" opacity="0.3" d="M0,400 Q300,200 600,400 T1200,400 L1200,600 L0,600 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
+                        url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200') center/cover;
             color: white;
             padding: 8rem 2rem;
             text-align: center;
@@ -94,12 +110,17 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            margin: 0.5rem;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button.secondary {
+            background: #388e3c;
         }
 
         /* Section Styles */
@@ -114,6 +135,36 @@
             margin-bottom: 2rem;
             text-align: center;
             color: #d32f2f;
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            background: linear-gradient(135deg, #d32f2f 0%, #388e3c 100%);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f9a825;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
         }
 
         /* Mission & Vision */
@@ -141,32 +192,61 @@
             font-size: 1.5rem;
         }
 
-        /* Values Section */
-        .values-grid {
+        /* Projects Section */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .value-item {
-            background: linear-gradient(135deg, #d32f2f, #f9a825);
-            color: white;
-            padding: 1.5rem;
+        .project-card {
+            background: white;
             border-radius: 10px;
-            text-align: center;
-            font-weight: bold;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .value-item:hover {
-            transform: scale(1.05);
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* Programs Section */
-        #programs {
-            background: #f5f5f5;
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
         }
 
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .status-ongoing {
+            background: #f9a825;
+            color: white;
+        }
+
+        .status-completed {
+            background: #388e3c;
+            color: white;
+        }
+
+        .project-card h3 {
+            color: #d32f2f;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Programs Grid */
         .programs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -185,18 +265,12 @@
             transform: translateY(-5px);
         }
 
-        .program-card h3 {
-            color: #d32f2f;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
         .program-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        /* Team Section */
+        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -209,23 +283,113 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-top: 4px solid #388e3c;
         }
 
-        .team-card h3 {
-            color: #d32f2f;
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #d32f2f, #f9a825);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Blog/News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            color: #f9a825;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
-        .team-card .role {
-            color: #f9a825;
-            font-weight: bold;
+        /* Donation Section */
+        .donation-section {
+            background: linear-gradient(135deg, #388e3c, #d32f2f);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .donation-section h2 {
+            color: white;
+        }
+
+        .donation-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .donation-card {
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .donation-card h3 {
+            color: #d32f2f;
             margin-bottom: 1rem;
         }
 
-        .team-card .contact {
-            color: #388e3c;
-            font-weight: bold;
+        /* QR Code Section */
+        .qr-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #f5f5f5;
+        }
+
+        .qr-code-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        #qrcode {
+            margin: 1rem auto;
         }
 
         /* Contact Section */
@@ -238,15 +402,6 @@
             color: white;
         }
 
-        .contact-info {
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        .contact-info p {
-            margin: 1rem 0;
-        }
-
         /* Footer */
         footer {
             background: #222;
@@ -255,7 +410,177 @@
             padding: 2rem;
         }
 
-        /* Mobile Menu */
+        /* ADMIN PANEL STYLES */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            overflow-y: auto;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f9a825;
+        }
+
+        .close-admin {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            background: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn.active {
+            background: #f9a825;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #f9a825;
+            outline: none;
+        }
+
+        .save-btn {
+            background: #388e3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .save-btn:hover {
+            background: #2e7d32;
+        }
+
+        .add-new-btn {
+            background: #f9a825;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .delete-btn {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .list-item {
+            background: #f5f5f5;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .backup-section {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .backup-section h4 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Mobile Responsive */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -289,12 +614,17 @@
                 font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .admin-tabs {
+                flex-direction: column;
             }
 
-            section h2 {
-                font-size: 2rem;
+            .tab-btn {
+                width: 100%;
+            }
+
+            .admin-container {
+                margin: 1rem;
+                padding: 1rem;
             }
         }
     </style>
@@ -308,49 +638,66 @@
             <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#values">Values</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#programs">Programs</a></li>
+                <li><a href="#news">News</a></li>
                 <li><a href="#team">Team</a></li>
+                <li><a href="#donate">Donate</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button class="admin-btn" onclick="openAdmin()">🔧 Admin</button></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Welcome to Taalanta Visionaries</h1>
-        <p>Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
-        <a href="#contact" class="cta-button">Get Involved</a>
+        <h1 id="hero-title">Welcome to Taalanta Visionaries</h1>
+        <p id="hero-text">Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
+        <a href="#donate" class="cta-button">Donate Now</a>
+        <a href="#contact" class="cta-button secondary">Get Involved</a>
     </section>
 
-    <!-- Mission & Vision Section -->
+    <!-- Impact Stats -->
+    <section class="impact-stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-youths">500+</div>
+                <div class="stat-label">Youths Empowered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-projects">15</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-volunteers">50+</div>
+                <div class="stat-label">Volunteers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-communities">10</div>
+                <div class="stat-label">Communities Served</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
     <section id="about" class="mission-vision">
         <h2>Our Purpose</h2>
         <div class="mv-container">
             <div class="mv-card">
                 <h3>🎯 Our Mission</h3>
-                <p>To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
+                <p id="mission-text">To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
             </div>
             <div class="mv-card">
                 <h3>🌟 Our Vision</h3>
-                <p>Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
+                <p id="vision-text">Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section id="values">
-        <h2>Our Core Values</h2>
-        <div class="values-grid">
-            <div class="value-item">Integrity</div>
-            <div class="value-item">Responsibility</div>
-            <div class="value-item">Accountability</div>
-            <div class="value-item">Teamwork</div>
-            <div class="value-item">Innovation</div>
-            <div class="value-item">Respect</div>
-            <div class="value-item">Inclusivity</div>
-            <div class="value-item">Commitment</div>
-        </div>
+    <!-- Projects Section -->
+    <section id="projects" style="background: #f5f5f5;">
+        <h2>Our Projects</h2>
+        <div class="projects-grid" id="projects-container"></div>
     </section>
 
     <!-- Programs Section -->
@@ -400,50 +747,1146 @@
         </div>
     </section>
 
+    <!-- News/Blog Section -->
+    <section id="news" style="background: #f5f5f5;">
+        <h2>Latest News & Updates</h2>
+        <div class="news-grid" id="news-container"></div>
+    </section>
+
     <!-- Team Section -->
     <section id="team">
         <h2>Our Leadership Team</h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <h3>Benedicto Momanyi</h3>
-                <div class="role">Chairman</div>
-                <div class="contact">📞 0716704347</div>
-            </div>
-            <div class="team-card">
-                <h3>Martin Mwenda</h3>
-                <div class="role">Secretary</div>
-                <div class="contact">📞 0708884038</div>
-            </div>
-            <div class="team-card">
-                <h3>Mercy Mwangi</h3>
-                <div class="role">Treasurer</div>
-                <div class="contact">📞 0711141894</div>
-            </div>
+        <div class="team-grid" id="team-container"></div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation-section">
+        <h2>Support Our Work</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your donation helps us empower communities and create lasting change</p>
+        
+        <div class="donation-methods" id="donation-container"></div>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-section">
+        <h2>📱 Scan to Visit Our Website</h2>
+        <p>Share this QR code with your community!</p>
+        <div class="qr-code-container">
+            <div id="qrcode"></div>
+            <p style="margin-top: 1rem; color: #666;" id="website-url"></p>
+            <button class="cta-button" onclick="downloadQR()" style="margin-top: 1rem;">Download QR Code</button>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Get In Touch</h2>
-        <div class="contact-info">
+        <div style="text-align: center; font-size: 1.2rem;">
             <p><strong>Ready to make a difference?</strong></p>
             <p>Contact us to learn more about our programs or to get involved!</p>
-            <p><strong>Chairman:</strong> Benedicto Momanyi - 0716704347</p>
-            <p><strong>Secretary:</strong> Martin Mwenda - 0708884038</p>
-            <p><strong>Treasurer:</strong> Mercy Mwangi - 0711141894</p>
+            <p><strong>Email:</strong> <span id="contact-email">info@taalantavisionaries.org</span></p>
+            <p id="contact-details" style="margin-top: 1rem;"></p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Taalanta Visionaries. All rights reserved.</p>
+        <p>&copy; 2024 Taalanta Visionaries CBO. All rights reserved.</p>
         <p>Empowering Communities | Building Futures | Creating Change</p>
     </footer>
 
+    <!-- ADMIN PANEL -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2 style="color: #d32f2f;">🔧 Admin Panel - Taalanta Visionaries</h2>
+                <button class="close-admin" onclick="closeAdmin()">✕ Close</button>
+            </div>
+
+            <!-- Backup/Restore Section at Top -->
+            <div class="backup-section">
+                <h4>💾 Backup & Restore</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <button class="add-new-btn" onclick="downloadBackup()">⬇️ Download Backup</button>
+                    <button class="add-new-btn" onclick="document.getElementById('restoreFile').click()">⬆️ Restore Backup</button>
+                    <input type="file" id="restoreFile" accept=".json" style="display: none;" onchange="restoreBackup(event)">
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">
+                    ⚠️ Download backup regularly to save your data!
+                </p>
+            </div>
+
+            <!-- Admin Tabs -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('general')">General</button>
+                <button class="tab-btn" onclick="showTab('projects')">Projects</button>
+                <button class="tab-btn" onclick="showTab('news')">News/Blog</button>
+                <button class="tab-btn" onclick="showTab('team')">Team</button>
+                <button class="tab-btn" onclick="showTab('donations')">Donations</button>
+                <button class="tab-btn" onclick="showTab('stats')">Statistics</button>
+                <button class="tab-btn" onclick="showTab('contact')">Contact</button>
+                <button class="tab-btn" onclick="showTab('qr')">QR Code</button>
+            </div>
+
+            <!-- General Info Tab -->
+            <div class="tab-content active" id="tab-general">
+                <h3>General Information</h3>
+                <div class="form-group">
+                    <label>Hero Title</label>
+                    <input type="text" id="admin-hero-title" placeholder="Welcome to Taalanta Visionaries">
+                </div>
+                <div class="form-group">
+                    <label>Hero Description</label>
+                    <textarea id="admin-hero-text" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Mission Statement</label>
+                    <textarea id="admin-mission" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Vision Statement</label>
+                    <textarea id="admin-vision" rows="4"></textarea>
+                </div>
+                <button class="save-btn" onclick="saveGeneral()">💾 Save Changes</button>
+            </div>
+
+            <!-- Projects Tab -->
+            <div class="tab-content" id="tab-projects">
+                <h3>Manage Projects</h3>
+                <button class="add-new-btn" onclick="addNewProject()">+ Add New Project</button>
+                
+                <div id="project-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                    <h4>Project Details</h4>
+                    <div class="form-group">
+                        <label>Project Title</label>
+                        <input type="text" id="project-title" placeholder="e.g., Community Recycling Initiative">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea id="project-description" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="text" id="project-date" placeholder="e.g., January 2024">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="project-status">
+                            <option value="ongoing">Ongoing</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Image URL</label>
+                        <input type="text" id="project-image" placeholder="https://i.imgur.com/...">
+                        <small style="display: block; margin-top: 0.5rem; color: #666;">
+                            📸 Upload to <a href="https://imgur.com" target="_blank">Imgur</a> first, then paste URL
+                        </small>
+                    </div>
+                    <button class="save-btn" onclick="saveProject()">💾 Save Project</button>
+                    <button class="delete-btn" onclick="cancelProject()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
+                </div>
+
+                <div id="projects-list"></div>
+            </div>
+
+            <!-- News/Blog Tab -->
+            <div class="tab-content" id="tab-news">
+                <h3>Manage News & Updates</h3>
+                <button class="add-new-btn" onclick="addNewNews()">+ Add News Article</button>
+                
+                <div id="news-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                    <h4>News Article</h4>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="news-title" placeholder="e.g., New Partnership Announcement">
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="text" id="news-date" placeholder="e.g., May 15, 2024">
+                    </div>
+                    <div class="form-group">
+                        <label>Summary</label>
+                        <textarea id="news-summary" rows="3" placeholder="Brief summary (2-3 sentences)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Content (Optional)</label>
+                        <textarea id="news-content" rows="6" placeholder="Full article content"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Image URL</label>
+                        <input type="text" id="news-image" placeholder="https://i.imgur.com/...">
+                    </div>
+                    <button class="save-btn" onclick="saveNews()">💾 Save Article</button>
+                    <button class="delete-btn" onclick="cancelNews()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
+                </div>
+
+                <div id="news-list"></div>
+            </div>
+
+            <!-- Team Tab -->
+            <div class="tab-content" id="tab-team">
+                <h3>Manage Team Members</h3>
+                <button class="add-new-btn" onclick="addNewMember()">+ Add Team Member</button>
+                
+                <div id="member-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
+                    <h4>Team Member</h4>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="member-name" placeholder="e.g., Benedicto Momanyi">
+                    </div>
+                    <div class="form-group">
+                        <label>Position</label>
+                        <input type="text" id="member-role" placeholder="e.g., Chairman">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="member-phone" placeholder="e.g., 0716704347">
+                    </div>
+                    <div class="form-group">
+                        <label>Bio (Optional)</label>
+                        <textarea id="member-bio" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Photo URL (Optional)</label>
+                        <input type="text" id="member-photo" placeholder="https://i.imgur.com/...">
+                    </div>
+                    <button class="save-btn" onclick="saveMember()">💾 Save Member</button>
+                    <button class="delete-btn" onclick="cancelMember()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
+                </div>
+
+                <div id="members-list"></div>
+            </div>
+
+            <!-- Donations Tab -->
+            <div class="tab-content" id="tab-donations">
+                <h3>Manage Donation Methods</h3>
+                <div class="warning-box">
+                    <strong>💡 Tip:</strong> Keep your donation information up-to-date to make it easy for supporters to contribute!
+                </div>
+                
+                <div class="form-group">
+                    <label>M-Pesa Paybill Number</label>
+                    <input type="text" id="admin-mpesa-paybill" placeholder="e.g., 123456">
+                </div>
+                <div class="form-group">
+                    <label>M-Pesa Account Name</label>
+                    <input type="text" id="admin-mpesa-account" placeholder="e.g., Donor Name">
+                </div>
+                <div class="form-group">
+                    <label>Bank Name</label>
+                    <input type="text" id="admin-bank-name" placeholder="e.g., Equity Bank">
+                </div>
+                <div class="form-group">
+                    <label>Bank Account Number</label>
+                    <input type="text" id="admin-bank-account" placeholder="Account number">
+                </div>
+                <div class="form-group">
+                    <label>Bank Branch</label>
+                    <input type="text" id="admin-bank-branch" placeholder="e.g., Nairobi">
+                </div>
+                <div class="form-group">
+                    <label>PayPal Email (Optional)</label>
+                    <input type="email" id="admin-paypal" placeholder="donations@taalanta.org">
+                </div>
+                <div class="form-group">
+                    <label>Other Payment Link (Optional)</label>
+                    <input type="text" id="admin-other-payment" placeholder="e.g., Buy Me a Coffee link">
+                </div>
+                <button class="save-btn" onclick="saveDonations()">💾 Save Donation Info</button>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div class="tab-content" id="tab-stats">
+                <h3>Update Impact Statistics</h3>
+                <div class="form-group">
+                    <label>Youths Empowered</label>
+                    <input type="text" id="admin-stat-youths" placeholder="e.g., 500+">
+                </div>
+                <div class="form-group">
+                    <label>Active Projects</label>
+                    <input type="text" id="admin-stat-projects" placeholder="e.g., 15">
+                </div>
+                <div class="form-group">
+                    <label>Volunteers</label>
+                    <input type="text" id="admin-stat-volunteers" placeholder="e.g., 50+">
+                </div>
+                <div class="form-group">
+                    <label>Communities Served</label>
+                    <input type="text" id="admin-stat-communities" placeholder="e.g., 10">
+                </div>
+                <button class="save-btn" onclick="saveStats()">💾 Save Statistics</button>
+            </div>
+
+            <!-- Contact Tab -->
+            <div class="tab-content" id="tab-contact">
+                <h3>Contact Information</h3>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="admin-email" placeholder="info@taalantavisionaries.org">
+                </div>
+                <div class="form-group">
+                    <label>Facebook Page URL</label>
+                    <input type="text" id="admin-facebook" placeholder="https://facebook.com/taalanta">
+                </div>
+                <div class="form-group">
+                    <label>Instagram Handle</label>
+                    <input type="text" id="admin-instagram" placeholder="@taalantavisionaries">
+                </div>
+                <div class="form-group">
+                    <label>Twitter Handle</label>
+                    <input type="text" id="admin-twitter" placeholder="@TaalantaKE">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" id="admin-whatsapp" placeholder="e.g., 0716704347">
+                </div>
+                <button class="save-btn" onclick="saveContact()">💾 Save Contact Info</button>
+            </div>
+
+            <!-- QR Code Tab -->
+            <div class="tab-content" id="tab-qr">
+                <h3>QR Code Generator</h3>
+                <div class="warning-box">
+                    <strong>📱 Your QR Code</strong><br>
+                    This QR code is automatically generated for your website. Download and use it on:
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                        <li>Business cards</li>
+                        <li>Posters and flyers</li>
+                        <li>Event banners</li>
+                        <li>Social media posts</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin: 2rem 0;">
+                    <div id="admin-qrcode" style="display: inline-block;"></div>
+                    <p style="margin-top: 1rem; font-weight: bold;" id="admin-website-url"></p>
+                </div>
+                
+                <button class="save-btn" onclick="downloadQRFromAdmin()">⬇️ Download QR Code</button>
+                
+                <div style="margin-top: 2rem; background: #e8f5e9; padding: 1rem; border-radius: 5px;">
+                    <strong>✅ How to Print:</strong>
+                    <ol style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                        <li>Click "Download QR Code"</li>
+                        <li>Open the downloaded image</li>
+                        <li>Print at high quality (300 DPI minimum)</li>
+                        <li>Test scan before mass printing</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
     <script>
+        // Initialize data storage
+        const STORAGE_KEY = 'taalanta_data';
+
+        function initializeData() {
+            const defaultData = {
+                hero: {
+                    title: 'Welcome to Taalanta Visionaries',
+                    text: 'Empowering youths and communities through talent development, employment creation, and sustainable projects'
+                },
+                mission: 'To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.',
+                vision: 'Empower youths and communities through talent development, employment creation, and sustainable projects.',
+                stats: {
+                    youths: '500+',
+                    projects: '15',
+                    volunteers: '50+',
+                    communities: '10'
+                },
+                projects: [
+                    {
+                        id: 1,
+                        title: 'Community Recycling Initiative',
+                        description: 'Creating jobs through waste collection and recycling in 5 neighborhoods. Training 20 youths in waste management.',
+                        date: 'January 2024',
+                        status: 'ongoing',
+                        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600'
+                    }
+                ],
+                news: [
+                    {
+                        id: 1,
+                        title: 'Welcome to Our New Website',
+                        date: 'May 2024',
+                        summary: 'We are excited to launch our new website to better connect with our community and share our impact.',
+                        content: 'Full article content here...',
+                        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600'
+                    }
+                ],
+                team: [
+                    {
+                        id: 1,
+                        name: 'Benedicto Momanyi',
+                        role: 'Chairman',
+                        phone: '0716704347',
+                        bio: 'Leading Taalanta Visionaries with passion and dedication to community development.',
+                        photo: ''
+                    },
+                    {
+                        id: 2,
+                        name: 'Martin Mwenda',
+                        role: 'Secretary',
+                        phone: '0708884038',
+                        bio: 'Ensuring smooth operations and effective communication across all programs.',
+                        photo: ''
+                    },
+                    {
+                        id: 3,
+                        name: 'Mercy Mwangi',
+                        role: 'Treasurer',
+                        phone: '0711141894',
+                        bio: 'Managing resources with transparency and accountability.',
+                        photo: ''
+                    }
+                ],
+                donations: {
+                    mpesaPaybill: '',
+                    mpesaAccount: '',
+                    bankName: '',
+                    bankAccount: '',
+                    bankBranch: '',
+                    paypal: '',
+                    otherPayment: ''
+                },
+                contact: {
+                    email: 'info@taalantavisionaries.org',
+                    facebook: '',
+                    instagram: '',
+                    twitter: '',
+                    whatsapp: '0716704347'
+                }
+            };
+
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
+                return defaultData;
+            }
+            return JSON.parse(saved);
+        }
+
+        function getData() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        }
+
+        function saveData(data) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // Backup and Restore Functions
+        function downloadBackup() {
+            const data = getData();
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `taalanta-backup-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            alert('✅ Backup downloaded successfully! Keep this file safe.');
+        }
+
+        function restoreBackup(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            if (!confirm('⚠️ This will replace all current data. Make sure you have a backup first. Continue?')) {
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                    alert('✅ Backup restored successfully!');
+                    location.reload();
+                } catch (error) {
+                    alert('❌ Error restoring backup. Please check the file.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Load content on page load
+        function loadContent() {
+            const data = getData();
+            
+            // Hero
+            document.getElementById('hero-title').textContent = data.hero.title;
+            document.getElementById('hero-text').textContent = data.hero.text;
+            
+            // Mission & Vision
+            document.getElementById('mission-text').textContent = data.mission;
+            document.getElementById('vision-text').textContent = data.vision;
+            
+            // Stats
+            document.getElementById('stat-youths').textContent = data.stats.youths;
+            document.getElementById('stat-projects').textContent = data.stats.projects;
+            document.getElementById('stat-volunteers').textContent = data.stats.volunteers;
+            document.getElementById('stat-communities').textContent = data.stats.communities;
+            
+            // Load sections
+            loadProjects();
+            loadNews();
+            loadTeam();
+            loadDonations();
+            loadQRCode();
+            
+            // Contact
+            document.getElementById('contact-email').textContent = data.contact.email;
+            const details = [];
+            if (data.team && data.team.length > 0) {
+                data.team.forEach(member => {
+                    details.push(`<strong>${member.role}:</strong> ${member.name} - ${member.phone}`);
+                });
+                document.getElementById('contact-details').innerHTML = details.join('<br>');
+            }
+        }
+
+        function loadProjects() {
+            const data = getData();
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+            
+            if (!data.projects || data.projects.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666;">No projects yet. Add one from the Admin Panel!</p>';
+                return;
+            }
+            
+            data.projects.forEach(project => {
+                const statusClass = project.status === 'ongoing' ? 'status-ongoing' : 'status-completed';
+                const statusText = project.status === 'ongoing' ? 'Ongoing' : 'Completed';
+                
+                container.innerHTML += `
+                    <div class="project-card">
+                        <img src="${project.image}" alt="${project.title}" class="project-image" onerror="this.src='https://via.placeholder.com/600x200?text=No+Image'">
+                        <div class="project-content">
+                            <span class="project-status ${statusClass}">${statusText}</span>
+                            <h3>${project.title}</h3>
+                            <p class="project-date" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Started: ${project.date}</p>
+                            <p>${project.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function loadNews() {
+            const data = getData();
+            const container = document.getElementById('news-container');
+            container.innerHTML = '';
+            
+            if (!data.news || data.news.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666;">No news yet. Add updates from the Admin Panel!</p>';
+                return;
+            }
+            
+            data.news.forEach(article => {
+                container.innerHTML += `
+                    <div class="news-card">
+                        <img src="${article.image}" alt="${article.title}" class="news-image" onerror="this.src='https://via.placeholder.com/600x200?text=News'">
+                        <div class="news-content">
+                            <p class="news-date">${article.date}</p>
+                            <h3>${article.title}</h3>
+                            <p>${article.summary}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function loadTeam() {
+            const data = getData();
+            const container = document.getElementById('team-container');
+            container.innerHTML = '';
+            
+            data.team.forEach(member => {
+                const initials = member.name.split(' ').map(n => n[0]).join('');
+                const photoHTML = member.photo ? 
+                    `<img src="${member.photo}" alt="${member.name}">` : 
+                    initials;
+                
+                container.innerHTML += `
+                    <div class="team-card">
+                        <div class="team-photo">${photoHTML}</div>
+                        <h3>${member.name}</h3>
+                        <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">${member.role}</div>
+                        ${member.bio ? `<p style="margin-bottom: 1rem;">${member.bio}</p>` : ''}
+                        <div style="color: #388e3c; font-weight: bold;">📞 ${member.phone}</div>
+                    </div>
+                `;
+            });
+        }
+
+        function loadDonations() {
+            const data = getData();
+            const container = document.getElementById('donation-container');
+            container.innerHTML = '';
+            
+            // M-Pesa Card
+            if (data.donations.mpesaPaybill) {
+                container.innerHTML += `
+                    <div class="donation-card">
+                        <h3>💚 M-Pesa</h3>
+                        <p style="font-size: 1.8rem; font-weight: bold; color: #388e3c; margin: 1rem 0;">
+                            ${data.donations.mpesaPaybill}
+                        </p>
+                        <p><strong>Account:</strong> ${data.donations.mpesaAccount || 'Your Name'}</p>
+                        <hr style="margin: 1rem 0;">
+                        <p style="font-size: 0.9rem;">Lipa na M-Pesa → Paybill</p>
+                    </div>
+                `;
+            }
+            
+            // Bank Card
+            if (data.donations.bankName) {
+                container.innerHTML += `
+                    <div class="donation-card">
+                        <h3>🏦 Bank Transfer</h3>
+                        <p><strong>Bank:</strong> ${data.donations.bankName}</p>
+                        <p><strong>Account:</strong> ${data.donations.bankAccount}</p>
+                        ${data.donations.bankBranch ? `<p><strong>Branch:</strong> ${data.donations.bankBranch}</p>` : ''}
+                    </div>
+                `;
+            }
+            
+            // International/Other
+            if (data.donations.paypal || data.donations.otherPayment) {
+                container.innerHTML += `
+                    <div class="donation-card">
+                        <h3>🌍 International</h3>
+                        ${data.donations.paypal ? `<p><strong>PayPal:</strong> ${data.donations.paypal}</p>` : ''}
+                        ${data.donations.otherPayment ? `<p style="margin-top: 1rem;"><a href="${data.donations.otherPayment}" target="_blank" class="cta-button">Donate Online</a></p>` : ''}
+                    </div>
+                `;
+            }
+            
+            // Default if nothing set
+            if (container.innerHTML === '') {
+                container.innerHTML = `
+                    <div class="donation-card">
+                        <h3>Set Up Donations</h3>
+                        <p>Go to Admin Panel → Donations to add your payment methods</p>
+                    </div>
+                `;
+            }
+        }
+
+        function loadQRCode() {
+            const websiteURL = window.location.href.split('?')[0].split('#')[0];
+            document.getElementById('website-url').textContent = websiteURL;
+            
+            // Clear existing QR code
+            document.getElementById('qrcode').innerHTML = '';
+            
+            // Generate new QR code
+            new QRCode(document.getElementById('qrcode'), {
+                text: websiteURL,
+                width: 256,
+                height: 256,
+                colorDark: '#d32f2f',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function downloadQR() {
+            const canvas = document.querySelector('#qrcode canvas');
+            if (canvas) {
+                const url = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'taalanta-visionaries-qr-code.png';
+                link.click();
+                alert('✅ QR Code downloaded!');
+            }
+        }
+
+        // Admin Panel Functions
+        function openAdmin() {
+            document.getElementById('adminPanel').classList.add('active');
+            loadAdminData();
+            loadAdminQRCode();
+        }
+
+        function closeAdmin() {
+            document.getElementById('adminPanel').classList.remove('active');
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Load QR code when QR tab is opened
+            if (tabName === 'qr') {
+                loadAdminQRCode();
+            }
+        }
+
+        function loadAdminData() {
+            const data = getData();
+            
+            // General
+            document.getElementById('admin-hero-title').value = data.hero.title;
+            document.getElementById('admin-hero-text').value = data.hero.text;
+            document.getElementById('admin-mission').value = data.mission;
+            document.getElementById('admin-vision').value = data.vision;
+            
+            // Stats
+            document.getElementById('admin-stat-youths').value = data.stats.youths;
+            document.getElementById('admin-stat-projects').value = data.stats.projects;
+            document.getElementById('admin-stat-volunteers').value = data.stats.volunteers;
+            document.getElementById('admin-stat-communities').value = data.stats.communities;
+            
+            // Donations
+            document.getElementById('admin-mpesa-paybill').value = data.donations.mpesaPaybill || '';
+            document.getElementById('admin-mpesa-account').value = data.donations.mpesaAccount || '';
+            document.getElementById('admin-bank-name').value = data.donations.bankName || '';
+            document.getElementById('admin-bank-account').value = data.donations.bankAccount || '';
+            document.getElementById('admin-bank-branch').value = data.donations.bankBranch || '';
+            document.getElementById('admin-paypal').value = data.donations.paypal || '';
+            document.getElementById('admin-other-payment').value = data.donations.otherPayment || '';
+            
+            // Contact
+            document.getElementById('admin-email').value = data.contact.email;
+            document.getElementById('admin-facebook').value = data.contact.facebook || '';
+            document.getElementById('admin-instagram').value = data.contact.instagram || '';
+            document.getElementById('admin-twitter').value = data.contact.twitter || '';
+            document.getElementById('admin-whatsapp').value = data.contact.whatsapp || '';
+            
+            // Load lists
+            loadProjectsList();
+            loadNewsList();
+            loadMembersList();
+        }
+
+        function loadAdminQRCode() {
+            const websiteURL = window.location.href.split('?')[0].split('#')[0];
+            document.getElementById('admin-website-url').textContent = websiteURL;
+            
+            // Clear existing QR code
+            document.getElementById('admin-qrcode').innerHTML = '';
+            
+            // Generate new QR code
+            new QRCode(document.getElementById('admin-qrcode'), {
+                text: websiteURL,
+                width: 256,
+                height: 256,
+                colorDark: '#d32f2f',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function downloadQRFromAdmin() {
+            const canvas = document.querySelector('#admin-qrcode canvas');
+            if (canvas) {
+                const url = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'taalanta-visionaries-qr-code.png';
+                link.click();
+                alert('✅ QR Code downloaded!');
+            }
+        }
+
+        // Save Functions
+        function saveGeneral() {
+            const data = getData();
+            data.hero.title = document.getElementById('admin-hero-title').value;
+            data.hero.text = document.getElementById('admin-hero-text').value;
+            data.mission = document.getElementById('admin-mission').value;
+            data.vision = document.getElementById('admin-vision').value;
+            
+            saveData(data);
+            loadContent();
+            alert('✅ Saved successfully!');
+        }
+
+        function saveStats() {
+            const data = getData();
+            data.stats = {
+                youths: document.getElementById('admin-stat-youths').value,
+                projects: document.getElementById('admin-stat-projects').value,
+                volunteers: document.getElementById('admin-stat-volunteers').value,
+                communities: document.getElementById('admin-stat-communities').value
+            };
+            
+            saveData(data);
+            loadContent();
+            alert('✅ Statistics updated!');
+        }
+
+        function saveDonations() {
+            const data = getData();
+            data.donations = {
+                mpesaPaybill: document.getElementById('admin-mpesa-paybill').value,
+                mpesaAccount: document.getElementById('admin-mpesa-account').value,
+                bankName: document.getElementById('admin-bank-name').value,
+                bankAccount: document.getElementById('admin-bank-account').value,
+                bankBranch: document.getElementById('admin-bank-branch').value,
+                paypal: document.getElementById('admin-paypal').value,
+                otherPayment: document.getElementById('admin-other-payment').value
+            };
+            
+            saveData(data);
+            loadContent();
+            alert('✅ Donation information updated!');
+        }
+
+        function saveContact() {
+            const data = getData();
+            data.contact = {
+                email: document.getElementById('admin-email').value,
+                facebook: document.getElementById('admin-facebook').value,
+                instagram: document.getElementById('admin-instagram').value,
+                twitter: document.getElementById('admin-twitter').value,
+                whatsapp: document.getElementById('admin-whatsapp').value
+            };
+            
+            saveData(data);
+            loadContent();
+            alert('✅ Contact information updated!');
+        }
+
+        // Project Management
+        let editingProjectId = null;
+
+        function addNewProject() {
+            document.getElementById('project-form').style.display = 'block';
+            editingProjectId = null;
+            document.getElementById('project-title').value = '';
+            document.getElementById('project-description').value = '';
+            document.getElementById('project-date').value = '';
+            document.getElementById('project-status').value = 'ongoing';
+            document.getElementById('project-image').value = '';
+            document.getElementById('project-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function saveProject() {
+            const title = document.getElementById('project-title').value;
+            const description = document.getElementById('project-description').value;
+            
+            if (!title || !description) {
+                alert('❌ Please fill in title and description');
+                return;
+            }
+            
+            const data = getData();
+            if (!data.projects) data.projects = [];
+            
+            const project = {
+                id: editingProjectId || Date.now(),
+                title: title,
+                description: description,
+                date: document.getElementById('project-date').value || new Date().toLocaleDateString(),
+                status: document.getElementById('project-status').value,
+                image: document.getElementById('project-image').value || 'https://via.placeholder.com/600x200?text=Project'
+            };
+            
+            if (editingProjectId) {
+                const index = data.projects.findIndex(p => p.id === editingProjectId);
+                data.projects[index] = project;
+            } else {
+                data.projects.push(project);
+            }
+            
+            saveData(data);
+            loadContent();
+            loadProjectsList();
+            cancelProject();
+            alert('✅ Project saved!');
+        }
+
+        function cancelProject() {
+            document.getElementById('project-form').style.display = 'none';
+            editingProjectId = null;
+        }
+
+        function loadProjectsList() {
+            const data = getData();
+            const list = document.getElementById('projects-list');
+            list.innerHTML = '<h4 style="margin: 1.5rem 0 1rem 0;">Existing Projects</h4>';
+            
+            if (!data.projects || data.projects.length === 0) {
+                list.innerHTML += '<p style="color: #666;">No projects yet.</p>';
+                return;
+            }
+            
+            data.projects.forEach(project => {
+                list.innerHTML += `
+                    <div class="list-item">
+                        <div>
+                            <strong>${project.title}</strong><br>
+                            <small>${project.date} - ${project.status}</small>
+                        </div>
+                        <div>
+                            <button class="add-new-btn" style="margin: 0 0.5rem; padding: 0.5rem 1rem;" onclick="editProject(${project.id})">Edit</button>
+                            <button class="delete-btn" onclick="deleteProject(${project.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function editProject(id) {
+            const data = getData();
+            const project = data.projects.find(p => p.id === id);
+            
+            editingProjectId = id;
+            document.getElementById('project-form').style.display = 'block';
+            document.getElementById('project-title').value = project.title;
+            document.getElementById('project-description').value = project.description;
+            document.getElementById('project-date').value = project.date;
+            document.getElementById('project-status').value = project.status;
+            document.getElementById('project-image').value = project.image;
+            
+            document.getElementById('project-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteProject(id) {
+            if (confirm('Are you sure you want to delete this project?')) {
+                const data = getData();
+                data.projects = data.projects.filter(p => p.id !== id);
+                saveData(data);
+                loadContent();
+                loadProjectsList();
+                alert('✅ Project deleted!');
+            }
+        }
+
+        // News Management
+        let editingNewsId = null;
+
+        function addNewNews() {
+            document.getElementById('news-form').style.display = 'block';
+            editingNewsId = null;
+            document.getElementById('news-title').value = '';
+            document.getElementById('news-date').value = '';
+            document.getElementById('news-summary').value = '';
+            document.getElementById('news-content').value = '';
+            document.getElementById('news-image').value = '';
+            document.getElementById('news-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function saveNews() {
+            const title = document.getElementById('news-title').value;
+            const summary = document.getElementById('news-summary').value;
+            
+            if (!title || !summary) {
+                alert('❌ Please fill in title and summary');
+                return;
+            }
+            
+            const data = getData();
+            if (!data.news) data.news = [];
+            
+            const article = {
+                id: editingNewsId || Date.now(),
+                title: title,
+                date: document.getElementById('news-date').value || new Date().toLocaleDateString(),
+                summary: summary,
+                content: document.getElementById('news-content').value,
+                image: document.getElementById('news-image').value || 'https://via.placeholder.com/600x200?text=News'
+            };
+            
+            if (editingNewsId) {
+                const index = data.news.findIndex(n => n.id === editingNewsId);
+                data.news[index] = article;
+            } else {
+                data.news.unshift(article); // Add to beginning
+            }
+            
+            saveData(data);
+            loadContent();
+            loadNewsList();
+            cancelNews();
+            alert('✅ Article saved!');
+        }
+
+        function cancelNews() {
+            document.getElementById('news-form').style.display = 'none';
+            editingNewsId = null;
+        }
+
+        function loadNewsList() {
+            const data = getData();
+            const list = document.getElementById('news-list');
+            list.innerHTML = '<h4 style="margin: 1.5rem 0 1rem 0;">Published Articles</h4>';
+            
+            if (!data.news || data.news.length === 0) {
+                list.innerHTML += '<p style="color: #666;">No news articles yet.</p>';
+                return;
+            }
+            
+            data.news.forEach(article => {
+                list.innerHTML += `
+                    <div class="list-item">
+                        <div>
+                            <strong>${article.title}</strong><br>
+                            <small>${article.date}</small>
+                        </div>
+                        <div>
+                            <button class="add-new-btn" style="margin: 0 0.5rem; padding: 0.5rem 1rem;" onclick="editNews(${article.id})">Edit</button>
+                            <button class="delete-btn" onclick="deleteNews(${article.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function editNews(id) {
+            const data = getData();
+            const article = data.news.find(n => n.id === id);
+            
+            editingNewsId = id;
+            document.getElementById('news-form').style.display = 'block';
+            document.getElementById('news-title').value = article.title;
+            document.getElementById('news-date').value = article.date;
+            document.getElementById('news-summary').value = article.summary;
+            document.getElementById('news-content').value = article.content || '';
+            document.getElementById('news-image').value = article.image;
+            
+            document.getElementById('news-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteNews(id) {
+            if (confirm('Are you sure you want to delete this article?')) {
+                const data = getData();
+                data.news = data.news.filter(n => n.id !== id);
+                saveData(data);
+                loadContent();
+                loadNewsList();
+                alert('✅ Article deleted!');
+            }
+        }
+
+        // Team Management
+        let editingMemberId = null;
+
+        function addNewMember() {
+            document.getElementById('member-form').style.display = 'block';
+            editingMemberId = null;
+            document.getElementById('member-name').value = '';
+            document.getElementById('member-role').value = '';
+            document.getElementById('member-phone').value = '';
+            document.getElementById('member-bio').value = '';
+            document.getElementById('member-photo').value = '';
+            document.getElementById('member-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function saveMember() {
+            const name = document.getElementById('member-name').value;
+            const role = document.getElementById('member-role').value;
+            const phone = document.getElementById('member-phone').value;
+            
+            if (!name || !role || !phone) {
+                alert('❌ Please fill in name, role, and phone');
+                return;
+            }
+            
+            const data = getData();
+            if (!data.team) data.team = [];
+            
+            const member = {
+                id: editingMemberId || Date.now(),
+                name: name,
+                role: role,
+                phone: phone,
+                bio: document.getElementById('member-bio').value,
+                photo: document.getElementById('member-photo').value
+            };
+            
+            if (editingMemberId) {
+                const index = data.team.findIndex(m => m.id === editingMemberId);
+                data.team[index] = member;
+            } else {
+                data.team.push(member);
+            }
+            
+            saveData(data);
+            loadContent();
+            loadMembersList();
+            cancelMember();
+            alert('✅ Team member saved!');
+        }
+
+        function cancelMember() {
+            document.getElementById('member-form').style.display = 'none';
+            editingMemberId = null;
+        }
+
+        function loadMembersList() {
+            const data = getData();
+            const list = document.getElementById('members-list');
+            list.innerHTML = '<h4 style="margin: 1.5rem 0 1rem 0;">Current Team Members</h4>';
+            
+            if (!data.team || data.team.length === 0) {
+                list.innerHTML += '<p style="color: #666;">No team members yet.</p>';
+                return;
+            }
+            
+            data.team.forEach(member => {
+                list.innerHTML += `
+                    <div class="list-item">
+                        <div>
+                            <strong>${member.name}</strong> - ${member.role}<br>
+                            <small>${member.phone}</small>
+                        </div>
+                        <div>
+                            <button class="add-new-btn" style="margin: 0 0.5rem; padding: 0.5rem 1rem;" onclick="editMember(${member.id})">Edit</button>
+                            <button class="delete-btn" onclick="deleteMember(${member.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function editMember(id) {
+            const data = getData();
+            const member = data.team.find(m => m.id === id);
+            
+            editingMemberId = id;
+            document.getElementById('member-form').style.display = 'block';
+            document.getElementById('member-name').value = member.name;
+            document.getElementById('member-role').value = member.role;
+            document.getElementById('member-phone').value = member.phone;
+            document.getElementById('member-bio').value = member.bio || '';
+            document.getElementById('member-photo').value = member.photo || '';
+            
+            document.getElementById('member-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteMember(id) {
+            if (confirm('Are you sure you want to remove this team member?')) {
+                const data = getData();
+                data.team = data.team.filter(m => m.id !== id);
+                saveData(data);
+                loadContent();
+                loadMembersList();
+                alert('✅ Team member removed!');
+            }
+        }
+
+        // Mobile menu
         function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
+            document.getElementById('nav-menu').classList.toggle('active');
         }
 
         // Smooth scrolling
@@ -452,14 +1895,23 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
+                    target.scrollIntoView({ behavior: 'smooth' });
                     document.getElementById('nav-menu').classList.remove('active');
                 }
             });
+        });
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeData();
+            loadContent();
+        });
+
+        // Close admin panel with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAdmin();
+            }
         });
     </script>
 </body>
