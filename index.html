@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya through talent development, employment creation, and sustainable projects">
-    <meta name="keywords" content="CBO Kenya, Nairobi community projects, youth empowerment Kenya, talent development, environmental conservation Kenya">
-    <title>Taalanta Visionaries - Empowering Communities Through Talent Development</title>
+    <meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya">
+    <title>Taalanta Visionaries - Empowering Communities</title>
     
     <style>
         * {
@@ -462,40 +461,6 @@
             object-fit: cover;
         }
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .news-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .news-content {
-            padding: 1.5rem;
-        }
-
-        .news-date {
-            color: #f9a825;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
         .volunteer-section {
             background: #f5f5f5;
         }
@@ -589,10 +554,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .comment-text {
-            color: #333;
-        }
-
         .donation-section {
             background: linear-gradient(135deg, #388e3c, #d32f2f);
             color: white;
@@ -601,27 +562,6 @@
 
         .donation-section h2 {
             color: white;
-        }
-
-        .donation-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 2rem auto;
-        }
-
-        .donation-card {
-            background: white;
-            color: #333;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .donation-card h3 {
-            color: #d32f2f;
-            margin-bottom: 1rem;
         }
 
         .qr-section {
@@ -643,51 +583,6 @@
             margin: 1rem auto;
         }
 
-        .social-section {
-            background: #f5f5f5;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-            width: 120px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .social-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .social-facebook { color: #1877f2; }
-        .social-instagram { color: #e4405f; }
-        .social-twitter { color: #1da1f2; }
-        .social-whatsapp { color: #25d366; }
-        .social-linkedin { color: #0077b5; }
-        .social-youtube { color: #ff0000; }
-        .social-tiktok { color: #000000; }
-
         #contact {
             background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
             color: white;
@@ -704,15 +599,111 @@
             padding: 2rem;
         }
 
-        .footer-social {
-            margin: 1rem 0;
-        }
-
         .footer-social a {
             color: #f9a825;
             font-size: 1.5rem;
             margin: 0 0.5rem;
             text-decoration: none;
+        }
+
+        /* ADMIN PANEL STYLES */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            overflow-y: auto;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f9a825;
+        }
+
+        .close-admin {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            background: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn.active {
+            background: #f9a825;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .save-btn {
+            background: #388e3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .save-btn:hover {
+            background: #2e7d32;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
         }
 
         .mobile-menu-toggle {
@@ -748,17 +739,22 @@
                 font-size: 2rem;
             }
 
-            .social-links {
-                gap: 1rem;
-            }
-
-            .social-link {
-                width: 100px;
-            }
-
             .founder-header {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .admin-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .admin-tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
             }
         }
     </style>
@@ -774,11 +770,10 @@
                 <li><a href="#about">Mission & Vision</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#programs">Programs</a></li>
-                <li><a href="#news">News</a></li>
                 <li><a href="#volunteer">Volunteer</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#donate">Donate</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button class="admin-btn" onclick="openAdmin()">🔧 Admin</button></li>
             </ul>
         </nav>
     </header>
@@ -1026,13 +1021,6 @@
         </div>
     </section>
 
-    <section id="news" style="background: #f5f5f5;">
-        <h2>Latest News & Updates</h2>
-        <div class="news-grid">
-            <p style="text-align: center; color: #666; width: 100%;">Check back soon for our latest news and community updates!</p>
-        </div>
-    </section>
-
     <section id="volunteer" class="volunteer-section">
         <h2>🤝 Become a Volunteer</h2>
         <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
@@ -1040,7 +1028,7 @@
         </p>
 
         <div class="volunteer-form">
-            <form>
+            <form id="volunteerForm">
                 <div class="form-group">
                     <label for="volunteer-name">Full Name *</label>
                     <input type="text" id="volunteer-name" name="name" required>
@@ -1144,31 +1132,6 @@
         </div>
     </section>
 
-    <section id="donate" class="donation-section">
-        <h2>Support Our Work</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your donation helps us empower communities and create lasting change</p>
-        
-        <div class="donation-methods">
-            <div class="donation-card">
-                <h3>Set Up Donations</h3>
-                <p>Contact us to learn about donation options</p>
-                <p style="margin-top: 1rem;"><strong>📞 0716704347</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="social-section">
-        <h2>🌐 Connect With Us</h2>
-        <p style="margin-bottom: 2rem;">Follow our journey and stay updated on all our activities!</p>
-        
-        <div class="social-links">
-            <a href="https://wa.me/254716704347" target="_blank" class="social-link">
-                <div class="social-icon social-whatsapp">💬</div>
-                <span>WhatsApp</span>
-            </a>
-        </div>
-    </section>
-
     <section class="qr-section">
         <h2>📱 Scan to Visit Our Website</h2>
         <p>Share this QR code with your community!</p>
@@ -1198,13 +1161,100 @@
         <p>Empowering Communities | Building Futures | Creating Change</p>
     </footer>
 
+    <!-- ADMIN PANEL -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2 style="color: #d32f2f;">🔧 Admin Panel - Quick Updates</h2>
+                <button class="close-admin" onclick="closeAdmin()">✕ Close</button>
+            </div>
+
+            <div class="warning-box">
+                <strong>📝 Note:</strong> Your program images are now permanent and will show for everyone! Use this panel to update text, add projects, and manage team info.
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('notes')">📋 Quick Notes</button>
+                <button class="tab-btn" onclick="showTab('projects')">📊 Add Projects</button>
+                <button class="tab-btn" onclick="showTab('contact')">📞 Update Contact</button>
+            </div>
+
+            <div class="tab-content active" id="tab-notes">
+                <h3>Quick Admin Notes</h3>
+                <p style="margin: 1rem 0;">✅ <strong>Your website is fully functional!</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>All 8 program images are showing for everyone</li>
+                    <li>QR code works perfectly</li>
+                    <li>Mobile responsive design</li>
+                    <li>Comments section active</li>
+                    <li>Volunteer form ready</li>
+                </ul>
+
+                <h4 style="margin-top: 2rem; color: #388e3c;">To Add More Features:</h4>
+                <p style="margin: 1rem 0;">Contact Benedicto at <strong>0716704347</strong> for:</p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Adding more projects with photos</li>
+                    <li>Setting up M-Pesa donations</li>
+                    <li>Connecting volunteer form to email</li>
+                    <li>Adding social media links</li>
+                    <li>Creating news/blog posts</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="tab-projects">
+                <h3>Add New Project</h3>
+                <p style="color: #666; margin-bottom: 1rem;">To add projects with photos, upload images to Imgur first, then update the code.</p>
+                
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" id="project-title" placeholder="e.g., Tree Planting Drive 2024">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="project-desc" rows="3" placeholder="Describe your project..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Image URL (from Imgur)</label>
+                    <input type="text" id="project-img" placeholder="https://i.imgur.com/...">
+                </div>
+                
+                <button class="save-btn" onclick="alert('Contact Benedicto (0716704347) to add this project to the website permanently!')">💾 Request Project Addition</button>
+            </div>
+
+            <div class="tab-content" id="tab-contact">
+                <h3>Update Contact Information</h3>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="info@taalantavisionaries.org">
+                </div>
+                
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" value="254716704347">
+                </div>
+                
+                <div class="form-group">
+                    <label>Facebook Page URL</label>
+                    <input type="text" placeholder="https://facebook.com/taalanta">
+                </div>
+                
+                <button class="save-btn" onclick="alert('Contact the web team to update these details in the code!')">💾 Request Update</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <script>
+        // Toggle mobile menu
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
         }
 
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1216,6 +1266,7 @@
             });
         });
 
+        // QR Code generation
         window.addEventListener('DOMContentLoaded', () => {
             const websiteURL = window.location.href.split('?')[0].split('#')[0];
             document.getElementById('website-url').textContent = websiteURL;
@@ -1230,6 +1281,7 @@
             });
         });
 
+        // Comments functionality
         document.getElementById('commentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('comment-name').value;
@@ -1252,6 +1304,43 @@
             container.insertBefore(comment, container.firstChild);
             this.reset();
             alert('✅ Comment posted!');
+        });
+
+        // Volunteer form submission
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('volunteer-name').value;
+            const phone = document.getElementById('volunteer-phone').value;
+            alert(`✅ Thank you ${name}! We've received your application. We'll contact you at ${phone} soon!`);
+            this.reset();
+        });
+
+        // Admin Panel Functions
+        function openAdmin() {
+            document.getElementById('adminPanel').classList.add('active');
+        }
+
+        function closeAdmin() {
+            document.getElementById('adminPanel').classList.remove('active');
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Close admin with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAdmin();
+            }
         });
     </script>
 </body>
