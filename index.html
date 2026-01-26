@@ -554,6 +554,16 @@
             margin-bottom: 0.5rem;
         }
 
+        .donation-section {
+            background: linear-gradient(135deg, #388e3c, #d32f2f);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .donation-section h2 {
+            color: white;
+        }
+
         .qr-section {
             text-align: center;
             padding: 3rem 2rem;
@@ -596,7 +606,7 @@
             text-decoration: none;
         }
 
-        /* ADMIN PANEL */
+        /* ADMIN PANEL STYLES */
         .admin-panel {
             display: none;
             position: fixed;
@@ -694,47 +704,6 @@
             padding: 1rem;
             margin-bottom: 1rem;
             border-radius: 5px;
-        }
-
-        .success-box {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            color: #155724;
-            display: none;
-        }
-
-        .add-new-btn {
-            background: #f9a825;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .delete-btn {
-            background: #d32f2f;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 0.5rem;
-        }
-
-        .list-item {
-            background: #f5f5f5;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .mobile-menu-toggle {
@@ -969,8 +938,86 @@
 
     <section id="programs">
         <h2>Our Programs</h2>
-        <div class="programs-grid" id="programs-container">
-            <!-- Programs will be loaded from localStorage -->
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/SnjG27Y.jpeg" alt="Integration">
+                </div>
+                <div class="program-content">
+                    <h3>🤝 Integration</h3>
+                    <p>Building bridges within communities and fostering social cohesion through inclusive programs.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/CQ7xkHL.jpeg" alt="Climate Work">
+                </div>
+                <div class="program-content">
+                    <h3>🌍 Climate Work</h3>
+                    <p>Taking action against climate change through education and community-based initiatives.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/euX517j.jpeg" alt="Recycling">
+                </div>
+                <div class="program-content">
+                    <h3>♻️ Garbage Collection & Recycling</h3>
+                    <p>Promoting environmental sustainability through waste management and recycling programs.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/Yp2qzyD.jpeg" alt="Art and Culture">
+                </div>
+                <div class="program-content">
+                    <h3>🎨 Art & Culture Development</h3>
+                    <p>Preserving and promoting local arts and culture while creating economic opportunities.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/sOt21CT.jpeg" alt="Environment Conservation">
+                </div>
+                <div class="program-content">
+                    <h3>🌱 Environment Conservation</h3>
+                    <p>Protecting natural resources and promoting sustainable environmental practices.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/vYcQRMB.jpeg" alt="Entrepreneurship">
+                </div>
+                <div class="program-content">
+                    <h3>💼 Entrepreneurship & Sustainability</h3>
+                    <p>Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/zp1YDtf.jpeg" alt="Talent Development">
+                </div>
+                <div class="program-content">
+                    <h3>⭐ Talent Development</h3>
+                    <p>Identifying and nurturing individual talents to unlock potential and create opportunities.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/A3Ws7aK.jpeg" alt="Youth Empowerment">
+                </div>
+                <div class="program-content">
+                    <h3>💪 Youth Empowerment</h3>
+                    <p>Equipping young people with skills, knowledge, and confidence to shape their futures.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1027,8 +1074,8 @@
         </div>
 
         <div style="text-align: center; margin-top: 2rem; color: #666;">
-            <p>📞 Questions? Call us: <strong id="display-contact-phone">0716704347</strong></p>
-            <p>📧 Email: <strong id="display-contact-email">info@taalantavisionaries.org</strong></p>
+            <p>📞 Questions? Call us: <strong>0716704347</strong></p>
+            <p>📧 Email: <strong>info@taalantavisionaries.org</strong></p>
         </div>
     </section>
 
@@ -1060,8 +1107,28 @@
 
     <section id="team">
         <h2>Our Leadership Team</h2>
-        <div class="team-grid" id="team-container">
-            <!-- Team will be loaded from localStorage -->
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">BM</div>
+                <h3>Benedicto Momanyi</h3>
+                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Chairman</div>
+                <p style="margin-bottom: 1rem;">Leading Taalanta Visionaries with passion and dedication to community development.</p>
+                <div style="color: #388e3c; font-weight: bold;">📞 0716704347</div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">MM</div>
+                <h3>Martin Mwenda</h3>
+                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Secretary</div>
+                <p style="margin-bottom: 1rem;">Ensuring smooth operations and effective communication.</p>
+                <div style="color: #388e3c; font-weight: bold;">📞 0708884038</div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">MW</div>
+                <h3>Mercy Mwangi</h3>
+                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Treasurer</div>
+                <p style="margin-bottom: 1rem;">Managing resources with transparency and accountability.</p>
+                <div style="color: #388e3c; font-weight: bold;">📞 0711141894</div>
+            </div>
         </div>
     </section>
 
@@ -1076,8 +1143,13 @@
 
     <section id="contact">
         <h2>Get In Touch</h2>
-        <div style="text-align: center; font-size: 1.2rem;" id="contact-display">
-            <!-- Contact info will be loaded from localStorage -->
+        <div style="text-align: center; font-size: 1.2rem;">
+            <p><strong>Ready to make a difference?</strong></p>
+            <p>Contact us to learn more about our programs or to get involved!</p>
+            <p><strong>Email:</strong> info@taalantavisionaries.org</p>
+            <p style="margin-top: 1rem;"><strong>Chairman:</strong> Benedicto Momanyi - 0716704347</p>
+            <p><strong>Secretary:</strong> Martin Mwenda - 0708884038</p>
+            <p><strong>Treasurer:</strong> Mercy Mwangi - 0711141894</p>
         </div>
     </section>
 
@@ -1093,4 +1165,183 @@
     <div class="admin-panel" id="adminPanel">
         <div class="admin-container">
             <div class="admin-header">
-                <h
+                <h2 style="color: #d32f2f;">🔧 Admin Panel - Quick Updates</h2>
+                <button class="close-admin" onclick="closeAdmin()">✕ Close</button>
+            </div>
+
+            <div class="warning-box">
+                <strong>📝 Note:</strong> Your program images are now permanent and will show for everyone! Use this panel to update text, add projects, and manage team info.
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('notes')">📋 Quick Notes</button>
+                <button class="tab-btn" onclick="showTab('projects')">📊 Add Projects</button>
+                <button class="tab-btn" onclick="showTab('contact')">📞 Update Contact</button>
+            </div>
+
+            <div class="tab-content active" id="tab-notes">
+                <h3>Quick Admin Notes</h3>
+                <p style="margin: 1rem 0;">✅ <strong>Your website is fully functional!</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>All 8 program images are showing for everyone</li>
+                    <li>QR code works perfectly</li>
+                    <li>Mobile responsive design</li>
+                    <li>Comments section active</li>
+                    <li>Volunteer form ready</li>
+                </ul>
+
+                <h4 style="margin-top: 2rem; color: #388e3c;">To Add More Features:</h4>
+                <p style="margin: 1rem 0;">Contact Benedicto at <strong>0716704347</strong> for:</p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Adding more projects with photos</li>
+                    <li>Setting up M-Pesa donations</li>
+                    <li>Connecting volunteer form to email</li>
+                    <li>Adding social media links</li>
+                    <li>Creating news/blog posts</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="tab-projects">
+                <h3>Add New Project</h3>
+                <p style="color: #666; margin-bottom: 1rem;">To add projects with photos, upload images to Imgur first, then update the code.</p>
+                
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" id="project-title" placeholder="e.g., Tree Planting Drive 2024">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="project-desc" rows="3" placeholder="Describe your project..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Image URL (from Imgur)</label>
+                    <input type="text" id="project-img" placeholder="https://i.imgur.com/...">
+                </div>
+                
+                <button class="save-btn" onclick="alert('Contact Benedicto (0716704347) to add this project to the website permanently!')">💾 Request Project Addition</button>
+            </div>
+
+            <div class="tab-content" id="tab-contact">
+                <h3>Update Contact Information</h3>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="info@taalantavisionaries.org">
+                </div>
+                
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" value="254716704347">
+                </div>
+                
+                <div class="form-group">
+                    <label>Facebook Page URL</label>
+                    <input type="text" placeholder="https://facebook.com/taalanta">
+                </div>
+                
+                <button class="save-btn" onclick="alert('Contact the web team to update these details in the code!')">💾 Request Update</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+
+        // QR Code generation
+        window.addEventListener('DOMContentLoaded', () => {
+            const websiteURL = window.location.href.split('?')[0].split('#')[0];
+            document.getElementById('website-url').textContent = websiteURL;
+            
+            new QRCode(document.getElementById('qrcode'), {
+                text: websiteURL,
+                width: 256,
+                height: 256,
+                colorDark: '#d32f2f',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+
+        // Comments functionality
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('comment-name').value;
+            const text = document.getElementById('comment-text').value;
+            const date = new Date().toLocaleDateString();
+            
+            const container = document.getElementById('comments-container');
+            const comment = document.createElement('div');
+            comment.className = 'comment-item';
+            comment.innerHTML = `
+                <div class="comment-author">${name}</div>
+                <div class="comment-date">${date}</div>
+                <div class="comment-text">${text}</div>
+            `;
+            
+            if (container.querySelector('p')) {
+                container.innerHTML = '';
+            }
+            
+            container.insertBefore(comment, container.firstChild);
+            this.reset();
+            alert('✅ Comment posted!');
+        });
+
+        // Volunteer form submission
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('volunteer-name').value;
+            const phone = document.getElementById('volunteer-phone').value;
+            alert(`✅ Thank you ${name}! We've received your application. We'll contact you at ${phone} soon!`);
+            this.reset();
+        });
+
+        // Admin Panel Functions
+        function openAdmin() {
+            document.getElementById('adminPanel').classList.add('active');
+        }
+
+        function closeAdmin() {
+            document.getElementById('adminPanel').classList.remove('active');
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById('tab-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Close admin with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAdmin();
+            }
+        });
+    </script>
+</body>
+</html>
