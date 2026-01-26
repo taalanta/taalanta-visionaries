@@ -20,7 +20,6 @@
             color: #333;
         }
 
-        /* Header Styles */
         header {
             background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
             color: white;
@@ -79,7 +78,6 @@
             transform: scale(1.05);
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 70px;
             background: linear-gradient(rgba(211, 47, 47, 0.7), rgba(56, 142, 60, 0.7)), 
@@ -123,7 +121,6 @@
             background: #388e3c;
         }
 
-        /* Section Styles */
         section {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -137,7 +134,6 @@
             color: #d32f2f;
         }
 
-        /* OUR STORY SECTION - NEW! */
         .story-section {
             background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
         }
@@ -278,7 +274,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Impact Stats */
         .impact-stats {
             background: linear-gradient(135deg, #d32f2f 0%, #388e3c 100%);
             color: white;
@@ -308,7 +303,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Mission & Vision */
         .mission-vision {
             background: #f5f5f5;
         }
@@ -333,7 +327,6 @@
             font-size: 1.5rem;
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -387,7 +380,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Programs Grid - NOW WITH IMAGES! */
         .programs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -416,6 +408,12 @@
             justify-content: center;
         }
 
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .program-icon-large {
             font-size: 5rem;
         }
@@ -430,7 +428,6 @@
             font-size: 1.3rem;
         }
 
-        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -465,7 +462,6 @@
             object-fit: cover;
         }
 
-        /* News Section */
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -500,7 +496,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Volunteer Form Section */
         .volunteer-section {
             background: #f5f5f5;
         }
@@ -559,7 +554,6 @@
             background: #2e7d32;
         }
 
-        /* Comments Section */
         .comments-section {
             max-width: 800px;
             margin: 3rem auto;
@@ -599,7 +593,6 @@
             color: #333;
         }
 
-        /* Donation Section */
         .donation-section {
             background: linear-gradient(135deg, #388e3c, #d32f2f);
             color: white;
@@ -631,7 +624,6 @@
             margin-bottom: 1rem;
         }
 
-        /* QR Code Section */
         .qr-section {
             text-align: center;
             padding: 3rem 2rem;
@@ -651,7 +643,6 @@
             margin: 1rem auto;
         }
 
-        /* Social Media Section */
         .social-section {
             background: #f5f5f5;
             padding: 3rem 2rem;
@@ -697,7 +688,6 @@
         .social-youtube { color: #ff0000; }
         .social-tiktok { color: #000000; }
 
-        /* Contact Section */
         #contact {
             background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
             color: white;
@@ -707,7 +697,6 @@
             color: white;
         }
 
-        /* Footer */
         footer {
             background: #222;
             color: white;
@@ -726,159 +715,6 @@
             text-decoration: none;
         }
 
-        /* ADMIN PANEL STYLES */
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 10000;
-            overflow-y: auto;
-        }
-
-        .admin-panel.active {
-            display: block;
-        }
-
-        .admin-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #f9a825;
-        }
-
-        .close-admin {
-            background: #d32f2f;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .admin-tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 0.8rem 1.2rem;
-            border: none;
-            background: #f0f0f0;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .tab-btn.active {
-            background: #f9a825;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .save-btn {
-            background: #388e3c;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1rem;
-        }
-
-        .save-btn:hover {
-            background: #2e7d32;
-        }
-
-        .add-new-btn {
-            background: #f9a825;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .delete-btn {
-            background: #d32f2f;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .list-item {
-            background: #f5f5f5;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .backup-section {
-            background: #e3f2fd;
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-
-        .backup-section h4 {
-            color: #1976d2;
-            margin-bottom: 1rem;
-        }
-
-        .warning-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-        }
-
-        .success-message {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            color: #155724;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            display: none;
-        }
-
-        /* Mobile Responsive */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -912,19 +748,6 @@
                 font-size: 2rem;
             }
 
-            .admin-tabs {
-                flex-direction: column;
-            }
-
-            .tab-btn {
-                width: 100%;
-            }
-
-            .admin-container {
-                margin: 1rem;
-                padding: 1rem;
-            }
-
             .social-links {
                 gap: 1rem;
             }
@@ -941,7 +764,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <div class="logo">Taalanta Visionaries</div>
@@ -957,67 +779,59 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#donate">Donate</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><button class="admin-btn" onclick="openAdmin()">🔧 Admin</button></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1 id="hero-title">Welcome to Taalanta Visionaries</h1>
-        <p id="hero-text">Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
+        <h1>Welcome to Taalanta Visionaries</h1>
+        <p>Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
         <a href="#story" class="cta-button">Our Story</a>
         <a href="#volunteer" class="cta-button secondary">Join Us</a>
     </section>
 
-    <!-- OUR STORY SECTION - NEW! -->
     <section id="story" class="story-section">
         <h2>🌟 Our Story</h2>
         
         <div class="story-content">
-            <!-- Founder's Message -->
             <div class="founder-message">
                 <div class="founder-header">
-                    <div class="founder-photo" id="founder-photo">
-                        BM
-                    </div>
+                    <div class="founder-photo">BM</div>
                     <div class="founder-info">
-                        <h3 id="founder-name">Benedicto Momanyi</h3>
-                        <p id="founder-title">Founder & Chairman, Taalanta Visionaries</p>
+                        <h3>Benedicto Momanyi</h3>
+                        <p>Founder & Chairman, Taalanta Visionaries</p>
                     </div>
                 </div>
-                <div class="founder-quote" id="founder-quote">
+                <div class="founder-quote">
                     "Every young person deserves a chance to discover their potential and contribute positively to society. Taalanta Visionaries was born from witnessing the struggles of our youth and believing in their capacity for greatness."
                 </div>
             </div>
 
-            <!-- The Beginning -->
             <div class="story-text">
                 <h3>💡 How It All Started</h3>
-                <p id="story-beginning">
+                <p>
                     Taalanta Visionaries was founded when our founder, Mr. Benedicto Momanyi, identified critical challenges facing our community. He witnessed firsthand the devastating cycle of youth dropping out of school, falling into drug abuse, and finding themselves on the wrong side of the law through crime and robbery.
                 </p>
                 
                 <div class="problem-box">
                     <h4>⚠️ The Challenges We Saw:</h4>
                     <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                        <li id="challenge-1">High school dropout rates among youth</li>
-                        <li id="challenge-2">Increasing drug and substance abuse</li>
-                        <li id="challenge-3">Youth involvement in crime and robbery</li>
-                        <li id="challenge-4">Lack of positive role models and opportunities</li>
-                        <li id="challenge-5">Limited access to skills training and mentorship</li>
+                        <li>High school dropout rates among youth</li>
+                        <li>Increasing drug and substance abuse</li>
+                        <li>Youth involvement in crime and robbery</li>
+                        <li>Lack of positive role models and opportunities</li>
+                        <li>Limited access to skills training and mentorship</li>
                     </ul>
                 </div>
 
-                <p id="story-realization">
+                <p>
                     Mr. Momanyi realized that these young people were not bad—they were simply lost, lacking direction, opportunities, and belief in their own potential. He understood that with the right support, guidance, and opportunities, these same youths could become productive members of society and agents of positive change in their communities.
                 </p>
             </div>
 
-            <!-- The Solution -->
             <div class="story-text">
                 <h3>✨ Our Solution: Taalanta Visionaries</h3>
-                <p id="story-solution">
+                <p>
                     Instead of turning away from the problem, we decided to be part of the solution. Taalanta Visionaries was established to provide a pathway for young people to discover their talents, develop their skills, and create meaningful opportunities for themselves and their communities.
                 </p>
 
@@ -1034,83 +848,191 @@
                 </div>
             </div>
 
-            <!-- Our Journey Timeline -->
             <div class="story-text">
                 <h3>🚀 Our Journey</h3>
-                <div class="timeline" id="timeline-container">
-                    <!-- Timeline items will be loaded here -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-title">The Beginning</div>
+                        <p>Mr. Benedicto Momanyi identified the challenges and founded Taalanta Visionaries</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-title">First Programs Launched</div>
+                        <p>Started with youth empowerment and environmental conservation programs</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-title">Growing Impact</div>
+                        <p>Reached 200+ youths and expanded to 5 different programs</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-title">Community Recognition</div>
+                        <p>Received official CBO registration and community awards</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-title">Expanding Reach</div>
+                        <p>Now serving 10 communities with 500+ beneficiaries and growing</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Today & Future -->
             <div class="story-text">
                 <h3>🌍 Today and Beyond</h3>
-                <p id="story-today">
+                <p>
                     Today, Taalanta Visionaries stands as a beacon of hope in our community. We've helped hundreds of young people redirect their lives, discover their purpose, and become contributing members of society. Many of our beneficiaries have gone on to start their own businesses, return to school, or become mentors themselves.
                 </p>
-                <p id="story-future">
+                <p>
                     But our work is far from over. Every day, more young people face the same challenges that inspired our founding. We remain committed to reaching every youth who needs a second chance, a helping hand, or simply someone who believes in them.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Impact Stats -->
     <section class="impact-stats">
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number" id="stat-youths">500+</div>
+                <div class="stat-number">500+</div>
                 <div class="stat-label">Youths Empowered</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="stat-projects">15</div>
+                <div class="stat-number">15</div>
                 <div class="stat-label">Active Projects</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="stat-volunteers">50+</div>
+                <div class="stat-number">50+</div>
                 <div class="stat-label">Volunteers</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="stat-communities">10</div>
+                <div class="stat-number">10</div>
                 <div class="stat-label">Communities Served</div>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Vision -->
     <section id="about" class="mission-vision">
         <h2>Our Purpose</h2>
         <div class="mv-container">
             <div class="mv-card">
                 <h3>🎯 Our Mission</h3>
-                <p id="mission-text">To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
+                <p>To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
             </div>
             <div class="mv-card">
                 <h3>🌟 Our Vision</h3>
-                <p id="vision-text">Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
+                <p>Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" style="background: #f5f5f5;">
         <h2>Our Projects</h2>
-        <div class="projects-grid" id="projects-container"></div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Community Recycling" class="project-image">
+                <div class="project-content">
+                    <span class="project-status status-ongoing">Ongoing</span>
+                    <h3>Community Recycling Initiative</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Started: January 2024</p>
+                    <p>Creating jobs through waste collection and recycling in 5 neighborhoods. Training 20 youths in waste management.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Programs Section - NOW WITH IMAGES! -->
     <section id="programs">
         <h2>Our Programs</h2>
-        <div class="programs-grid" id="programs-container"></div>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/SnjG27Y.jpeg" alt="Integration">
+                </div>
+                <div class="program-content">
+                    <h3>🤝 Integration</h3>
+                    <p>Building bridges within communities and fostering social cohesion through inclusive programs.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/CQ7xkHL.jpeg" alt="Climate Work">
+                </div>
+                <div class="program-content">
+                    <h3>🌍 Climate Work</h3>
+                    <p>Taking action against climate change through education and community-based initiatives.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/euX517j.jpeg" alt="Recycling">
+                </div>
+                <div class="program-content">
+                    <h3>♻️ Garbage Collection & Recycling</h3>
+                    <p>Promoting environmental sustainability through waste management and recycling programs.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/Yp2qzyD.jpeg" alt="Art and Culture">
+                </div>
+                <div class="program-content">
+                    <h3>🎨 Art & Culture Development</h3>
+                    <p>Preserving and promoting local arts and culture while creating economic opportunities.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/sOt21CT.jpeg" alt="Environment Conservation">
+                </div>
+                <div class="program-content">
+                    <h3>🌱 Environment Conservation</h3>
+                    <p>Protecting natural resources and promoting sustainable environmental practices.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/vYcQRMB.jpeg" alt="Entrepreneurship">
+                </div>
+                <div class="program-content">
+                    <h3>💼 Entrepreneurship & Sustainability</h3>
+                    <p>Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/zp1YDtf.jpeg" alt="Talent Development">
+                </div>
+                <div class="program-content">
+                    <h3>⭐ Talent Development</h3>
+                    <p>Identifying and nurturing individual talents to unlock potential and create opportunities.</p>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://i.imgur.com/A3Ws7aK.jpeg" alt="Youth Empowerment">
+                </div>
+                <div class="program-content">
+                    <h3>💪 Youth Empowerment</h3>
+                    <p>Equipping young people with skills, knowledge, and confidence to shape their futures.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- News/Blog Section -->
     <section id="news" style="background: #f5f5f5;">
         <h2>Latest News & Updates</h2>
-        <div class="news-grid" id="news-container"></div>
+        <div class="news-grid">
+            <p style="text-align: center; color: #666; width: 100%;">Check back soon for our latest news and community updates!</p>
+        </div>
     </section>
 
-    <!-- Volunteer Section -->
     <section id="volunteer" class="volunteer-section">
         <h2>🤝 Become a Volunteer</h2>
         <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
@@ -1118,11 +1040,7 @@
         </p>
 
         <div class="volunteer-form">
-            <div class="success-message" id="volunteer-success">
-                ✅ Thank you for applying! We'll contact you soon.
-            </div>
-
-            <form id="volunteerForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form>
                 <div class="form-group">
                     <label for="volunteer-name">Full Name *</label>
                     <input type="text" id="volunteer-name" name="name" required>
@@ -1136,11 +1054,6 @@
                 <div class="form-group">
                     <label for="volunteer-phone">Phone Number *</label>
                     <input type="tel" id="volunteer-phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-age">Age</label>
-                    <input type="number" id="volunteer-age" name="age" min="15" max="100">
                 </div>
 
                 <div class="form-group">
@@ -1160,22 +1073,6 @@
                         <option value="entrepreneurship">Entrepreneurship & Sustainability</option>
                         <option value="talent">Talent Development</option>
                         <option value="youth">Youth Empowerment</option>
-                        <option value="any">Any Program</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-skills">Your Skills/Experience</label>
-                    <textarea id="volunteer-skills" name="skills" rows="3" placeholder="Tell us about your skills, experience, or what you can contribute..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-availability">Availability</label>
-                    <select id="volunteer-availability" name="availability">
-                        <option value="weekends">Weekends Only</option>
-                        <option value="weekdays">Weekdays</option>
-                        <option value="flexible">Flexible</option>
-                        <option value="full-time">Full Time</option>
                     </select>
                 </div>
 
@@ -1184,20 +1081,16 @@
                     <textarea id="volunteer-message" name="message" rows="4" required></textarea>
                 </div>
 
-                <input type="hidden" name="_subject" value="New Volunteer Application - Taalanta Visionaries">
-                <input type="hidden" name="_next" value="#volunteer">
-
                 <button type="submit" class="submit-btn">📩 Submit Application</button>
             </form>
         </div>
 
         <div style="text-align: center; margin-top: 2rem; color: #666;">
-            <p>📞 Questions? Call us: <strong id="volunteer-contact-phone">0716704347</strong></p>
-            <p>📧 Email: <strong id="volunteer-contact-email">info@taalantavisionaries.org</strong></p>
+            <p>📞 Questions? Call us: <strong>0716704347</strong></p>
+            <p>📧 Email: <strong>info@taalantavisionaries.org</strong></p>
         </div>
     </section>
 
-    <!-- Comments Section -->
     <section style="background: #f5f5f5;">
         <h2>💬 Community Comments</h2>
         <p style="text-align: center; margin-bottom: 2rem;">Share your thoughts, experiences, or ask questions!</p>
@@ -1218,1480 +1111,100 @@
                 </form>
             </div>
 
-            <div id="comments-container"></div>
+            <div id="comments-container">
+                <p style="text-align: center; color: #666;">No comments yet. Be the first to comment!</p>
+            </div>
         </div>
     </section>
 
-    <!-- Team Section -->
     <section id="team">
         <h2>Our Leadership Team</h2>
-        <div class="team-grid" id="team-container"></div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">BM</div>
+                <h3>Benedicto Momanyi</h3>
+                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Chairman</div>
+                <p style="margin-bottom: 1rem;">Leading Taalanta Visionaries with passion and dedication to community development.</p>
+                <div style="color: #388e3c; font-weight: bold;">📞 0716704347</div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">MM</div>
+                <h3>Martin Mwenda</h3>
+                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Secretary</div>
+                <p style="margin-bottom: 1rem;">Ensuring smooth operations and effective communication.</p>
+                <div style="color: #388e3c; font-weight: bold;">📞 0708884038</div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">MW</div>
+                <h3>Mercy Mwangi</h3>
+                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Treasurer</div>
+                <p style="margin-bottom: 1rem;">Managing resources with transparency and accountability.</p>
+                <div style="color: #388e3c; font-weight: bold;">📞 0711141894</div>
+            </div>
+        </div>
     </section>
 
-    <!-- Donation Section -->
     <section id="donate" class="donation-section">
         <h2>Support Our Work</h2>
         <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your donation helps us empower communities and create lasting change</p>
         
-        <div class="donation-methods" id="donation-container"></div>
+        <div class="donation-methods">
+            <div class="donation-card">
+                <h3>Set Up Donations</h3>
+                <p>Contact us to learn about donation options</p>
+                <p style="margin-top: 1rem;"><strong>📞 0716704347</strong></p>
+            </div>
+        </div>
     </section>
 
-    <!-- Social Media Section -->
     <section class="social-section">
         <h2>🌐 Connect With Us</h2>
         <p style="margin-bottom: 2rem;">Follow our journey and stay updated on all our activities!</p>
         
-        <div class="social-links" id="social-links-container"></div>
+        <div class="social-links">
+            <a href="https://wa.me/254716704347" target="_blank" class="social-link">
+                <div class="social-icon social-whatsapp">💬</div>
+                <span>WhatsApp</span>
+            </a>
+        </div>
     </section>
 
-    <!-- QR Code Section -->
     <section class="qr-section">
         <h2>📱 Scan to Visit Our Website</h2>
         <p>Share this QR code with your community!</p>
         <div class="qr-code-container">
             <div id="qrcode"></div>
             <p style="margin-top: 1rem; color: #666;" id="website-url"></p>
-            <button class="cta-button" onclick="downloadQR()" style="margin-top: 1rem;">Download QR Code</button>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2>Get In Touch</h2>
         <div style="text-align: center; font-size: 1.2rem;">
             <p><strong>Ready to make a difference?</strong></p>
             <p>Contact us to learn more about our programs or to get involved!</p>
-            <p><strong>Email:</strong> <span id="contact-email">info@taalantavisionaries.org</span></p>
-            <p id="contact-details" style="margin-top: 1rem;"></p>
+            <p><strong>Email:</strong> info@taalantavisionaries.org</p>
+            <p style="margin-top: 1rem;"><strong>Chairman:</strong> Benedicto Momanyi - 0716704347</p>
+            <p><strong>Secretary:</strong> Martin Mwenda - 0708884038</p>
+            <p><strong>Treasurer:</strong> Mercy Mwangi - 0711141894</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-social" id="footer-social"></div>
+        <div class="footer-social">
+            <a href="https://wa.me/254716704347" target="_blank">💬</a>
+        </div>
         <p>&copy; 2024 Taalanta Visionaries CBO. All rights reserved.</p>
         <p>Empowering Communities | Building Futures | Creating Change</p>
     </footer>
 
-    <!-- ADMIN PANEL -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-container">
-            <div class="admin-header">
-                <h2 style="color: #d32f2f;">🔧 Admin Panel - Taalanta Visionaries</h2>
-                <button class="close-admin" onclick="closeAdmin()">✕ Close</button>
-            </div>
-
-            <!-- Backup/Restore Section -->
-            <div class="backup-section">
-                <h4>💾 Backup & Restore</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <button class="add-new-btn" onclick="downloadBackup()">⬇️ Download Backup</button>
-                    <button class="add-new-btn" onclick="document.getElementById('restoreFile').click()">⬆️ Restore Backup</button>
-                    <input type="file" id="restoreFile" accept=".json" style="display: none;" onchange="restoreBackup(event)">
-                </div>
-                <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">
-                    ⚠️ Download backup regularly to save your data!
-                </p>
-            </div>
-
-            <!-- Admin Tabs -->
-            <div class="admin-tabs">
-                <button class="tab-btn active" onclick="showTab('general')">General</button>
-                <button class="tab-btn" onclick="showTab('story')">Our Story</button>
-                <button class="tab-btn" onclick="showTab('programs')">Programs</button>
-                <button class="tab-btn" onclick="showTab('projects')">Projects</button>
-                <button class="tab-btn" onclick="showTab('news')">News</button>
-                <button class="tab-btn" onclick="showTab('team')">Team</button>
-                <button class="tab-btn" onclick="showTab('volunteer-settings')">Volunteer</button>
-                <button class="tab-btn" onclick="showTab('social')">Social Media</button>
-                <button class="tab-btn" onclick="showTab('donations')">Donations</button>
-                <button class="tab-btn" onclick="showTab('stats')">Statistics</button>
-                <button class="tab-btn" onclick="showTab('contact')">Contact</button>
-                <button class="tab-btn" onclick="showTab('qr')">QR Code</button>
-            </div>
-
-            <!-- General Info Tab -->
-            <div class="tab-content active" id="tab-general">
-                <h3>General Information</h3>
-                <div class="form-group">
-                    <label>Hero Title</label>
-                    <input type="text" id="admin-hero-title" placeholder="Welcome to Taalanta Visionaries">
-                </div>
-                <div class="form-group">
-                    <label>Hero Description</label>
-                    <textarea id="admin-hero-text" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Mission Statement</label>
-                    <textarea id="admin-mission" rows="4"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Vision Statement</label>
-                    <textarea id="admin-vision" rows="4"></textarea>
-                </div>
-                <button class="save-btn" onclick="saveGeneral()">💾 Save Changes</button>
-            </div>
-
-            <!-- OUR STORY TAB - NEW! -->
-            <div class="tab-content" id="tab-story">
-                <h3>Edit Our Story</h3>
-                
-                <h4 style="margin-top: 1.5rem; color: #388e3c;">Founder Information</h4>
-                <div class="form-group">
-                    <label>Founder Name</label>
-                    <input type="text" id="admin-founder-name" placeholder="Benedicto Momanyi">
-                </div>
-                <div class="form-group">
-                    <label>Founder Title</label>
-                    <input type="text" id="admin-founder-title" placeholder="Founder & Chairman">
-                </div>
-                <div class="form-group">
-                    <label>Founder Photo URL (Optional)</label>
-                    <input type="text" id="admin-founder-photo" placeholder="https://i.imgur.com/...">
-                </div>
-                <div class="form-group">
-                    <label>Founder Quote</label>
-                    <textarea id="admin-founder-quote" rows="4" placeholder="A powerful quote from the founder..."></textarea>
-                </div>
-
-                <h4 style="margin-top: 1.5rem; color: #388e3c;">Our Story Content</h4>
-                <div class="form-group">
-                    <label>How It All Started (Opening Paragraph)</label>
-                    <textarea id="admin-story-beginning" rows="4"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Challenge 1</label>
-                    <input type="text" id="admin-challenge-1" placeholder="e.g., High school dropout rates">
-                </div>
-                <div class="form-group">
-                    <label>Challenge 2</label>
-                    <input type="text" id="admin-challenge-2" placeholder="e.g., Drug abuse">
-                </div>
-                <div class="form-group">
-                    <label>Challenge 3</label>
-                    <input type="text" id="admin-challenge-3" placeholder="e.g., Youth crime">
-                </div>
-                <div class="form-group">
-                    <label>Challenge 4</label>
-                    <input type="text" id="admin-challenge-4" placeholder="e.g., Lack of opportunities">
-                </div>
-                <div class="form-group">
-                    <label>Challenge 5</label>
-                    <input type="text" id="admin-challenge-5" placeholder="e.g., Limited skills training">
-                </div>
-
-                <div class="form-group">
-                    <label>The Realization (Why we started)</label>
-                    <textarea id="admin-story-realization" rows="4"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Our Solution Description</label>
-                    <textarea id="admin-story-solution" rows="4"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Today & Current Work</label>
-                    <textarea id="admin-story-today" rows="4"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Future Vision</label>
-                    <textarea id="admin-story-future" rows="4"></textarea>
-                </div>
-
-                <h4 style="margin-top: 1.5rem; color: #388e3c;">Timeline Events</h4>
-                <button class="add-new-btn" onclick="addTimelineEvent()">+ Add Timeline Event</button>
-                <div id="timeline-list"></div>
-
-                <button class="save-btn" onclick="saveStory()">💾 Save Our Story</button>
-            </div>
-
-            <!-- PROGRAMS TAB - WITH IMAGE SUPPORT! -->
-            <div class="tab-content" id="tab-programs">
-                <h3>Manage Programs</h3>
-                <div class="warning-box">
-                    <strong>📸 NEW:</strong> You can now add images to programs!<br>
-                    Upload images to Imgur, then paste the URL below.
-                </div>
-                <button class="add-new-btn" onclick="addNewProgram()">+ Add New Program</button>
-                
-                <div id="program-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
-                    <h4>Program Details</h4>
-                    <div class="form-group">
-                        <label>Program Icon (Emoji)</label>
-                        <input type="text" id="program-icon" placeholder="e.g., 🌱 ♻️ 🎨 💼 🤝" maxlength="2">
-                    </div>
-                    <div class="form-group">
-                        <label>Program Name</label>
-                        <input type="text" id="program-name" placeholder="e.g., Environmental Conservation">
-                    </div>
-                    <div class="form-group">
-                        <label>Program Description</label>
-                        <textarea id="program-description" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Program Image URL (Optional)</label>
-                        <input type="text" id="program-image" placeholder="https://i.imgur.com/...">
-                        <small style="display: block; margin-top: 0.5rem; color: #666;">
-                            📸 Leave empty to show emoji only. Add image for better visual impact!
-                        </small>
-                    </div>
-                    <button class="save-btn" onclick="saveProgram()">💾 Save Program</button>
-                    <button class="delete-btn" onclick="cancelProgram()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
-                </div>
-
-                <div id="programs-list"></div>
-            </div>
-
-            <!-- Projects Tab -->
-            <div class="tab-content" id="tab-projects">
-                <h3>Manage Projects</h3>
-                <button class="add-new-btn" onclick="addNewProject()">+ Add New Project</button>
-                
-                <div id="project-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
-                    <h4>Project Details</h4>
-                    <div class="form-group">
-                        <label>Project Title</label>
-                        <input type="text" id="project-title" placeholder="e.g., Community Recycling Initiative">
-                    </div>
-                    <div class="form-group">
-                        <label>Project Description</label>
-                        <textarea id="project-description" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Start Date</label>
-                        <input type="text" id="project-date" placeholder="e.g., January 2024">
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select id="project-status">
-                            <option value="ongoing">Ongoing</option>
-                            <option value="completed">Completed</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Image URL</label>
-                        <input type="text" id="project-image" placeholder="https://i.imgur.com/...">
-                    </div>
-                    <button class="save-btn" onclick="saveProject()">💾 Save Project</button>
-                    <button class="delete-btn" onclick="cancelProject()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
-                </div>
-
-                <div id="projects-list"></div>
-            </div>
-
-            <!-- News Tab -->
-            <div class="tab-content" id="tab-news">
-                <h3>Manage News & Updates</h3>
-                <button class="add-new-btn" onclick="addNewNews()">+ Add News Article</button>
-                
-                <div id="news-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
-                    <h4>News Article</h4>
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" id="news-title" placeholder="e.g., New Partnership Announcement">
-                    </div>
-                    <div class="form-group">
-                        <label>Date</label>
-                        <input type="text" id="news-date" placeholder="e.g., May 15, 2024">
-                    </div>
-                    <div class="form-group">
-                        <label>Summary</label>
-                        <textarea id="news-summary" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Full Content (Optional)</label>
-                        <textarea id="news-content" rows="6"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Image URL</label>
-                        <input type="text" id="news-image" placeholder="https://i.imgur.com/...">
-                    </div>
-                    <button class="save-btn" onclick="saveNews()">💾 Save Article</button>
-                    <button class="delete-btn" onclick="cancelNews()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
-                </div>
-
-                <div id="news-list"></div>
-            </div>
-
-            <!-- Team Tab -->
-            <div class="tab-content" id="tab-team">
-                <h3>Manage Team Members</h3>
-                <button class="add-new-btn" onclick="addNewMember()">+ Add Team Member</button>
-                
-                <div id="member-form" style="display:none; background: #f5f5f5; padding: 1.5rem; border-radius: 5px; margin-bottom: 2rem;">
-                    <h4>Team Member</h4>
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" id="member-name" placeholder="e.g., Benedicto Momanyi">
-                    </div>
-                    <div class="form-group">
-                        <label>Position</label>
-                        <input type="text" id="member-role" placeholder="e.g., Chairman">
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" id="member-phone" placeholder="e.g., 0716704347">
-                    </div>
-                    <div class="form-group">
-                        <label>Bio (Optional)</label>
-                        <textarea id="member-bio" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Photo URL (Optional)</label>
-                        <input type="text" id="member-photo" placeholder="https://i.imgur.com/...">
-                    </div>
-                    <button class="save-btn" onclick="saveMember()">💾 Save Member</button>
-                    <button class="delete-btn" onclick="cancelMember()" style="width: 100%; margin-top: 0.5rem;">Cancel</button>
-                </div>
-
-                <div id="members-list"></div>
-            </div>
-
-            <!-- Volunteer Settings Tab -->
-            <div class="tab-content" id="tab-volunteer-settings">
-                <h3>Volunteer Form Setup</h3>
-                
-                <div class="warning-box">
-                    <strong>📧 Set Up Formspree:</strong><br>
-                    1. Go to <a href="https://formspree.io" target="_blank">Formspree.io</a><br>
-                    2. Create a form<br>
-                    3. Paste the form ID below
-                </div>
-
-                <div class="form-group">
-                    <label>Formspree Form ID</label>
-                    <input type="text" id="admin-formspree-id" placeholder="e.g., xnqoabcd">
-                </div>
-
-                <div class="form-group">
-                    <label>Volunteer Contact Email</label>
-                    <input type="email" id="admin-volunteer-email" placeholder="volunteer@taalanta.org">
-                </div>
-
-                <div class="form-group">
-                    <label>Volunteer Contact Phone</label>
-                    <input type="tel" id="admin-volunteer-phone" placeholder="0716704347">
-                </div>
-
-                <button class="save-btn" onclick="saveVolunteerSettings()">💾 Save Settings</button>
-            </div>
-
-            <!-- Social Media Tab -->
-            <div class="tab-content" id="tab-social">
-                <h3>Social Media Links</h3>
-
-                <div class="form-group">
-                    <label>📘 Facebook Page URL</label>
-                    <input type="text" id="admin-facebook" placeholder="https://facebook.com/taalanta">
-                </div>
-
-                <div class="form-group">
-                    <label>📷 Instagram Profile URL</label>
-                    <input type="text" id="admin-instagram" placeholder="https://instagram.com/taalanta">
-                </div>
-
-                <div class="form-group">
-                    <label>🐦 Twitter/X Profile URL</label>
-                    <input type="text" id="admin-twitter" placeholder="https://twitter.com/TaalantaKE">
-                </div>
-
-                <div class="form-group">
-                    <label>💬 WhatsApp Number</label>
-                    <input type="text" id="admin-whatsapp" placeholder="254716704347">
-                </div>
-
-                <div class="form-group">
-                    <label>💼 LinkedIn Page URL</label>
-                    <input type="text" id="admin-linkedin" placeholder="https://linkedin.com/company/taalanta">
-                </div>
-
-                <div class="form-group">
-                    <label>📺 YouTube Channel URL</label>
-                    <input type="text" id="admin-youtube" placeholder="https://youtube.com/@taalanta">
-                </div>
-
-                <div class="form-group">
-                    <label>🎵 TikTok Profile URL</label>
-                    <input type="text" id="admin-tiktok" placeholder="https://tiktok.com/@taalanta">
-                </div>
-
-                <button class="save-btn" onclick="saveSocialMedia()">💾 Save Social Media</button>
-            </div>
-
-            <!-- Donations Tab -->
-            <div class="tab-content" id="tab-donations">
-                <h3>Manage Donation Methods</h3>
-                
-                <div class="form-group">
-                    <label>M-Pesa Paybill Number</label>
-                    <input type="text" id="admin-mpesa-paybill" placeholder="e.g., 123456">
-                </div>
-                <div class="form-group">
-                    <label>M-Pesa Account Name</label>
-                    <input type="text" id="admin-mpesa-account" placeholder="Donor Name">
-                </div>
-                <div class="form-group">
-                    <label>Bank Name</label>
-                    <input type="text" id="admin-bank-name" placeholder="Equity Bank">
-                </div>
-                <div class="form-group">
-                    <label>Bank Account Number</label>
-                    <input type="text" id="admin-bank-account">
-                </div>
-                <div class="form-group">
-                    <label>Bank Branch</label>
-                    <input type="text" id="admin-bank-branch" placeholder="Nairobi">
-                </div>
-                <div class="form-group">
-                    <label>PayPal Email (Optional)</label>
-                    <input type="email" id="admin-paypal" placeholder="donations@taalanta.org">
-                </div>
-                <div class="form-group">
-                    <label>Other Payment Link</label>
-                    <input type="text" id="admin-other-payment">
-                </div>
-                <button class="save-btn" onclick="saveDonations()">💾 Save Donation Info</button>
-            </div>
-
-            <!-- Statistics Tab -->
-            <div class="tab-content" id="tab-stats">
-                <h3>Update Impact Statistics</h3>
-                <div class="form-group">
-                    <label>Youths Empowered</label>
-                    <input type="text" id="admin-stat-youths" placeholder="500+">
-                </div>
-                <div class="form-group">
-                    <label>Active Projects</label>
-                    <input type="text" id="admin-stat-projects" placeholder="15">
-                </div>
-                <div class="form-group">
-                    <label>Volunteers</label>
-                    <input type="text" id="admin-stat-volunteers" placeholder="50+">
-                </div>
-                <div class="form-group">
-                    <label>Communities Served</label>
-                    <input type="text" id="admin-stat-communities" placeholder="10">
-                </div>
-                <button class="save-btn" onclick="saveStats()">💾 Save Statistics</button>
-            </div>
-
-            <!-- Contact Tab -->
-            <div class="tab-content" id="tab-contact">
-                <h3>Contact Information</h3>
-                <div class="form-group">
-                    <label>General Email Address</label>
-                    <input type="email" id="admin-email" placeholder="info@taalantavisionaries.org">
-                </div>
-                <button class="save-btn" onclick="saveContact()">💾 Save Contact</button>
-            </div>
-
-            <!-- QR Code Tab -->
-            <div class="tab-content" id="tab-qr">
-                <h3>QR Code Generator</h3>
-                <div class="warning-box">
-                    <strong>📱 Your QR Code</strong><br>
-                    Download and print on business cards, posters, and flyers!
-                </div>
-                
-                <div style="text-align: center; margin: 2rem 0;">
-                    <div id="admin-qrcode" style="display: inline-block;"></div>
-                    <p style="margin-top: 1rem; font-weight: bold;" id="admin-website-url"></p>
-                </div>
-                
-                <button class="save-btn" onclick="downloadQRFromAdmin()">⬇️ Download QR Code</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <script>
-        // Initialize data storage
-        const STORAGE_KEY = 'taalanta_data';
-
-        function initializeData() {
-            const defaultData = {
-                hero: {
-                    title: 'Welcome to Taalanta Visionaries',
-                    text: 'Empowering youths and communities through talent development, employment creation, and sustainable projects'
-                },
-                mission: 'To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.',
-                vision: 'Empower youths and communities through talent development, employment creation, and sustainable projects.',
-                story: {
-                    founderName: 'Benedicto Momanyi',
-                    founderTitle: 'Founder & Chairman, Taalanta Visionaries',
-                    founderPhoto: '',
-                    founderQuote: 'Every young person deserves a chance to discover their potential and contribute positively to society. Taalanta Visionaries was born from witnessing the struggles of our youth and believing in their capacity for greatness.',
-                    beginning: 'Taalanta Visionaries was founded when our founder, Mr. Benedicto Momanyi, identified critical challenges facing our community. He witnessed firsthand the devastating cycle of youth dropping out of school, falling into drug abuse, and finding themselves on the wrong side of the law through crime and robbery.',
-                    challenges: [
-                        'High school dropout rates among youth',
-                        'Increasing drug and substance abuse',
-                        'Youth involvement in crime and robbery',
-                        'Lack of positive role models and opportunities',
-                        'Limited access to skills training and mentorship'
-                    ],
-                    realization: 'Mr. Momanyi realized that these young people were not bad—they were simply lost, lacking direction, opportunities, and belief in their own potential. He understood that with the right support, guidance, and opportunities, these same youths could become productive members of society and agents of positive change in their communities.',
-                    solution: 'Instead of turning away from the problem, we decided to be part of the solution. Taalanta Visionaries was established to provide a pathway for young people to discover their talents, develop their skills, and create meaningful opportunities for themselves and their communities.',
-                    today: 'Today, Taalanta Visionaries stands as a beacon of hope in our community. We\'ve helped hundreds of young people redirect their lives, discover their purpose, and become contributing members of society. Many of our beneficiaries have gone on to start their own businesses, return to school, or become mentors themselves.',
-                    future: 'But our work is far from over. Every day, more young people face the same challenges that inspired our founding. We remain committed to reaching every youth who needs a second chance, a helping hand, or simply someone who believes in them.',
-                    timeline: [
-                        { year: '2020', title: 'The Beginning', description: 'Mr. Benedicto Momanyi identified the challenges and founded Taalanta Visionaries' },
-                        { year: '2021', title: 'First Programs Launched', description: 'Started with youth empowerment and environmental conservation programs' },
-                        { year: '2022', title: 'Growing Impact', description: 'Reached 200+ youths and expanded to 5 different programs' },
-                        { year: '2023', title: 'Community Recognition', description: 'Received official CBO registration and community awards' },
-                        { year: '2024', title: 'Expanding Reach', description: 'Now serving 10 communities with 500+ beneficiaries and growing' }
-                    ]
-                },
-                stats: {
-                    youths: '500+',
-                    projects: '15',
-                    volunteers: '50+',
-                    communities: '10'
-                },
-                programs: [
-                    {
-                        id: 1,
-                        icon: '🤝',
-                        name: 'Integration',
-                        description: 'Building bridges within communities and fostering social cohesion through inclusive programs.',
-                        image: ''
-                    },
-                    {
-                        id: 2,
-                        icon: '🌍',
-                        name: 'Climate Work',
-                        description: 'Taking action against climate change through education and community-based initiatives.',
-                        image: ''
-                    },
-                    {
-                        id: 3,
-                        icon: '♻️',
-                        name: 'Garbage Collection & Recycling',
-                        description: 'Promoting environmental sustainability through waste management and recycling programs.',
-                        image: ''
-                    },
-                    {
-                        id: 4,
-                        icon: '🎨',
-                        name: 'Art & Culture Development',
-                        description: 'Preserving and promoting local arts and culture while creating economic opportunities.',
-                        image: ''
-                    },
-                    {
-                        id: 5,
-                        icon: '🌱',
-                        name: 'Environment Conservation',
-                        description: 'Protecting natural resources and promoting sustainable environmental practices.',
-                        image: ''
-                    },
-                    {
-                        id: 6,
-                        icon: '💼',
-                        name: 'Entrepreneurship & Sustainability',
-                        description: 'Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.',
-                        image: ''
-                    },
-                    {
-                        id: 7,
-                        icon: '⭐',
-                        name: 'Talent Development',
-                        description: 'Identifying and nurturing individual talents to unlock potential and create opportunities.',
-                        image: ''
-                    },
-                    {
-                        id: 8,
-                        icon: '💪',
-                        name: 'Youth Empowerment',
-                        description: 'Equipping young people with skills, knowledge, and confidence to shape their futures.',
-                        image: ''
-                    }
-                ],
-                projects: [
-                    {
-                        id: 1,
-                        title: 'Community Recycling Initiative',
-                        description: 'Creating jobs through waste collection and recycling in 5 neighborhoods.',
-                        date: 'January 2024',
-                        status: 'ongoing',
-                        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600'
-                    }
-                ],
-                news: [],
-                team: [
-                    {
-                        id: 1,
-                        name: 'Benedicto Momanyi',
-                        role: 'Chairman',
-                        phone: '0716704347',
-                        bio: 'Leading Taalanta Visionaries with passion and dedication to community development.',
-                        photo: ''
-                    },
-                    {
-                        id: 2,
-                        name: 'Martin Mwenda',
-                        role: 'Secretary',
-                        phone: '0708884038',
-                        bio: 'Ensuring smooth operations and effective communication.',
-                        photo: ''
-                    },
-                    {
-                        id: 3,
-                        name: 'Mercy Mwangi',
-                        role: 'Treasurer',
-                        phone: '0711141894',
-                        bio: 'Managing resources with transparency and accountability.',
-                        photo: ''
-                    }
-                ],
-                donations: {
-                    mpesaPaybill: '',
-                    mpesaAccount: '',
-                    bankName: '',
-                    bankAccount: '',
-                    bankBranch: '',
-                    paypal: '',
-                    otherPayment: ''
-                },
-                contact: {
-                    email: 'info@taalantavisionaries.org'
-                },
-                volunteer: {
-                    formspreeId: '',
-                    email: 'info@taalantavisionaries.org',
-                    phone: '0716704347'
-                },
-                social: {
-                    facebook: '',
-                    instagram: '',
-                    twitter: '',
-                    whatsapp: '254716704347',
-                    linkedin: '',
-                    youtube: '',
-                    tiktok: ''
-                },
-                comments: []
-            };
-
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (!saved) {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
-                return defaultData;
-            }
-            return JSON.parse(saved);
-        }
-
-        function getData() {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-        }
-
-        function saveData(data) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        }
-
-        // Backup and Restore
-        function downloadBackup() {
-            const data = getData();
-            const dataStr = JSON.stringify(data, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `taalanta-backup-${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            
-            alert('✅ Backup downloaded!');
-        }
-
-        function restoreBackup(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            if (!confirm('⚠️ This will replace all data. Continue?')) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const data = JSON.parse(e.target.result);
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-                    alert('✅ Backup restored!');
-                    location.reload();
-                } catch (error) {
-                    alert('❌ Error restoring backup.');
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        // Load content
-        function loadContent() {
-            const data = getData();
-            
-            // Hero
-            document.getElementById('hero-title').textContent = data.hero.title;
-            document.getElementById('hero-text').textContent = data.hero.text;
-            
-            // Mission & Vision
-            document.getElementById('mission-text').textContent = data.mission;
-            document.getElementById('vision-text').textContent = data.vision;
-            
-            // Stats
-            document.getElementById('stat-youths').textContent = data.stats.youths;
-            document.getElementById('stat-projects').textContent = data.stats.projects;
-            document.getElementById('stat-volunteers').textContent = data.stats.volunteers;
-            document.getElementById('stat-communities').textContent = data.stats.communities;
-            
-            // Story
-            loadStory();
-            
-            // Load sections
-            loadPrograms();
-            loadProjects();
-            loadNews();
-            loadTeam();
-            loadDonations();
-            loadSocialMedia();
-            loadComments();
-            loadQRCode();
-            
-            // Volunteer
-            if (data.volunteer) {
-                document.getElementById('volunteer-contact-email').textContent = data.volunteer.email;
-                document.getElementById('volunteer-contact-phone').textContent = data.volunteer.phone;
-                
-                if (data.volunteer.formspreeId) {
-                    document.getElementById('volunteerForm').action = `https://formspree.io/f/${data.volunteer.formspreeId}`;
-                }
-            }
-            
-            // Contact
-            document.getElementById('contact-email').textContent = data.contact.email;
-            const details = [];
-            if (data.team) {
-                data.team.forEach(member => {
-                    details.push(`<strong>${member.role}:</strong> ${member.name} - ${member.phone}`);
-                });
-                document.getElementById('contact-details').innerHTML = details.join('<br>');
-            }
-        }
-
-        // Load Story Section
-        function loadStory() {
-            const data = getData();
-            const story = data.story || {};
-            
-            // Founder info
-            document.getElementById('founder-name').textContent = story.founderName || 'Benedicto Momanyi';
-            document.getElementById('founder-title').textContent = story.founderTitle || 'Founder & Chairman';
-            document.getElementById('founder-quote').textContent = story.founderQuote || '';
-            
-            const founderPhoto = document.getElementById('founder-photo');
-            if (story.founderPhoto) {
-                founderPhoto.innerHTML = `<img src="${story.founderPhoto}" alt="${story.founderName}">`;
-            } else {
-                const initials = (story.founderName || 'BM').split(' ').map(n => n[0]).join('');
-                founderPhoto.textContent = initials;
-            }
-            
-            // Story content
-            document.getElementById('story-beginning').textContent = story.beginning || '';
-            document.getElementById('story-realization').textContent = story.realization || '';
-            document.getElementById('story-solution').textContent = story.solution || '';
-            document.getElementById('story-today').textContent = story.today || '';
-            document.getElementById('story-future').textContent = story.future || '';
-            
-            // Challenges
-            if (story.challenges) {
-                for (let i = 0; i < 5; i++) {
-                    const elem = document.getElementById(`challenge-${i+1}`);
-                    if (elem) elem.textContent = story.challenges[i] || '';
-                }
-            }
-            
-            // Timeline
-            const timelineContainer = document.getElementById('timeline-container');
-            timelineContainer.innerHTML = '';
-            if (story.timeline) {
-                story.timeline.forEach(event => {
-                    timelineContainer.innerHTML += `
-                        <div class="timeline-item">
-                            <div class="timeline-year">${event.year}</div>
-                            <div class="timeline-title">${event.title}</div>
-                            <p>${event.description}</p>
-                        </div>
-                    `;
-                });
-            }
-        }
-
-        // Load Programs with Images
-        function loadPrograms() {
-            const data = getData();
-            const container = document.getElementById('programs-container');
-            container.innerHTML = '';
-            
-            if (!data.programs || data.programs.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #666;">No programs yet.</p>';
-                return;
-            }
-            
-            data.programs.forEach(program => {
-                const imageHTML = program.image ? 
-                    `<img src="${program.image}" alt="${program.name}" style="width: 100%; height: 100%; object-fit: cover;">` :
-                    `<div class="program-icon-large">${program.icon}</div>`;
-                    
-                container.innerHTML += `
-                    <div class="program-card">
-                        <div class="program-image">${imageHTML}</div>
-                        <div class="program-content">
-                            <h3>${program.name}</h3>
-                            <p>${program.description}</p>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function loadProjects() {
-            const data = getData();
-            const container = document.getElementById('projects-container');
-            container.innerHTML = '';
-            
-            if (!data.projects || data.projects.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #666;">No projects yet.</p>';
-                return;
-            }
-            
-            data.projects.forEach(project => {
-                const statusClass = project.status === 'ongoing' ? 'status-ongoing' : 'status-completed';
-                const statusText = project.status === 'ongoing' ? 'Ongoing' : 'Completed';
-                
-                container.innerHTML += `
-                    <div class="project-card">
-                        <img src="${project.image}" alt="${project.title}" class="project-image" onerror="this.src='https://via.placeholder.com/600x200'">
-                        <div class="project-content">
-                            <span class="project-status ${statusClass}">${statusText}</span>
-                            <h3>${project.title}</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Started: ${project.date}</p>
-                            <p>${project.description}</p>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function loadNews() {
-            const data = getData();
-            const container = document.getElementById('news-container');
-            container.innerHTML = '';
-            
-            if (!data.news || data.news.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #666;">No news yet.</p>';
-                return;
-            }
-            
-            data.news.forEach(article => {
-                container.innerHTML += `
-                    <div class="news-card">
-                        <img src="${article.image}" alt="${article.title}" class="news-image">
-                        <div class="news-content">
-                            <p class="news-date">${article.date}</p>
-                            <h3>${article.title}</h3>
-                            <p>${article.summary}</p>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function loadTeam() {
-            const data = getData();
-            const container = document.getElementById('team-container');
-            container.innerHTML = '';
-            
-            data.team.forEach(member => {
-                const initials = member.name.split(' ').map(n => n[0]).join('');
-                const photoHTML = member.photo ? 
-                    `<img src="${member.photo}" alt="${member.name}">` : 
-                    initials;
-                
-                container.innerHTML += `
-                    <div class="team-card">
-                        <div class="team-photo">${photoHTML}</div>
-                        <h3>${member.name}</h3>
-                        <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">${member.role}</div>
-                        ${member.bio ? `<p style="margin-bottom: 1rem;">${member.bio}</p>` : ''}
-                        <div style="color: #388e3c; font-weight: bold;">📞 ${member.phone}</div>
-                    </div>
-                `;
-            });
-        }
-
-        function loadDonations() {
-            const data = getData();
-            const container = document.getElementById('donation-container');
-            container.innerHTML = '';
-            
-            if (data.donations.mpesaPaybill) {
-                container.innerHTML += `
-                    <div class="donation-card">
-                        <h3>💚 M-Pesa</h3>
-                        <p style="font-size: 1.8rem; font-weight: bold; color: #388e3c; margin: 1rem 0;">
-                            ${data.donations.mpesaPaybill}
-                        </p>
-                        <p><strong>Account:</strong> ${data.donations.mpesaAccount || 'Your Name'}</p>
-                    </div>
-                `;
-            }
-            
-            if (data.donations.bankName) {
-                container.innerHTML += `
-                    <div class="donation-card">
-                        <h3>🏦 Bank Transfer</h3>
-                        <p><strong>Bank:</strong> ${data.donations.bankName}</p>
-                        <p><strong>Account:</strong> ${data.donations.bankAccount}</p>
-                        ${data.donations.bankBranch ? `<p><strong>Branch:</strong> ${data.donations.bankBranch}</p>` : ''}
-                    </div>
-                `;
-            }
-            
-            if (container.innerHTML === '') {
-                container.innerHTML = `
-                    <div class="donation-card">
-                        <h3>Set Up Donations</h3>
-                        <p>Go to Admin Panel → Donations</p>
-                    </div>
-                `;
-            }
-        }
-
-        function loadSocialMedia() {
-            const data = getData();
-            const social = data.social || {};
-            
-            const container = document.getElementById('social-links-container');
-            container.innerHTML = '';
-            
-            if (social.facebook) container.innerHTML += `<a href="${social.facebook}" target="_blank" class="social-link"><div class="social-icon social-facebook">📘</div><span>Facebook</span></a>`;
-            if (social.instagram) container.innerHTML += `<a href="${social.instagram}" target="_blank" class="social-link"><div class="social-icon social-instagram">📷</div><span>Instagram</span></a>`;
-            if (social.twitter) container.innerHTML += `<a href="${social.twitter}" target="_blank" class="social-link"><div class="social-icon social-twitter">🐦</div><span>Twitter</span></a>`;
-            if (social.whatsapp) container.innerHTML += `<a href="https://wa.me/${social.whatsapp}" target="_blank" class="social-link"><div class="social-icon social-whatsapp">💬</div><span>WhatsApp</span></a>`;
-            if (social.linkedin) container.innerHTML += `<a href="${social.linkedin}" target="_blank" class="social-link"><div class="social-icon social-linkedin">💼</div><span>LinkedIn</span></a>`;
-            if (social.youtube) container.innerHTML += `<a href="${social.youtube}" target="_blank" class="social-link"><div class="social-icon social-youtube">📺</div><span>YouTube</span></a>`;
-            if (social.tiktok) container.innerHTML += `<a href="${social.tiktok}" target="_blank" class="social-link"><div class="social-icon social-tiktok">🎵</div><span>TikTok</span></a>`;
-            
-            if (container.innerHTML === '') {
-                container.innerHTML = '<p style="color: #666;">Add social media in Admin Panel</p>';
-            }
-            
-            const footerSocial = document.getElementById('footer-social');
-            footerSocial.innerHTML = '';
-            if (social.facebook) footerSocial.innerHTML += `<a href="${social.facebook}" target="_blank">📘</a>`;
-            if (social.instagram) footerSocial.innerHTML += `<a href="${social.instagram}" target="_blank">📷</a>`;
-            if (social.twitter) footerSocial.innerHTML += `<a href="${social.twitter}" target="_blank">🐦</a>`;
-            if (social.whatsapp) footerSocial.innerHTML += `<a href="https://wa.me/${social.whatsapp}" target="_blank">💬</a>`;
-        }
-
-        function loadComments() {
-            const data = getData();
-            const container = document.getElementById('comments-container');
-            container.innerHTML = '';
-            
-            if (!data.comments || data.comments.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #666;">No comments yet.</p>';
-                return;
-            }
-            
-            data.comments.reverse().forEach(comment => {
-                container.innerHTML += `
-                    <div class="comment-item">
-                        <div class="comment-author">${comment.name}</div>
-                        <div class="comment-date">${comment.date}</div>
-                        <div class="comment-text">${comment.text}</div>
-                    </div>
-                `;
-            });
-        }
-
-        // Comment Form
-        document.addEventListener('DOMContentLoaded', () => {
-            const commentForm = document.getElementById('commentForm');
-            if (commentForm) {
-                commentForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    
-                    const data = getData();
-                    if (!data.comments) data.comments = [];
-                    
-                    const comment = {
-                        id: Date.now(),
-                        name: document.getElementById('comment-name').value,
-                        text: document.getElementById('comment-text').value,
-                        date: new Date().toLocaleDateString()
-                    };
-                    
-                    data.comments.push(comment);
-                    saveData(data);
-                    
-                    commentForm.reset();
-                    loadComments();
-                    alert('✅ Comment posted!');
-                });
-            }
-        });
-
-        function loadQRCode() {
-            const websiteURL = window.location.href.split('?')[0].split('#')[0];
-            document.getElementById('website-url').textContent = websiteURL;
-            
-            document.getElementById('qrcode').innerHTML = '';
-            
-            new QRCode(document.getElementById('qrcode'), {
-                text: websiteURL,
-                width: 256,
-                height: 256,
-                colorDark: '#d32f2f',
-                colorLight: '#ffffff',
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        }
-
-        function downloadQR() {
-            const canvas = document.querySelector('#qrcode canvas');
-            if (canvas) {
-                const url = canvas.toDataURL('image/png');
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'taalanta-qr-code.png';
-                link.click();
-                alert('✅ QR Code downloaded!');
-            }
-        }
-
-        // Admin Functions
-        function openAdmin() {
-            document.getElementById('adminPanel').classList.add('active');
-            loadAdminData();
-            loadAdminQRCode();
-        }
-
-        function closeAdmin() {
-            document.getElementById('adminPanel').classList.remove('active');
-        }
-
-        function showTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById('tab-' + tabName).classList.add('active');
-            event.target.classList.add('active');
-            
-            if (tabName === 'qr') loadAdminQRCode();
-        }
-
-        function loadAdminData() {
-            const data = getData();
-            
-            // General
-            document.getElementById('admin-hero-title').value = data.hero.title;
-            document.getElementById('admin-hero-text').value = data.hero.text;
-            document.getElementById('admin-mission').value = data.mission;
-            document.getElementById('admin-vision').value = data.vision;
-            
-            // Story
-            const story = data.story || {};
-            document.getElementById('admin-founder-name').value = story.founderName || '';
-            document.getElementById('admin-founder-title').value = story.founderTitle || '';
-            document.getElementById('admin-founder-photo').value = story.founderPhoto || '';
-            document.getElementById('admin-founder-quote').value = story.founderQuote || '';
-            document.getElementById('admin-story-beginning').value = story.beginning || '';
-            document.getElementById('admin-story-realization').value = story.realization || '';
-            document.getElementById('admin-story-solution').value = story.solution || '';
-            document.getElementById('admin-story-today').value = story.today || '';
-            document.getElementById('admin-story-future').value = story.future || '';
-            
-            if (story.challenges) {
-                for (let i = 0; i < 5; i++) {
-                    const elem = document.getElementById(`admin-challenge-${i+1}`);
-                    if (elem) elem.value = story.challenges[i] || '';
-                }
-            }
-            
-            loadTimelineList();
-            
-            // Stats
-            document.getElementById('admin-stat-youths').value = data.stats.youths;
-            document.getElementById('admin-stat-projects').value = data.stats.projects;
-            document.getElementById('admin-stat-volunteers').value = data.stats.volunteers;
-            document.getElementById('admin-stat-communities').value = data.stats.communities;
-            
-            // Donations
-            document.getElementById('admin-mpesa-paybill').value = data.donations.mpesaPaybill || '';
-            document.getElementById('admin-mpesa-account').value = data.donations.mpesaAccount || '';
-            document.getElementById('admin-bank-name').value = data.donations.bankName || '';
-            document.getElementById('admin-bank-account').value = data.donations.bankAccount || '';
-            document.getElementById('admin-bank-branch').value = data.donations.bankBranch || '';
-            document.getElementById('admin-paypal').value = data.donations.paypal || '';
-            document.getElementById('admin-other-payment').value = data.donations.otherPayment || '';
-            
-            // Contact
-            document.getElementById('admin-email').value = data.contact.email;
-            
-            // Volunteer
-            if (data.volunteer) {
-                document.getElementById('admin-formspree-id').value = data.volunteer.formspreeId || '';
-                document.getElementById('admin-volunteer-email').value = data.volunteer.email || '';
-                document.getElementById('admin-volunteer-phone').value = data.volunteer.phone || '';
-            }
-            
-            // Social
-            if (data.social) {
-                document.getElementById('admin-facebook').value = data.social.facebook || '';
-                document.getElementById('admin-instagram').value = data.social.instagram || '';
-                document.getElementById('admin-twitter').value = data.social.twitter || '';
-                document.getElementById('admin-whatsapp').value = data.social.whatsapp || '';
-                document.getElementById('admin-linkedin').value = data.social.linkedin || '';
-                document.getElementById('admin-youtube').value = data.social.youtube || '';
-                document.getElementById('admin-tiktok').value = data.social.tiktok || '';
-            }
-            
-            // Load lists
-            loadProgramsList();
-            loadProjectsList();
-            loadNewsList();
-            loadMembersList();
-        }
-
-        function loadAdminQRCode() {
-            const websiteURL = window.location.href.split('?')[0].split('#')[0];
-            document.getElementById('admin-website-url').textContent = websiteURL;
-            
-            document.getElementById('admin-qrcode').innerHTML = '';
-            
-            new QRCode(document.getElementById('admin-qrcode'), {
-                text: websiteURL,
-                width: 256,
-                height: 256,
-                colorDark: '#d32f2f',
-                colorLight: '#ffffff',
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        }
-
-        function downloadQRFromAdmin() {
-            const canvas = document.querySelector('#admin-qrcode canvas');
-            if (canvas) {
-                const url = canvas.toDataURL('image/png');
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'taalanta-qr-code.png';
-                link.click();
-                alert('✅ QR Code downloaded!');
-            }
-        }
-
-        // Save Functions
-        function saveGeneral() {
-            const data = getData();
-            data.hero.title = document.getElementById('admin-hero-title').value;
-            data.hero.text = document.getElementById('admin-hero-text').value;
-            data.mission = document.getElementById('admin-mission').value;
-            data.vision = document.getElementById('admin-vision').value;
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Saved!');
-        }
-
-        function saveStory() {
-            const data = getData();
-            
-            data.story = {
-                founderName: document.getElementById('admin-founder-name').value,
-                founderTitle: document.getElementById('admin-founder-title').value,
-                founderPhoto: document.getElementById('admin-founder-photo').value,
-                founderQuote: document.getElementById('admin-founder-quote').value,
-                beginning: document.getElementById('admin-story-beginning').value,
-                challenges: [
-                    document.getElementById('admin-challenge-1').value,
-                    document.getElementById('admin-challenge-2').value,
-                    document.getElementById('admin-challenge-3').value,
-                    document.getElementById('admin-challenge-4').value,
-                    document.getElementById('admin-challenge-5').value
-                ],
-                realization: document.getElementById('admin-story-realization').value,
-                solution: document.getElementById('admin-story-solution').value,
-                today: document.getElementById('admin-story-today').value,
-                future: document.getElementById('admin-story-future').value,
-                timeline: data.story?.timeline || []
-            };
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Story saved!');
-        }
-
-        function loadTimelineList() {
-            const data = getData();
-            const list = document.getElementById('timeline-list');
-            list.innerHTML = '';
-            
-            if (data.story && data.story.timeline) {
-                data.story.timeline.forEach((event, index) => {
-                    list.innerHTML += `
-                        <div class="list-item">
-                            <div>
-                                <strong>${event.year}: ${event.title}</strong><br>
-                                <small>${event.description}</small>
-                            </div>
-                            <button class="delete-btn" onclick="deleteTimelineEvent(${index})">Delete</button>
-                        </div>
-                    `;
-                });
-            }
-        }
-
-        function addTimelineEvent() {
-            const year = prompt('Enter year (e.g., 2024):');
-            if (!year) return;
-            
-            const title = prompt('Enter event title:');
-            if (!title) return;
-            
-            const description = prompt('Enter description:');
-            if (!description) return;
-            
-            const data = getData();
-            if (!data.story) data.story = {};
-            if (!data.story.timeline) data.story.timeline = [];
-            
-            data.story.timeline.push({ year, title, description });
-            saveData(data);
-            loadTimelineList();
-            loadContent();
-        }
-
-        function deleteTimelineEvent(index) {
-            if (confirm('Delete this timeline event?')) {
-                const data = getData();
-                data.story.timeline.splice(index, 1);
-                saveData(data);
-                loadTimelineList();
-                loadContent();
-            }
-        }
-
-        function saveStats() {
-            const data = getData();
-            data.stats = {
-                youths: document.getElementById('admin-stat-youths').value,
-                projects: document.getElementById('admin-stat-projects').value,
-                volunteers: document.getElementById('admin-stat-volunteers').value,
-                communities: document.getElementById('admin-stat-communities').value
-            };
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Statistics updated!');
-        }
-
-        function saveDonations() {
-            const data = getData();
-            data.donations = {
-                mpesaPaybill: document.getElementById('admin-mpesa-paybill').value,
-                mpesaAccount: document.getElementById('admin-mpesa-account').value,
-                bankName: document.getElementById('admin-bank-name').value,
-                bankAccount: document.getElementById('admin-bank-account').value,
-                bankBranch: document.getElementById('admin-bank-branch').value,
-                paypal: document.getElementById('admin-paypal').value,
-                otherPayment: document.getElementById('admin-other-payment').value
-            };
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Donation info updated!');
-        }
-
-        function saveContact() {
-            const data = getData();
-            data.contact = {
-                email: document.getElementById('admin-email').value
-            };
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Contact updated!');
-        }
-
-        function saveVolunteerSettings() {
-            const data = getData();
-            data.volunteer = {
-                formspreeId: document.getElementById('admin-formspree-id').value,
-                email: document.getElementById('admin-volunteer-email').value,
-                phone: document.getElementById('admin-volunteer-phone').value
-            };
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Volunteer settings saved!');
-        }
-
-        function saveSocialMedia() {
-            const data = getData();
-            data.social = {
-                facebook: document.getElementById('admin-facebook').value,
-                instagram: document.getElementById('admin-instagram').value,
-                twitter: document.getElementById('admin-twitter').value,
-                whatsapp: document.getElementById('admin-whatsapp').value,
-                linkedin: document.getElementById('admin-linkedin').value,
-                youtube: document.getElementById('admin-youtube').value,
-                tiktok: document.getElementById('admin-tiktok').value
-            };
-            
-            saveData(data);
-            loadContent();
-            alert('✅ Social media updated!');
-        }
-
-        // Program Management
-        let editingProgramId = null;
-
-        function addNewProgram() {
-            document.getElementById('program-form').style.display = 'block';
-            editingProgramId = null;
-            document.getElementById('program-icon').value = '';
-            document.getElementById('program-name').value = '';
-            document.getElementById('program-description').value = '';
-            document.getElementById('program-image').value = '';
-            document.getElementById('program-form').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function saveProgram() {
-            const name = document.getElementById('program-name').value;
-            const description = document.getElementById('program-description').value;
-            
-            if (!name || !description) {
-                alert('❌ Fill in name and description');
-                return;
-            }
-            
-            const data = getData();
-            if (!data.programs) data.programs = [];
-            
-            const program = {
-                id: editingProgramId || Date.now(),
-                icon: document.getElementById('program-icon').value || '📌',
-                name: name,
-                description: description,
-                image: document.getElementById('program-image').value
-            };
-            
-            if (editingProgramId) {
-                const index = data.programs.findIndex(p => p.id === editingProgramId);
-                data.programs[index] = program;
-            } else {
-                data.programs.push(program);
-            }
-            
-            saveData(data);
-            loadContent();
-            loadProgramsList();
-            cancelProgram();
-            alert('✅ Program saved!');
-        }
-
-        function cancelProgram() {
-            document.getElementById('program-form').style.display = 'none';
-            editingProgramId = null;
-        }
-
-        function loadProgramsList() {
-            const data = getData();
-            const list = document.getElementById('programs-list');
-            list.innerHTML = '<h4 style="margin: 1.5rem 0 1rem 0;">Current Programs</h4>';
-            
-            if (!data.programs || data.programs.length === 0) {
-                list.innerHTML += '<p style="color: #666;">No programs yet.</p>';
-                return;
-            }
-            
-            data.programs.forEach(program => {
-                list.innerHTML += `
-                    <div class="list-item">
-                        <div>
-                            <strong>${program.icon} ${program.name}</strong><br>
-                            <small>${program.description.substring(0, 60)}...</small>
-                        </div>
-                        <div>
-                            <button class="add-new-btn" style="margin: 0 0.5rem; padding: 0.5rem 1rem;" onclick="editProgram(${program.id})">Edit</button>
-                            <button class="delete-btn" onclick="deleteProgram(${program.id})">Delete</button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function editProgram(id) {
-            const data = getData();
-            const program = data.programs.find(p => p.id === id);
-            
-            editingProgramId = id;
-            document.getElementById('program-form').style.display = 'block';
-            document.getElementById('program-icon').value = program.icon;
-            document.getElementById('program-name').value = program.name;
-            document.getElementById('program-description').value = program.description;
-            document.getElementById('program-image').value = program.image || '';
-            
-            document.getElementById('program-form').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function deleteProgram(id) {
-            if (confirm('Delete this program?')) {
-                const data = getData();
-                data.programs = data.programs.filter(p => p.id !== id);
-                saveData(data);
-                loadContent();
-                loadProgramsList();
-                alert('✅ Program deleted!');
-            }
-        }
-
-        // Similar functions for Projects, News, Team (abbreviated to save space - same pattern as programs)
-        let editingProjectId = null;
-        let editingNewsId = null;
-        let editingMemberId = null;
-
-        function addNewProject() { /* Similar to addNewProgram */ }
-        function saveProject() { /* Similar to saveProgram */ }
-        function cancelProject() { /* Similar to cancelProgram */ }
-        function loadProjectsList() { /* Similar to loadProgramsList */ }
-        function editProject(id) { /* Similar to editProgram */ }
-        function deleteProject(id) { /* Similar to deleteProgram */ }
-
-        function addNewNews() { /* Similar pattern */ }
-        function saveNews() { /* Similar pattern */ }
-        function cancelNews() { /* Similar pattern */ }
-        function loadNewsList() { /* Similar pattern */ }
-        function editNews(id) { /* Similar pattern */ }
-        function deleteNews(id) { /* Similar pattern */ }
-
-        function addNewMember() { /* Similar pattern */ }
-        function saveMember() { /* Similar pattern */ }
-        function cancelMember() { /* Similar pattern */ }
-        function loadMembersList() { /* Similar pattern */ }
-        function editMember(id) { /* Similar pattern */ }
-        function deleteMember(id) { /* Similar pattern */ }
-
-        // Mobile menu
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
         }
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2703,14 +1216,42 @@
             });
         });
 
-        // Initialize
         window.addEventListener('DOMContentLoaded', () => {
-            initializeData();
-            loadContent();
+            const websiteURL = window.location.href.split('?')[0].split('#')[0];
+            document.getElementById('website-url').textContent = websiteURL;
+            
+            new QRCode(document.getElementById('qrcode'), {
+                text: websiteURL,
+                width: 256,
+                height: 256,
+                colorDark: '#d32f2f',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
         });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeAdmin();
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('comment-name').value;
+            const text = document.getElementById('comment-text').value;
+            const date = new Date().toLocaleDateString();
+            
+            const container = document.getElementById('comments-container');
+            const comment = document.createElement('div');
+            comment.className = 'comment-item';
+            comment.innerHTML = `
+                <div class="comment-author">${name}</div>
+                <div class="comment-date">${date}</div>
+                <div class="comment-text">${text}</div>
+            `;
+            
+            if (container.querySelector('p')) {
+                container.innerHTML = '';
+            }
+            
+            container.insertBefore(comment, container.firstChild);
+            this.reset();
+            alert('✅ Comment posted!');
         });
     </script>
 </body>
