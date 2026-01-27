@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -131,6 +131,33 @@
             margin-bottom: 2rem;
             text-align: center;
             color: #d32f2f;
+        }
+
+        .editable {
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .editable:hover {
+            background: rgba(249, 168, 37, 0.1);
+            cursor: pointer;
+        }
+
+        .edit-indicator {
+            display: none;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #f9a825;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .editable:hover .edit-indicator {
+            display: block;
         }
 
         .story-section {
@@ -562,6 +589,96 @@
 
         .donation-section h2 {
             color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .donation-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+        }
+
+        .donation-methods {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .donation-card {
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .donation-card h3 {
+            color: #d32f2f;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .donation-details {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .donation-detail-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .donation-detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #f9a825;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: #388e3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #2e7d32;
+        }
+
+        .donation-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 5px;
+            color: #856404;
         }
 
         .qr-section {
@@ -706,6 +823,16 @@
             border-radius: 5px;
         }
 
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            color: #155724;
+            display: none;
+        }
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -756,6 +883,10 @@
             .tab-btn {
                 width: 100%;
             }
+
+            .donation-methods {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -770,6 +901,7 @@
                 <li><a href="#about">Mission & Vision</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#programs">Programs</a></li>
+                <li><a href="#donate">Donate</a></li>
                 <li><a href="#volunteer">Volunteer</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -779,10 +911,11 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>Welcome to Taalanta Visionaries</h1>
-        <p>Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
+        <h1 class="editable" data-field="hero-title">Welcome to Taalanta Visionaries</h1>
+        <p class="editable" data-field="hero-subtitle">Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
         <a href="#story" class="cta-button">Our Story</a>
-        <a href="#volunteer" class="cta-button secondary">Join Us</a>
+        <a href="#donate" class="cta-button secondary">Donate Now</a>
+        <a href="#volunteer" class="cta-button">Join Us</a>
     </section>
 
     <section id="story" class="story-section">
@@ -797,14 +930,14 @@
                         <p>Founder & Chairman, Taalanta Visionaries</p>
                     </div>
                 </div>
-                <div class="founder-quote">
+                <div class="founder-quote editable" data-field="founder-quote">
                     "Every young person deserves a chance to discover their potential and contribute positively to society. Taalanta Visionaries was born from witnessing the struggles of our youth and believing in their capacity for greatness."
                 </div>
             </div>
 
             <div class="story-text">
                 <h3>💡 How It All Started</h3>
-                <p>
+                <p class="editable" data-field="story-intro">
                     Taalanta Visionaries was founded when our founder, Mr. Benedicto Momanyi, identified critical challenges facing our community. He witnessed firsthand the devastating cycle of youth dropping out of school, falling into drug abuse, and finding themselves on the wrong side of the law through crime and robbery.
                 </p>
                 
@@ -819,14 +952,14 @@
                     </ul>
                 </div>
 
-                <p>
+                <p class="editable" data-field="story-problem">
                     Mr. Momanyi realized that these young people were not bad—they were simply lost, lacking direction, opportunities, and belief in their own potential. He understood that with the right support, guidance, and opportunities, these same youths could become productive members of society and agents of positive change in their communities.
                 </p>
             </div>
 
             <div class="story-text">
                 <h3>✨ Our Solution: Taalanta Visionaries</h3>
-                <p>
+                <p class="editable" data-field="story-solution">
                     Instead of turning away from the problem, we decided to be part of the solution. Taalanta Visionaries was established to provide a pathway for young people to discover their talents, develop their skills, and create meaningful opportunities for themselves and their communities.
                 </p>
 
@@ -876,10 +1009,10 @@
 
             <div class="story-text">
                 <h3>🌍 Today and Beyond</h3>
-                <p>
+                <p class="editable" data-field="story-today">
                     Today, Taalanta Visionaries stands as a beacon of hope in our community. We've helped hundreds of young people redirect their lives, discover their purpose, and become contributing members of society. Many of our beneficiaries have gone on to start their own businesses, return to school, or become mentors themselves.
                 </p>
-                <p>
+                <p class="editable" data-field="story-future">
                     But our work is far from over. Every day, more young people face the same challenges that inspired our founding. We remain committed to reaching every youth who needs a second chance, a helping hand, or simply someone who believes in them.
                 </p>
             </div>
@@ -889,19 +1022,19 @@
     <section class="impact-stats">
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number">500+</div>
+                <div class="stat-number editable" data-field="stat-youths">500+</div>
                 <div class="stat-label">Youths Empowered</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">15</div>
+                <div class="stat-number editable" data-field="stat-projects">15</div>
                 <div class="stat-label">Active Projects</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">50+</div>
+                <div class="stat-number editable" data-field="stat-volunteers">50+</div>
                 <div class="stat-label">Volunteers</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">10</div>
+                <div class="stat-number editable" data-field="stat-communities">10</div>
                 <div class="stat-label">Communities Served</div>
             </div>
         </div>
@@ -912,18 +1045,18 @@
         <div class="mv-container">
             <div class="mv-card">
                 <h3>🎯 Our Mission</h3>
-                <p>To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
+                <p class="editable" data-field="mission-text">To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
             </div>
             <div class="mv-card">
                 <h3>🌟 Our Vision</h3>
-                <p>Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
+                <p class="editable" data-field="vision-text">Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
             </div>
         </div>
     </section>
 
     <section id="projects" style="background: #f5f5f5;">
         <h2>Our Projects</h2>
-        <div class="projects-grid">
+        <div class="projects-grid" id="projects-container">
             <div class="project-card">
                 <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Community Recycling" class="project-image">
                 <div class="project-content">
@@ -945,7 +1078,7 @@
                 </div>
                 <div class="program-content">
                     <h3>🤝 Integration</h3>
-                    <p>Building bridges within communities and fostering social cohesion through inclusive programs.</p>
+                    <p class="editable" data-field="program-integration">Building bridges within communities and fostering social cohesion through inclusive programs.</p>
                 </div>
             </div>
 
@@ -955,7 +1088,7 @@
                 </div>
                 <div class="program-content">
                     <h3>🌍 Climate Work</h3>
-                    <p>Taking action against climate change through education and community-based initiatives.</p>
+                    <p class="editable" data-field="program-climate">Taking action against climate change through education and community-based initiatives.</p>
                 </div>
             </div>
 
@@ -965,7 +1098,7 @@
                 </div>
                 <div class="program-content">
                     <h3>♻️ Garbage Collection & Recycling</h3>
-                    <p>Promoting environmental sustainability through waste management and recycling programs.</p>
+                    <p class="editable" data-field="program-recycling">Promoting environmental sustainability through waste management and recycling programs.</p>
                 </div>
             </div>
 
@@ -975,7 +1108,7 @@
                 </div>
                 <div class="program-content">
                     <h3>🎨 Art & Culture Development</h3>
-                    <p>Preserving and promoting local arts and culture while creating economic opportunities.</p>
+                    <p class="editable" data-field="program-art">Preserving and promoting local arts and culture while creating economic opportunities.</p>
                 </div>
             </div>
 
@@ -985,7 +1118,7 @@
                 </div>
                 <div class="program-content">
                     <h3>🌱 Environment Conservation</h3>
-                    <p>Protecting natural resources and promoting sustainable environmental practices.</p>
+                    <p class="editable" data-field="program-environment">Protecting natural resources and promoting sustainable environmental practices.</p>
                 </div>
             </div>
 
@@ -995,7 +1128,7 @@
                 </div>
                 <div class="program-content">
                     <h3>💼 Entrepreneurship & Sustainability</h3>
-                    <p>Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.</p>
+                    <p class="editable" data-field="program-entrepreneurship">Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.</p>
                 </div>
             </div>
 
@@ -1005,7 +1138,7 @@
                 </div>
                 <div class="program-content">
                     <h3>⭐ Talent Development</h3>
-                    <p>Identifying and nurturing individual talents to unlock potential and create opportunities.</p>
+                    <p class="editable" data-field="program-talent">Identifying and nurturing individual talents to unlock potential and create opportunities.</p>
                 </div>
             </div>
 
@@ -1015,9 +1148,100 @@
                 </div>
                 <div class="program-content">
                     <h3>💪 Youth Empowerment</h3>
-                    <p>Equipping young people with skills, knowledge, and confidence to shape their futures.</p>
+                    <p class="editable" data-field="program-youth">Equipping young people with skills, knowledge, and confidence to shape their futures.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="donate" class="donation-section">
+        <h2>💝 Support Our Mission</h2>
+        <div class="donation-intro">
+            <p>Your generous donations help us empower youth, protect the environment, and build stronger communities. Every contribution makes a real difference in transforming lives.</p>
+        </div>
+
+        <div class="donation-methods">
+            <div class="donation-card">
+                <h3>🏦 Bank Transfer</h3>
+                <div class="donation-details">
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Bank Name:</span>
+                        <span class="detail-value">Co-operative Bank</span>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Branch:</span>
+                        <span class="detail-value">Githurai</span>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Account Name:</span>
+                        <span class="detail-value">TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)</span>
+                        <button class="copy-btn" onclick="copyToClipboard('TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)')">📋 Copy</button>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Account Number:</span>
+                        <span class="detail-value">01091091096</span>
+                        <button class="copy-btn" onclick="copyToClipboard('01091091096')">📋 Copy</button>
+                    </div>
+                </div>
+                <div class="donation-note">
+                    <strong>Note:</strong> Please send us a confirmation message after your transfer.
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <h3>📱 M-Pesa Paybill</h3>
+                <div class="donation-details">
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Paybill Number:</span>
+                        <span class="detail-value">400200</span>
+                        <button class="copy-btn" onclick="copyToClipboard('400200')">📋 Copy</button>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Account Number:</span>
+                        <span class="detail-value">01091091096</span>
+                        <button class="copy-btn" onclick="copyToClipboard('01091091096')">📋 Copy</button>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Account Name:</span>
+                        <span class="detail-value">TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)</span>
+                    </div>
+                </div>
+                <div class="donation-note">
+                    <strong>How to donate:</strong><br>
+                    1. Go to M-Pesa menu<br>
+                    2. Select Lipa na M-Pesa<br>
+                    3. Select Pay Bill<br>
+                    4. Enter Business No: 400200<br>
+                    5. Enter Account No: 01091091096<br>
+                    6. Enter Amount<br>
+                    7. Enter your M-Pesa PIN
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <h3>💳 Direct M-Pesa</h3>
+                <div class="donation-details">
+                    <div class="donation-detail-item">
+                        <span class="detail-label">M-Pesa Number:</span>
+                        <span class="detail-value">0716704347</span>
+                        <button class="copy-btn" onclick="copyToClipboard('0716704347')">📋 Copy</button>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Name:</span>
+                        <span class="detail-value">Benedicto Momanyi (Chairman)</span>
+                    </div>
+                </div>
+                <div class="donation-note">
+                    <strong>For quick donations:</strong><br>
+                    Send money directly via M-Pesa to our Chairman's number. All funds go directly to community projects.
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="color: #f9a825; margin-bottom: 1rem;">🙏 Thank You for Your Support!</h3>
+            <p style="font-size: 1.1rem;">Your donation helps us continue our mission of empowering youth and building sustainable communities. For donation confirmation or any questions, contact us at:</p>
+            <p style="font-size: 1.2rem; font-weight: bold; margin-top: 1rem;">📞 0716704347 | 📧 taalantavisionaries9@gmail.com</p>
         </div>
     </section>
 
@@ -1075,7 +1299,7 @@
 
         <div style="text-align: center; margin-top: 2rem; color: #666;">
             <p>📞 Questions? Call us: <strong>0716704347</strong></p>
-            <p>📧 Email: <strong>info@taalantavisionaries.org</strong></p>
+            <p>📧 Email: <strong>taalantavisionaries9@gmail.com</strong></p>
         </div>
     </section>
 
@@ -1110,23 +1334,23 @@
         <div class="team-grid">
             <div class="team-card">
                 <div class="team-photo">BM</div>
-                <h3>Benedicto Momanyi</h3>
+                <h3 class="editable" data-field="team-chair-name">Benedicto Momanyi</h3>
                 <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Chairman</div>
-                <p style="margin-bottom: 1rem;">Leading Taalanta Visionaries with passion and dedication to community development.</p>
+                <p style="margin-bottom: 1rem;" class="editable" data-field="team-chair-desc">Leading Taalanta Visionaries with passion and dedication to community development.</p>
                 <div style="color: #388e3c; font-weight: bold;">📞 0716704347</div>
             </div>
             <div class="team-card">
                 <div class="team-photo">MM</div>
-                <h3>Martin Mwenda</h3>
+                <h3 class="editable" data-field="team-sec-name">Martin Mwenda</h3>
                 <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Secretary</div>
-                <p style="margin-bottom: 1rem;">Ensuring smooth operations and effective communication.</p>
+                <p style="margin-bottom: 1rem;" class="editable" data-field="team-sec-desc">Ensuring smooth operations and effective communication.</p>
                 <div style="color: #388e3c; font-weight: bold;">📞 0708884038</div>
             </div>
             <div class="team-card">
                 <div class="team-photo">MW</div>
-                <h3>Mercy Mwangi</h3>
+                <h3 class="editable" data-field="team-treas-name">Mercy Mwangi</h3>
                 <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Treasurer</div>
-                <p style="margin-bottom: 1rem;">Managing resources with transparency and accountability.</p>
+                <p style="margin-bottom: 1rem;" class="editable" data-field="team-treas-desc">Managing resources with transparency and accountability.</p>
                 <div style="color: #388e3c; font-weight: bold;">📞 0711141894</div>
             </div>
         </div>
@@ -1146,7 +1370,7 @@
         <div style="text-align: center; font-size: 1.2rem;">
             <p><strong>Ready to make a difference?</strong></p>
             <p>Contact us to learn more about our programs or to get involved!</p>
-            <p><strong>Email:</strong> info@taalantavisionaries.org</p>
+            <p><strong>Email:</strong> taalantavisionaries9@gmail.com</p>
             <p style="margin-top: 1rem;"><strong>Chairman:</strong> Benedicto Momanyi - 0716704347</p>
             <p><strong>Secretary:</strong> Martin Mwenda - 0708884038</p>
             <p><strong>Treasurer:</strong> Mercy Mwangi - 0711141894</p>
@@ -1165,49 +1389,102 @@
     <div class="admin-panel" id="adminPanel">
         <div class="admin-container">
             <div class="admin-header">
-                <h2 style="color: #d32f2f;">🔧 Admin Panel - Quick Updates</h2>
+                <h2 style="color: #d32f2f;">🔧 Admin Panel - Edit Website Content</h2>
                 <button class="close-admin" onclick="closeAdmin()">✕ Close</button>
             </div>
 
+            <div class="success-box" id="successMessage">
+                ✅ Changes saved successfully!
+            </div>
+
             <div class="warning-box">
-                <strong>📝 Note:</strong> Your program images are now permanent and will show for everyone! Use this panel to update text, add projects, and manage team info.
+                <strong>💡 How to Edit:</strong> Click on any highlighted text on the website to edit it, or use the forms below to manage content.
             </div>
 
             <div class="admin-tabs">
-                <button class="tab-btn active" onclick="showTab('notes')">📋 Quick Notes</button>
-                <button class="tab-btn" onclick="showTab('projects')">📊 Add Projects</button>
-                <button class="tab-btn" onclick="showTab('contact')">📞 Update Contact</button>
+                <button class="tab-btn active" onclick="showTab('content')">✏️ Edit Content</button>
+                <button class="tab-btn" onclick="showTab('stats')">📊 Update Stats</button>
+                <button class="tab-btn" onclick="showTab('projects')">📁 Add Projects</button>
+                <button class="tab-btn" onclick="showTab('contact')">📞 Contact Info</button>
+                <button class="tab-btn" onclick="showTab('donation')">💰 Donation Info</button>
             </div>
 
-            <div class="tab-content active" id="tab-notes">
-                <h3>Quick Admin Notes</h3>
-                <p style="margin: 1rem 0;">✅ <strong>Your website is fully functional!</strong></p>
-                <ul style="margin-left: 1.5rem; line-height: 2;">
-                    <li>All 8 program images are showing for everyone</li>
-                    <li>QR code works perfectly</li>
-                    <li>Mobile responsive design</li>
-                    <li>Comments section active</li>
-                    <li>Volunteer form ready</li>
-                </ul>
+            <div class="tab-content active" id="tab-content">
+                <h3>Quick Content Editor</h3>
+                <p style="color: #666; margin-bottom: 1rem;">Click on any text with a light yellow highlight on the main page to edit it directly!</p>
+                
+                <div class="form-group">
+                    <label>Hero Title</label>
+                    <input type="text" id="edit-hero-title" value="Welcome to Taalanta Visionaries">
+                    <button class="copy-btn" onclick="updateField('hero-title')">Update</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Hero Subtitle</label>
+                    <textarea id="edit-hero-subtitle" rows="2">Empowering youths and communities through talent development, employment creation, and sustainable projects</textarea>
+                    <button class="copy-btn" onclick="updateField('hero-subtitle')">Update</button>
+                </div>
 
-                <h4 style="margin-top: 2rem; color: #388e3c;">To Add More Features:</h4>
-                <p style="margin: 1rem 0;">Contact Benedicto at <strong>0716704347</strong> for:</p>
-                <ul style="margin-left: 1.5rem;">
-                    <li>Adding more projects with photos</li>
-                    <li>Setting up M-Pesa donations</li>
-                    <li>Connecting volunteer form to email</li>
-                    <li>Adding social media links</li>
-                    <li>Creating news/blog posts</li>
-                </ul>
+                <div class="form-group">
+                    <label>Mission Statement</label>
+                    <textarea id="edit-mission-text" rows="3">To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</textarea>
+                    <button class="copy-btn" onclick="updateField('mission-text')">Update</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Vision Statement</label>
+                    <textarea id="edit-vision-text" rows="3">Empower youths and communities through talent development, employment creation, and sustainable projects.</textarea>
+                    <button class="copy-btn" onclick="updateField('vision-text')">Update</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-stats">
+                <h3>Update Impact Statistics</h3>
+                
+                <div class="form-group">
+                    <label>Youths Empowered</label>
+                    <input type="text" id="edit-stat-youths" value="500+">
+                    <button class="copy-btn" onclick="updateField('stat-youths')">Update</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Active Projects</label>
+                    <input type="text" id="edit-stat-projects" value="15">
+                    <button class="copy-btn" onclick="updateField('stat-projects')">Update</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Volunteers</label>
+                    <input type="text" id="edit-stat-volunteers" value="50+">
+                    <button class="copy-btn" onclick="updateField('stat-volunteers')">Update</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Communities Served</label>
+                    <input type="text" id="edit-stat-communities" value="10">
+                    <button class="copy-btn" onclick="updateField('stat-communities')">Update</button>
+                </div>
             </div>
 
             <div class="tab-content" id="tab-projects">
                 <h3>Add New Project</h3>
-                <p style="color: #666; margin-bottom: 1rem;">To add projects with photos, upload images to Imgur first, then update the code.</p>
                 
                 <div class="form-group">
                     <label>Project Title</label>
                     <input type="text" id="project-title" placeholder="e.g., Tree Planting Drive 2024">
+                </div>
+                
+                <div class="form-group">
+                    <label>Project Status</label>
+                    <select id="project-status">
+                        <option value="ongoing">Ongoing</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="text" id="project-date" placeholder="e.g., January 2024">
                 </div>
                 
                 <div class="form-group">
@@ -1216,32 +1493,69 @@
                 </div>
                 
                 <div class="form-group">
-                    <label>Image URL (from Imgur)</label>
+                    <label>Image URL (from Imgur or other image host)</label>
                     <input type="text" id="project-img" placeholder="https://i.imgur.com/...">
                 </div>
                 
-                <button class="save-btn" onclick="alert('Contact Benedicto (0716704347) to add this project to the website permanently!')">💾 Request Project Addition</button>
+                <button class="save-btn" onclick="addProject()">➕ Add Project</button>
             </div>
 
             <div class="tab-content" id="tab-contact">
                 <h3>Update Contact Information</h3>
                 
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" value="info@taalantavisionaries.org">
+                    <label>Email Address</label>
+                    <input type="email" id="contact-email" value="taalantavisionaries9@gmail.com">
                 </div>
                 
                 <div class="form-group">
                     <label>WhatsApp Number</label>
-                    <input type="tel" value="254716704347">
+                    <input type="tel" id="contact-whatsapp" value="254716704347">
                 </div>
                 
                 <div class="form-group">
                     <label>Facebook Page URL</label>
-                    <input type="text" placeholder="https://facebook.com/taalanta">
+                    <input type="text" id="contact-facebook" placeholder="https://facebook.com/taalanta">
+                </div>
+
+                <div class="form-group">
+                    <label>Twitter/X Handle</label>
+                    <input type="text" id="contact-twitter" placeholder="@taalantavisionaries">
                 </div>
                 
-                <button class="save-btn" onclick="alert('Contact the web team to update these details in the code!')">💾 Request Update</button>
+                <button class="save-btn" onclick="saveContactInfo()">💾 Save Contact Info</button>
+            </div>
+
+            <div class="tab-content" id="tab-donation">
+                <h3>Donation Information</h3>
+                <p style="color: #666; margin-bottom: 1rem;">Current donation details are displayed below. Contact details are:</p>
+                
+                <div class="donation-details">
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Bank:</span>
+                        <span class="detail-value">Co-operative Bank - Githurai Branch</span>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Account Name:</span>
+                        <span class="detail-value">TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)</span>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Account Number:</span>
+                        <span class="detail-value">01091091096</span>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">Paybill:</span>
+                        <span class="detail-value">400200</span>
+                    </div>
+                    <div class="donation-detail-item">
+                        <span class="detail-label">M-Pesa:</span>
+                        <span class="detail-value">0716704347</span>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top: 1rem;">
+                    <strong>Note:</strong> These details are permanently displayed on the donation section. To modify them, you'll need to edit the HTML code directly or contact your web developer.
+                </div>
             </div>
         </div>
     </div>
@@ -1249,6 +1563,144 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <script>
+        // Content Storage
+        let websiteContent = {};
+
+        // Initialize editable content
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved content from localStorage
+            loadContent();
+            
+            // Make all elements with 'editable' class clickable
+            document.querySelectorAll('.editable').forEach(element => {
+                element.style.position = 'relative';
+                const indicator = document.createElement('span');
+                indicator.className = 'edit-indicator';
+                indicator.textContent = '✏️ Click to edit';
+                element.appendChild(indicator);
+                
+                element.addEventListener('click', function(e) {
+                    if (!document.getElementById('adminPanel').classList.contains('active')) {
+                        const field = this.getAttribute('data-field');
+                        const currentText = this.textContent.replace('✏️ Click to edit', '').trim();
+                        const newText = prompt('Edit content:', currentText);
+                        if (newText !== null && newText !== currentText) {
+                            this.childNodes[0].textContent = newText;
+                            websiteContent[field] = newText;
+                            saveContent();
+                            showSuccessMessage();
+                        }
+                    }
+                });
+            });
+        });
+
+        // Save content to localStorage
+        function saveContent() {
+            localStorage.setItem('taalantaContent', JSON.stringify(websiteContent));
+        }
+
+        // Load content from localStorage
+        function loadContent() {
+            const saved = localStorage.getItem('taalantaContent');
+            if (saved) {
+                websiteContent = JSON.parse(saved);
+                Object.keys(websiteContent).forEach(field => {
+                    const element = document.querySelector(`[data-field="${field}"]`);
+                    if (element) {
+                        element.childNodes[0].textContent = websiteContent[field];
+                    }
+                });
+            }
+        }
+
+        // Update field from admin panel
+        function updateField(field) {
+            const input = document.getElementById(`edit-${field}`);
+            if (input) {
+                const newValue = input.value;
+                const element = document.querySelector(`[data-field="${field}"]`);
+                if (element) {
+                    element.childNodes[0].textContent = newValue;
+                    websiteContent[field] = newValue;
+                    saveContent();
+                    showSuccessMessage();
+                }
+            }
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+            const msg = document.getElementById('successMessage');
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 3000);
+        }
+
+        // Add new project
+        function addProject() {
+            const title = document.getElementById('project-title').value;
+            const status = document.getElementById('project-status').value;
+            const date = document.getElementById('project-date').value;
+            const desc = document.getElementById('project-desc').value;
+            const img = document.getElementById('project-img').value;
+
+            if (!title || !desc) {
+                alert('Please fill in at least the title and description!');
+                return;
+            }
+
+            const container = document.getElementById('projects-container');
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card';
+            projectCard.innerHTML = `
+                <img src="${img || 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600'}" alt="${title}" class="project-image">
+                <div class="project-content">
+                    <span class="project-status status-${status}">${status === 'ongoing' ? 'Ongoing' : 'Completed'}</span>
+                    <h3>${title}</h3>
+                    ${date ? `<p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Started: ${date}</p>` : ''}
+                    <p>${desc}</p>
+                </div>
+            `;
+            container.appendChild(projectCard);
+
+            // Clear form
+            document.getElementById('project-title').value = '';
+            document.getElementById('project-desc').value = '';
+            document.getElementById('project-img').value = '';
+            document.getElementById('project-date').value = '';
+
+            showSuccessMessage();
+            alert('✅ Project added successfully!');
+        }
+
+        // Save contact info
+        function saveContactInfo() {
+            const email = document.getElementById('contact-email').value;
+            const whatsapp = document.getElementById('contact-whatsapp').value;
+            
+            // Update all email references on the page
+            document.querySelectorAll('a[href^="mailto:"], p:contains("taalantavisionaries9@gmail.com")').forEach(el => {
+                if (el.tagName === 'A') {
+                    el.href = `mailto:${email}`;
+                }
+                el.textContent = el.textContent.replace(/taalantavisionaries9@gmail\.com/g, email);
+            });
+
+            showSuccessMessage();
+            alert('✅ Contact information updated!');
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Copied to clipboard: ' + text);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
         // Toggle mobile menu
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
