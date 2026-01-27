@@ -563,6 +563,11 @@
             background: #2e7d32;
         }
 
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
         .comments-section {
             max-width: 800px;
             margin: 3rem auto;
@@ -748,6 +753,67 @@
 
         .footer-social a:hover {
             transform: scale(1.2);
+        }
+
+        /* Success Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h3 {
+            color: #388e3c;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .modal-close-btn {
+            background: #388e3c;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .modal-close-btn:hover {
+            background: #2e7d32;
         }
 
         /* ADMIN PANEL STYLES */
@@ -1279,48 +1345,54 @@
         </p>
 
         <div class="volunteer-form">
-            <form id="volunteerForm">
+            <form id="volunteerForm" action="https://formsubmit.co/taalantavisionaries9@gmail.com" method="POST">
+                <!-- Hidden fields for FormSubmit configuration -->
+                <input type="hidden" name="_subject" value="New Volunteer Application - Taalanta Visionaries">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+                
                 <div class="form-group">
                     <label for="volunteer-name">Full Name *</label>
-                    <input type="text" id="volunteer-name" name="name" required>
+                    <input type="text" id="volunteer-name" name="Full_Name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="volunteer-email">Email Address *</label>
-                    <input type="email" id="volunteer-email" name="email" required>
+                    <input type="email" id="volunteer-email" name="Email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="volunteer-phone">Phone Number *</label>
-                    <input type="tel" id="volunteer-phone" name="phone" required>
+                    <input type="tel" id="volunteer-phone" name="Phone_Number" required>
                 </div>
 
                 <div class="form-group">
                     <label for="volunteer-location">Your Location *</label>
-                    <input type="text" id="volunteer-location" name="location" placeholder="e.g., Nairobi, Kibera" required>
+                    <input type="text" id="volunteer-location" name="Location" placeholder="e.g., Nairobi, Kibera" required>
                 </div>
 
                 <div class="form-group">
                     <label for="volunteer-program">Interested Program *</label>
-                    <select id="volunteer-program" name="program" required>
+                    <select id="volunteer-program" name="Program_Interest" required>
                         <option value="">Select a program...</option>
-                        <option value="integration">Integration</option>
-                        <option value="climate">Climate Work</option>
-                        <option value="recycling">Garbage Collection & Recycling</option>
-                        <option value="art">Art & Culture Development</option>
-                        <option value="environment">Environment Conservation</option>
-                        <option value="entrepreneurship">Entrepreneurship & Sustainability</option>
-                        <option value="talent">Talent Development</option>
-                        <option value="youth">Youth Empowerment</option>
+                        <option value="Integration">Integration</option>
+                        <option value="Climate Work">Climate Work</option>
+                        <option value="Garbage Collection & Recycling">Garbage Collection & Recycling</option>
+                        <option value="Art & Culture Development">Art & Culture Development</option>
+                        <option value="Environment Conservation">Environment Conservation</option>
+                        <option value="Entrepreneurship & Sustainability">Entrepreneurship & Sustainability</option>
+                        <option value="Talent Development">Talent Development</option>
+                        <option value="Youth Empowerment">Youth Empowerment</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="volunteer-message">Why do you want to volunteer with us? *</label>
-                    <textarea id="volunteer-message" name="message" rows="4" required></textarea>
+                    <textarea id="volunteer-message" name="Message" rows="4" required></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">📩 Submit Application</button>
+                <button type="submit" class="submit-btn" id="submitBtn">📩 Submit Application</button>
             </form>
         </div>
 
@@ -1329,6 +1401,16 @@
             <p>📧 Email: <strong>taalantavisionaries9@gmail.com</strong></p>
         </div>
     </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>✅ Application Submitted!</h3>
+            <p>Thank you for your interest in volunteering with Taalanta Visionaries!</p>
+            <p>We've received your application and will contact you shortly at the phone number you provided.</p>
+            <button class="modal-close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <section style="background: #f5f5f5;">
         <h2>💬 Community Comments</h2>
@@ -1715,14 +1797,6 @@
             const email = document.getElementById('contact-email').value;
             const whatsapp = document.getElementById('contact-whatsapp').value;
             
-            // Update all email references on the page
-            document.querySelectorAll('a[href^="mailto:"], p:contains("taalantavisionaries9@gmail.com")').forEach(el => {
-                if (el.tagName === 'A') {
-                    el.href = `mailto:${email}`;
-                }
-                el.textContent = el.textContent.replace(/taalantavisionaries9@gmail\.com/g, email);
-            });
-
             showSuccessMessage();
             alert('✅ Contact information updated!');
         }
@@ -1793,14 +1867,18 @@
             alert('✅ Comment posted!');
         });
 
-        // Volunteer form submission
-        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('volunteer-name').value;
-            const phone = document.getElementById('volunteer-phone').value;
-            alert(`✅ Thank you ${name}! We've received your application. We'll contact you at ${phone} soon!`);
-            this.reset();
-        });
+        // Close modal
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('successModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
 
         // Admin Panel Functions
         function openAdmin() {
