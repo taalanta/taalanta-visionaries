@@ -1,245 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Taalanta Visionaries – 2026 Calendar</title>
-
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    color: #222;
-  }
-
-  h1, h2 {
-    text-align: center;
-  }
-
-  .month {
-    page-break-after: always;
-    margin-bottom: 40px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-
-  th, td {
-    border: 1px solid #999;
-    vertical-align: top;
-    height: 90px;
-    padding: 4px;
-    font-size: 0.75rem;
-  }
-
-  th {
-    background: #f0f0f0;
-    text-align: center;
-  }
-
-  .day-number {
-    font-weight: bold;
-  }
-
-  .holiday {
-    color: #b00020;
-    font-size: 0.6rem;
-    margin-top: 3px;
-    font-weight: 600;
-  }
-
-  .event-icon {
-    font-size: 1rem;
-    margin-top: 4px;
-  }
-
-  .event-title {
-    font-size: 0.65rem;
-    margin-top: 2px;
-  }
-
-  .county {
-    font-size: 0.55rem;
-    color: #555;
-  }
-
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    font-size: 0.7rem;
-    margin-top: 10px;
-  }
-
-  .footer {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .qr img {
-    width: 90px;
-  }
-
-  /* PRINT / PDF OPTIMIZATION */
-  @media print {
-    body {
-      margin: 10mm;
-    }
-    .footer {
-      page-break-inside: avoid;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Taalanta Visionaries 2026 Calendar</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; color:#333; background:#fff; }
+        .calendar-page { page-break-after: always; padding:2rem; }
+        .calendar-page img.program-image { width:100%; max-height:300px; object-fit:cover; border-radius:10px; margin-bottom:1rem; }
+        .month-header h2 { color:#006400; }
+        .program-name { font-size:1.2rem; margin:0.5rem 0; color:#DAA520; }
+        .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:5px; margin-bottom:1rem; }
+        .day-header { font-weight:bold; text-align:center; padding:0.5rem 0; background-color:#FFD700; border-radius:5px; }
+        .day-cell { text-align:center; padding:0.8rem 0; border-radius:5px; background-color:#f0f0f0; }
+        .day-cell.weekend { background-color:#FF6347; color:#fff; font-weight:bold; }
+        .quote-section { background-color:#006400; color:#fff; padding:1rem; border-radius:8px; font-style:italic; text-align:center; margin-bottom:1.5rem; }
+        .logo { display:block; margin:0 auto 1rem auto; width:150px; }
+        .footer { background-color:#333; color:#fff; padding:1rem; border-radius:8px; font-size:0.9rem; text-align:center; margin-top:1rem; }
+        .footer a { color:#FFD700; text-decoration:none; margin:0 0.5rem; }
+        .project-story { background-color:#f5f5f5; padding:1rem; border-radius:8px; margin-bottom:1rem; line-height:1.5; }
+    </style>
 </head>
-
 <body>
 
-<h1>TAALANTA VISIONARIES</h1>
-<h2>2026 Community Impact Calendar</h2>
+<!-- COVER -->
+<div class="calendar-page">
+    <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Logo" class="logo">
+    <h1 style="text-align:center; color:#006400;">Taalanta Visionaries 2026 Calendar</h1>
+    <p style="text-align:center; font-size:1.2rem; color:#DAA520;">Empowering Communities | Building Futures | Creating Change</p>
+</div>
+
+<!-- Month Template Function -->
+<script>
+function createMonth(monthName, imgURL, programName, story, quote, totalDays, startDay) {
+    document.write('<div class="calendar-page">');
+    document.write('<img src="'+imgURL+'" class="program-image" alt="'+programName+'">');
+    document.write('<div class="month-header"><h2>'+monthName+' 2026</h2><p class="program-name">'+programName+'</p></div>');
+    
+    // Project Story Section
+    document.write('<div class="project-story">'+story+'</div>');
+    
+    document.write('<div class="calendar-grid">');
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    for(let d=0; d<7; d++){ document.write('<div class="day-header">'+days[d]+'</div>'); }
+    for(let i=0;i<startDay;i++){ document.write('<div class="day-cell other-month"></div>'); }
+    for(let i=1;i<=totalDays;i++){
+        let dayOfWeek = (i+startDay-1)%7;
+        let weekendClass = (dayOfWeek===0 || dayOfWeek===6)?' weekend':'';
+        document.write('<div class="day-cell'+weekendClass+'">'+i+'</div>');
+    }
+    document.write('</div>');
+    document.write('<div class="quote-section"><strong>"'+quote+'"</strong></div>');
+
+    // Footer
+    document.write('<div class="footer">');
+    document.write('Visit us: <a href="https://taalanta.github.io/taalanta-visionaries/" target="_blank">Website</a> | ');
+    document.write('<a href="https://www.facebook.com/TaalantaVisionaries" target="_blank">Facebook</a> | ');
+    document.write('<a href="https://www.instagram.com/taalanta_visionaries" target="_blank">Instagram</a><br>');
+    document.write('Support our work: <a href="https://taalanta.github.io/taalanta-visionaries/donate" target="_blank">Donate Here</a>');
+    document.write('</div>');
+
+    document.write('</div>'); // End month page
+}
+</script>
 
 <script>
-const kenyaHolidays2026 = {
-  "2026-01-01": "🎆 New Year’s Day",
-  "2026-04-10": "✝️ Good Friday",
-  "2026-04-13": "✝️ Easter Monday",
-  "2026-05-01": "🛠️ Labour Day",
-  "2026-06-01": "🇰🇪 Madaraka Day",
-  "2026-10-20": "🛡️ Mashujaa Day",
-  "2026-12-12": "🇰🇪 Jamhuri Day",
-  "2026-12-25": "🎄 Christmas Day"
-};
+/* Program info: Month Name, Image, Program, Story, Quote, Days, Start day (0=Sun, 1=Mon...) */
+createMonth("January", "https://i.imgur.com/Yp2qzyD.jpeg", "🎨 Art & Culture",
+"Through our Art & Culture program, we celebrate creativity as the backbone of our communities. It empowers youth to preserve heritage and generate income through artistic expression.",
+"Your creativity is not a hobby — it's your heritage, your voice, and your economic power.", 31, 4);
 
-const programIcons = {
-  Integration: "🤝",
-  Climate: "🌍",
-  Recycling: "♻️",
-  Art: "🎨",
-  Conservation: "🌱",
-  MentalHealth: "🧠",
-  Skills: "🛠️",
-  Entrepreneurship: "💼",
-  Education: "🏫",
-  Leadership: "🛡️",
-  Community: "🤲",
-  Celebration: "🎉"
-};
+createMonth("February", "https://i.imgur.com/sOt21CT.jpeg", "🌱 Environmental Conservation",
+"Our Environmental Conservation program focuses on planting trees, cleaning rivers, and educating communities on sustainable practices for a healthier planet.",
+"We are the first generation to feel the impact of climate change, and the last who can do something about it.", 28, 0);
 
-const events = {
-  0: { // January
-    15: { title: "Youth Orientation", icon: "Integration", county: "Nairobi County" },
-    29: { title: "Community Dialogue", icon: "Community", county: "Nairobi County" }
-  },
-  5: { // June
-    5: { title: "Environmental Clean-Up", icon: "Climate", county: "Nairobi County" }
-  },
-  9: { // October
-    20: { title: "Mashujaa Youth Forum", icon: "Leadership", county: "Nairobi County" }
-  }
-};
+createMonth("March", "https://i.imgur.com/vYcQRMB.jpeg", "💼 Entrepreneurship & Sustainability",
+"Entrepreneurship & Sustainability teaches young people to turn ideas into viable businesses while considering environmental and social impact.",
+"You don't need permission to build your dream. You need courage, community, and a plan.", 31, 0);
 
-const months = [
-  "January","February","March","April","May","June",
-  "July","August","September","October","November","December"
-];
+createMonth("April", "https://i.imgur.com/zp1YDtf.jpeg", "⭐ Talent Development",
+"Talent Development identifies and nurtures skills in youth, providing mentorship and opportunities to shine in academics, arts, and leadership.",
+"Talent is everywhere. Opportunity is not. That's why we exist — to bridge that gap, one youth at a time.", 30, 3);
 
-function generateCalendar() {
-  const year = 2026;
+createMonth("May", "https://i.imgur.com/CQ7xkHL.jpeg", "🌍 Climate Work",
+"Our Climate Work program engages communities in reducing carbon footprints and building resilience to climate change through practical actions.",
+"Protecting our planet is not an option — it's a responsibility.", 31, 5);
 
-  months.forEach((month, mIndex) => {
-    const container = document.createElement("div");
-    container.className = "month";
+createMonth("June", "https://i.imgur.com/SnjG27Y.jpeg", "🔗 Integration Programs",
+"Integration Programs foster collaboration across different sectors and communities, creating networks for social and economic growth.",
+"Connection is the currency of change.", 30, 1);
 
-    const title = document.createElement("h2");
-    title.textContent = `${month} ${year}`;
-    container.appendChild(title);
+createMonth("July", "https://i.imgur.com/Yp2qzyD.jpeg", "🎨 Art & Culture",
+"July continues our Art & Culture focus, highlighting exhibitions, workshops, and community events to engage and inspire.",
+"Culture is the soil from which communities grow.", 31, 3);
 
-    const table = document.createElement("table");
-    const headerRow = document.createElement("tr");
+createMonth("August", "https://i.imgur.com/euX517j.jpeg", "♻️ Recycle & Garbage Collection",
+"This program mobilizes communities to clean neighborhoods, recycle waste, and turn garbage into resources while teaching sustainability habits.",
+"Small actions create big impact.", 31, 6);
 
-    ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach(d => {
-      const th = document.createElement("th");
-      th.textContent = d;
-      headerRow.appendChild(th);
-    });
-    table.appendChild(headerRow);
+createMonth("September", "https://i.imgur.com/A3Ws7aK.jpeg", "🌟 Youth Empowerment",
+"Youth Empowerment equips young leaders with mentorship, training, and platforms to initiate social change and influence their communities positively.",
+"When we empower youth, we empower the future.", 30, 2);
 
-    const firstDay = new Date(year, mIndex, 1).getDay();
-    const daysInMonth = new Date(year, mIndex + 1, 0).getDate();
+createMonth("October", "https://i.imgur.com/CQ7xkHL.jpeg", "🌍 Climate Work",
+"October focuses on climate advocacy, awareness campaigns, and practical initiatives that reduce community impact on the environment.",
+"The Earth does not belong to us — we belong to the Earth.", 31, 4);
 
-    let row = document.createElement("tr");
-    for (let i = 0; i < firstDay; i++) {
-      row.appendChild(document.createElement("td"));
-    }
+createMonth("November", "https://i.imgur.com/sOt21CT.jpeg", "🌱 Environmental Conservation",
+"November continues environmental projects with tree planting drives, recycling campaigns, and environmental education in schools.",
+"Every tree planted is hope for tomorrow.", 30, 0);
 
-    for (let day = 1; day <= daysInMonth; day++) {
-      if (row.children.length === 7) {
-        table.appendChild(row);
-        row = document.createElement("tr");
-      }
-
-      const td = document.createElement("td");
-      const fullDate = `${year}-${String(mIndex + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
-
-      td.innerHTML = `<div class="day-number">${day}</div>`;
-
-      if (kenyaHolidays2026[fullDate]) {
-        td.innerHTML += `<div class="holiday">${kenyaHolidays2026[fullDate]}</div>`;
-      }
-
-      const event = events[mIndex]?.[day];
-      if (event) {
-        td.innerHTML += `
-          <div class="event-icon">${programIcons[event.icon]}</div>
-          <div class="event-title">${event.title}</div>
-          <div class="county">${event.county}</div>
-        `;
-      }
-
-      row.appendChild(td);
-    }
-
-    table.appendChild(row);
-    container.appendChild(table);
-
-    const legend = document.createElement("div");
-    legend.className = "legend";
-    for (let key in programIcons) {
-      legend.innerHTML += `<span>${programIcons[key]} ${key}</span>`;
-    }
-    container.appendChild(legend);
-
-    document.body.appendChild(container);
-  });
-
-  // Footer (QR Codes)
-  const footer = document.createElement("div");
-  footer.className = "footer";
-
-  footer.innerHTML = `
-    <div>
-      <strong>Taalanta Visionaries</strong><br/>
-      Empowering Youth • Community • Sustainability
-    </div>
-
-    <div class="qr">
-      <div>Donate</div>
-      <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=https://your-donation-link.com" />
-    </div>
-
-    <div class="qr">
-      <div>Website</div>
-      <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=https://your-website-link.com" />
-    </div>
-  `;
-
-  document.body.appendChild(footer);
-}
-
-generateCalendar();
+createMonth("December", "https://i.imgur.com/zp1YDtf.jpeg", "⭐ Talent Development",
+"December emphasizes finishing the year strong by recognizing achievements, rewarding skills, and preparing youth for the year ahead.",
+"End the year by investing in skills that last a lifetime.", 31, 2);
 </script>
 
 </body>
