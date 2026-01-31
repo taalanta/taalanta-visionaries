@@ -1,239 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya">
-<title>Taalanta Visionaries - Empowering Communities</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya">
+    <title>Taalanta Visionaries - Empowering Communities</title>
 
-<style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#333;}
-header {background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%); color:white; padding:1rem 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-nav {max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center;}
-.logo {font-size:1.8rem; font-weight:bold; text-transform:uppercase;}
-nav ul {list-style:none; display:flex; gap:2rem;}
-nav ul li a {color:white; text-decoration:none; font-weight:500; transition:opacity 0.3s;}
-nav ul li a:hover {opacity:0.8;}
-.admin-btn {background:#fff; color:#d32f2f; padding:0.5rem 1rem; border-radius:5px; font-weight:bold; cursor:pointer; border:none; transition:transform 0.3s;}
-.admin-btn:hover {transform:scale(1.05);}
-.hero {margin-top:70px; background:linear-gradient(rgba(211,47,47,0.8), rgba(56,142,60,0.8)), url('https://i.imgur.com/iqlYDeS.jpeg') center/cover; color:white; padding:8rem 2rem; text-align:center; position:relative;}
-.hero::before {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(rgba(211,47,47,0.7), rgba(56,142,60,0.7)); z-index:1;}
-.hero>* {position:relative; z-index:2;}
-.hero h1 {font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
-.hero p {font-size:1.3rem; max-width:800px; margin:0 auto 2rem; text-shadow:1px 1px 2px rgba(0,0,0,0.5);}
-.cta-button {display:inline-block; background:#f9a825; color:white; padding:1rem 2rem; text-decoration:none; border-radius:5px; font-weight:bold; margin:0.5rem; transition:transform 0.3s, box-shadow 0.3s;}
-.cta-button:hover {transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.cta-button.secondary {background:#388e3c;}
-section {padding:4rem 2rem; max-width:1200px; margin:0 auto;}
-section h2 {font-size:2.5rem; margin-bottom:2rem; text-align:center; color:#d32f2f;}
-.admin-panel {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; overflow-y:auto; padding:2rem; color:white;}
-.admin-panel.active {display:block;}
-.programs-grid, .projects-grid, .team-grid, .mv-container, .stats-grid {display:grid; gap:2rem;}
-.projects-grid {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
-.programs-grid {grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.team-grid {grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-.mv-container {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
-.stats-grid {grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-.project-card, .program-card, .team-card, .mv-card, .donation-card, .story-text, .founder-message, .qr-code-container, .volunteer-form, .comments-section {background:white; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); overflow:hidden;}
-.project-card:hover, .program-card:hover {transform:translateY(-5px);}
-.project-image, .program-image {width:100%; height:200px; object-fit:cover;}
-.program-image {height:180px; display:flex; align-items:center; justify-content:center;}
-.program-content, .project-content, .mv-card, .team-card, .volunteer-form, .donation-card, .story-text, .founder-message, .qr-code-container, .comments-section {padding:1.5rem;}
-.project-status {display:inline-block; padding:0.3rem 1rem; border-radius:20px; font-size:0.9rem; font-weight:bold;}
-.status-ongoing {background:#f9a825; color:white;}
-.status-completed {background:#388e3c; color:white;}
-.founder-photo {width:100px; height:100px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:2.5rem; color:white;}
-.founder-photo img, .team-photo img {width:100%; height:100%; object-fit:cover;}
-.team-photo {width:150px; height:150px; border-radius:50%; margin:0 auto 1rem; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:3rem; color:white;}
-.volunteer-section {background:#f5f5f5;}
-.donation-section {background:linear-gradient(135deg,#388e3c,#d32f2f); color:white; padding:4rem 2rem;}
-.donation-section h2, #contact h2 {color:white;}
-.copy-btn, .submit-btn, .modal-close-btn {background:#388e3c; color:white; border:none; padding:0.8rem 2rem; border-radius:5px; cursor:pointer; font-weight:bold; transition:background 0.3s;}
-.copy-btn:hover, .submit-btn:hover, .modal-close-btn:hover {background:#2e7d32;}
-.qr-section, .comments-section {text-align:center; padding:3rem 2rem; background:#f5f5f5;}
-footer {background:#222; color:white; text-align:center; padding:2rem;}
-.footer-social a {color:#f9a825; font-size:1.5rem; margin:0 0.5rem; text-decoration:none; transition:transform 0.3s;}
-.footer-social a:hover {transform:scale(1.2);}
-</style>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#333;}
+        header {background: linear-gradient(135deg,#d32f2f 0%,#f9a825 50%,#388e3c 100%); color:white; padding:1rem 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+        nav {max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center;}
+        .logo {font-size:1.8rem; font-weight:bold; text-transform:uppercase;}
+        nav ul {list-style:none; display:flex; gap:2rem;}
+        nav ul li a {color:white; text-decoration:none; font-weight:500; transition: opacity 0.3s;}
+        nav ul li a:hover {opacity:0.8;}
+        .admin-btn {background:#fff; color:#d32f2f; padding:0.5rem 1rem; border-radius:5px; font-weight:bold; cursor:pointer; border:none; transition:transform 0.3s;}
+        .admin-btn:hover {transform:scale(1.05);}
+        .hero {margin-top:70px; background:linear-gradient(rgba(211,47,47,0.8),rgba(56,142,60,0.8)), url('https://i.imgur.com/iqlYDeS.jpeg') center/cover; color:white; padding:8rem 2rem; text-align:center; position:relative;}
+        .hero::before {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(rgba(211,47,47,0.7), rgba(56,142,60,0.7)); z-index:1;}
+        .hero > * {position:relative; z-index:2;}
+        .hero h1 {font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+        .hero p {font-size:1.3rem; max-width:800px; margin:0 auto 2rem; text-shadow:1px 1px 2px rgba(0,0,0,0.5);}
+        .cta-button {display:inline-block; background:#f9a825; color:white; padding:1rem 2rem; text-decoration:none; border-radius:5px; font-weight:bold; margin:0.5rem; transition: transform 0.3s, box-shadow 0.3s;}
+        .cta-button:hover {transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+        .cta-button.secondary {background:#388e3c;}
+        section {padding:4rem 2rem; max-width:1200px; margin:0 auto;}
+        section h2 {font-size:2.5rem; margin-bottom:2rem; text-align:center; color:#d32f2f;}
+        .story-section {background:linear-gradient(135deg,#fff 0%,#f5f5f5 100%);}
+        .story-content {max-width:900px; margin:0 auto;}
+        .founder-message {background:white; padding:2rem; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); margin-bottom:3rem; border-left:5px solid #f9a825;}
+        .founder-header {display:flex; align-items:center; margin-bottom:1.5rem; gap:1.5rem;}
+        .founder-photo {width:100px; height:100px; border-radius:50%; background:linear-gradient(135deg,#d32f2f,#f9a825); display:flex; align-items:center; justify-content:center; font-size:2.5rem; color:white; flex-shrink:0;}
+        .founder-photo img {width:100%; height:100%; object-fit:cover; border-radius:50%;}
+        .founder-info h3 {color:#d32f2f; font-size:1.5rem; margin-bottom:0.3rem;}
+        .founder-info p {color:#666; font-style:italic;}
+        .founder-quote {font-size:1.1rem; line-height:1.8; color:#333; padding-left:1rem; border-left:3px solid #f9a825; font-style:italic;}
+        .story-text {background:white; padding:2rem; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); margin-bottom:2rem;}
+        .story-text h3 {color:#388e3c; margin-bottom:1rem; font-size:1.8rem;}
+        .story-text p {font-size:1.1rem; line-height:1.8; margin-bottom:1rem; color:#555;}
+        .problem-box {background:#fff3cd; border-left:4px solid #ffc107; padding:1.5rem; margin:1.5rem 0; border-radius:5px;}
+        .problem-box h4 {color:#856404; margin-bottom:0.5rem;}
+        .solution-box {background:#d4edda; border-left:4px solid #28a745; padding:1.5rem; margin:1.5rem 0; border-radius:5px;}
+        .solution-box h4 {color:#155724; margin-bottom:0.5rem;}
+        .timeline {position:relative; padding:2rem 0;}
+        .timeline-item {background:white; padding:1.5rem; border-radius:10px; margin-bottom:2rem; box-shadow:0 3px 10px rgba(0,0,0,0.1); border-left:4px solid #f9a825;}
+        .timeline-year {color:#d32f2f; font-weight:bold; font-size:1.3rem; margin-bottom:0.5rem;}
+        .timeline-title {color:#388e3c; font-weight:bold; font-size:1.1rem; margin-bottom:0.5rem;}
+        .impact-stats {background:linear-gradient(135deg,#d32f2f 0%,#388e3c 100%); color:white; padding:3rem 2rem;}
+        .stats-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; max-width:1200px; margin:0 auto;}
+        .stat-card {text-align:center;}
+        .stat-number {font-size:3rem; font-weight:bold; color:#f9a825;}
+        .stat-label {font-size:1.1rem; margin-top:0.5rem;}
+        .mission-vision {background:#f5f5f5;}
+        .mv-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;}
+        .mv-card {background:white; padding:2rem; border-radius:10px; border-left:5px solid #f9a825; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+        .mv-card h3 {color:#388e3c; margin-bottom:1rem; font-size:1.5rem;}
+        .projects-grid, .programs-grid, .team-grid {display:grid; gap:2rem;}
+        .projects-grid {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+        .programs-grid {grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+        .team-grid {grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+        .project-card, .program-card, .team-card {background:white; border-radius:10px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition:transform 0.3s;}
+        .project-card:hover, .program-card:hover {transform:translateY(-5px);}
+        .project-image, .program-image {width:100%; height:200px; object-fit:cover; background:#f0f0f0; display:flex; align-items:center; justify-content:center;}
+        .project-image img, .program-image img {width:100%; height:100%; object-fit:cover;}
+        .project-content, .program-content {padding:1.5rem;}
+        .project-card h3, .program-content h3 {color:#d32f2f; margin-bottom:0.5rem;}
+        .project-status {display:inline-block; padding:0.3rem 1rem; border-radius:20px; font-size:0.9rem; font-weight:bold; margin-bottom:1rem;}
+        .status-ongoing {background:#f9a825; color:white;}
+        .status-completed {background:#388e3c; color:white;}
+        .team-card {text-align:center; padding:2rem;}
+        .team-photo {width:150px; height:150px; border-radius:50%; margin:0 auto 1rem; background:linear-gradient(135deg,#d32f2f,#f9a825); display:flex; align-items:center; justify-content:center; font-size:3rem; color:white; overflow:hidden;}
+        .team-photo img {width:100%; height:100%; object-fit:cover;}
+        .volunteer-section {background:#f5f5f5;}
+        .volunteer-form, .donation-card, .comments-section {max-width:600px; margin:2rem auto; background:white; padding:2rem; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+        .form-group {margin-bottom:1.5rem;}
+        .form-group label {display:block; margin-bottom:0.5rem; font-weight:bold; color:#d32f2f;}
+        .form-group input, .form-group select, .form-group textarea {width:100%; padding:0.8rem; border:2px solid #ddd; border-radius:5px; font-size:1rem;}
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {border-color:#f9a825; outline:none;}
+        .submit-btn {background:#388e3c; color:white; padding:1rem 2rem; border:none; border-radius:5px; font-size:1rem; font-weight:bold; cursor:pointer; width:100%; transition:background 0.3s;}
+        .submit-btn:hover {background:#2e7d32;}
+        .submit-btn:disabled {background:#ccc; cursor:not-allowed;}
+        .comments-section .comment-item {background:#f9f9f9; padding:1rem; margin-bottom:1rem; border-radius:5px; border-left:3px solid #f9a825;}
+        .comment-author {font-weight:bold; color:#d32f2f; margin-bottom:0.5rem;}
+        .comment-date {font-size:0.8rem; color:#666; margin-bottom:0.5rem;}
+        .donation-section {background:linear-gradient(135deg,#388e3c,#d32f2f); color:white; padding:4rem 2rem;}
+        .donation-section h2 {color:white; margin-bottom:1.5rem;}
+        .donation-intro {text-align:center; max-width:800px; margin:0 auto 3rem; font-size:1.2rem;}
+        .donation-methods {max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;}
+        .donation-card h3 {color:#d32f2f; margin-bottom:1.5rem; font-size:1.5rem; display:flex; align-items:center; gap:0.5rem;}
+        .donation-details {background:#f5f5f5; padding:1.5rem; border-radius:5px; margin-bottom:1rem;}
+        .donation-detail-item {margin-bottom:1rem; padding-bottom:1rem; border-bottom:1px solid #ddd;}
+        .detail-label {font-weight:bold; color:#f9a825; display:block; margin-bottom:0.3rem;}
+        .detail-value {font-size:1.1rem; color:#333; font-weight:600;}
+        .copy-btn {background:#388e3c; color:white; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer; font-size:0.9rem; margin-left:0.5rem; transition:background 0.3s;}
+        .copy-btn:hover {background:#2e7d32;}
+        .donation-note {background:#fff3cd; border-left:4px solid #ffc107; padding:1rem; margin-top:1.5rem; border-radius:5px; color:#856404;}
+        .qr-section {text-align:center; padding:3rem 2rem; background:#f5f5f5;}
+        .qr-code-container {max-width:400px; margin:2rem auto; padding:2rem; background:white; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+        footer {background:#222; color:white; text-align:center; padding:2rem;}
+        .footer-social a {color:#f9a825; font-size:1.5rem; margin:0 0.5rem; text-decoration:none; transition:transform 0.3s; display:inline-block;}
+        .footer-social a:hover {transform:scale(1.2);}
+        iframe {width:100%; height:500px; border:none; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+        .admin-panel {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; overflow-y:auto; padding:2rem; color:white;}
+        .admin-panel h2 {margin-bottom:1rem; color:#f9a825;}
+    </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-<nav>
-  <div class="logo">Taalanta Visionaries</div>
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="admin-btn" onclick="toggleAdmin()">Admin</button>
-</nav>
+    <nav>
+        <div class="logo">Taalanta Visionaries</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+        <button class="admin-btn" onclick="toggleAdmin()">Admin</button>
+    </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="hero">
-  <h1>Empowering Communities</h1>
-  <p>We nurture youth talents and empower local communities through sustainable programs and initiatives.</p>
-  <a href="#programs" class="cta-button">Our Programs</a>
-  <a href="#donate" class="cta-button secondary">Donate</a>
+    <h1>Empowering Youths & Communities in Kenya</h1>
+    <p>Join us in building brighter futures, one initiative at a time.</p>
+    <a href="#programs" class="cta-button">Our Programs</a>
+    <a href="#donate" class="cta-button secondary">Donate Now</a>
 </section>
 
-<!-- ADMIN PANEL -->
-<div class="admin-panel" id="adminPanel">
-  <h2>Admin Panel</h2>
-  <p>Manage website content, projects, donations, and more.</p>
-  <button class="cta-button secondary" onclick="toggleAdmin()">Close Admin Panel</button>
-</div>
+<!-- FOUNDER STORY -->
+<section class="story-section">
+    <h2>Our Story</h2>
+    <div class="story-content">
+        <div class="founder-message">
+            <div class="founder-header">
+                <div class="founder-photo">
+                    <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Founder">
+                </div>
+                <div class="founder-info">
+                    <h3>Jane Doe</h3>
+                    <p>Founder & Visionary</p>
+                </div>
+            </div>
+            <p class="founder-quote">"Taalanta Visionaries is dedicated to creating sustainable impact and empowering the next generation of leaders in our communities."</p>
+        </div>
+        <div class="story-text">
+            <h3>Why We Exist</h3>
+            <p>We saw the need for community-driven initiatives that empower young people and uplift local neighborhoods. Our programs focus on education, mentorship, and skill development.</p>
+        </div>
+        <div class="problem-box">
+            <h4>The Challenge</h4>
+            <p>Many youths lack access to quality mentorship and career opportunities, which limits their potential and community impact.</p>
+        </div>
+        <div class="solution-box">
+            <h4>Our Solution</h4>
+            <p>Through targeted programs, workshops, and projects, we provide resources, guidance, and support for youths to thrive.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mission-vision">
+    <h2>Mission & Vision</h2>
+    <div class="mv-container">
+        <div class="mv-card">
+            <h3>Our Mission</h3>
+            <p>To empower youths through education, mentorship, and community-driven initiatives, enabling them to create sustainable change.</p>
+        </div>
+        <div class="mv-card">
+            <h3>Our Vision</h3>
+            <p>To be a leading catalyst for youth empowerment and community development in Kenya, fostering innovation, leadership, and resilience.</p>
+        </div>
+    </div>
+</section>
 
 <!-- PROGRAMS -->
 <section id="programs">
-  <h2>Our Programs</h2>
-  <div class="programs-grid">
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/0XqRZ7h.jpeg" alt="Youth Empowerment">
-      </div>
-      <div class="program-content">
-        <h3>Youth Empowerment</h3>
-        <p>Training, mentorship and skills development for youth.</p>
-      </div>
+    <h2>Programs</h2>
+    <div class="programs-grid">
+        <div class="program-card">
+            <div class="program-image"><img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Program 1"></div>
+            <div class="program-content">
+                <h3>Education Mentorship</h3>
+                <p>Guiding youths to excel academically and explore career pathways.</p>
+            </div>
+        </div>
+        <div class="program-card">
+            <div class="program-image"><img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Program 2"></div>
+            <div class="program-content">
+                <h3>Skill Development</h3>
+                <p>Workshops to develop practical skills for employment and entrepreneurship.</p>
+            </div>
+        </div>
     </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/ZkV4N1T.jpeg" alt="Community Development">
-      </div>
-      <div class="program-content">
-        <h3>Community Development</h3>
-        <p>Projects to uplift local communities and infrastructure.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2>Our Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-image">
-        <img src="https://i.imgur.com/UX1YxH9.jpeg" alt="Project 1">
-      </div>
-      <div class="project-content">
-        <h3>Solar Water Pumps</h3>
-        <span class="project-status status-ongoing">Ongoing</span>
-        <p>Installing solar-powered water pumps in rural areas.</p>
-      </div>
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-image"><img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Project 1"></div>
+            <div class="project-content">
+                <span class="project-status status-ongoing">Ongoing</span>
+                <h3>Community Library</h3>
+                <p>Building local libraries to improve literacy and access to knowledge.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-image"><img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Project 2"></div>
+            <div class="project-content">
+                <span class="project-status status-completed">Completed</span>
+                <h3>Clean Water Initiative</h3>
+                <p>Providing clean water solutions to underserved communities.</p>
+            </div>
+        </div>
     </div>
-    <div class="project-card">
-      <div class="project-image">
-        <img src="https://i.imgur.com/NhBZbrH.jpeg" alt="Project 2">
-      </div>
-      <div class="project-content">
-        <h3>School Supplies</h3>
-        <span class="project-status status-completed">Completed</span>
-        <p>Distributing learning materials to underprivileged schools.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- DONATIONS & QR -->
+<!-- TEAM -->
+<section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="team-photo"><img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Team Member"></div>
+            <h3>John Smith</h3>
+            <p>Program Coordinator</p>
+        </div>
+        <div class="team-card">
+            <div class="team-photo"><img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Team Member"></div>
+            <h3>Mary Johnson</h3>
+            <p>Volunteer Lead</p>
+        </div>
+    </div>
+</section>
+
+<!-- DONATE & QR -->
 <section id="donate" class="donation-section">
-  <h2>Support Our Mission</h2>
-  <p class="donation-intro">Your contributions help us reach more communities and youth.</p>
-  <div class="donation-methods">
-    <div class="donation-card">
-      <h3>Mobile Money</h3>
-      <div class="donation-details">
-        <div class="donation-detail-item">
-          <span class="detail-label">Paybill Number</span>
-          <span class="detail-value">123456</span>
+    <h2>Support Our Work</h2>
+    <p class="donation-intro">Your contributions help us empower more youths and create sustainable community projects.</p>
+    <div class="donation-methods">
+        <div class="donation-card">
+            <h3>MPESA Paybill</h3>
+            <div class="donation-details">
+                <div class="donation-detail-item">
+                    <span class="detail-label">Paybill Number</span>
+                    <span class="detail-value">123456</span>
+                </div>
+                <div class="donation-detail-item">
+                    <span class="detail-label">Account</span>
+                    <span class="detail-value">TAALANTA</span>
+                </div>
+            </div>
         </div>
-        <div class="donation-detail-item">
-          <span class="detail-label">Account Name</span>
-          <span class="detail-value">Taalanta Visionaries</span>
+        <div class="donation-card">
+            <h3>Scan QR Code</h3>
+            <div class="qr-code-container" id="qrcode">
+                <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="QR Code" style="width:100%; height:auto;">
+            </div>
         </div>
-      </div>
-      <button class="copy-btn" onclick="copyText('123456')">Copy Paybill</button>
     </div>
-    <div class="donation-card">
-      <h3>QR Code</h3>
-      <div class="qr-code-container">
-        <div id="qrcode"></div>
-        <p>Scan to donate via mobile money</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- BLOG -->
 <section id="blog">
-  <h2>Latest Updates & Taalanta Blog</h2>
-  <div class="comments-section">
-    <h3>Embedded Blog Preview</h3>
-    <iframe src="https://taalanta.github.io/taalanta-visionaries/blog" 
-            style="width:100%; height:500px; border:none; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);"></iframe>
-    <p style="text-align:center; margin-top:1rem;">
-      <a href="https://taalanta.github.io/taalanta-visionaries/blog" target="_blank" 
-         class="cta-button secondary" style="padding:0.8rem 1.5rem;">Visit Full Blog</a>
-    </p>
-  </div>
-  <div class="comments-section">
-    <h3>Recent Comments</h3>
-    <div class="comment-item">
-      <div class="comment-author">Admin</div>
-      <div class="comment-date">Jan 31, 2026</div>
-      <div class="comment-text">Welcome to our new website! Stay tuned for updates.</div>
-    </div>
-    <div class="comment-item">
-      <div class="comment-author">Visitor</div>
-      <div class="comment-date">Jan 30, 2026</div>
-      <div class="comment-text">Excited about your community programs!</div>
-    </div>
-  </div>
+    <h2>Taalanta Blog</h2>
+    <iframe src="https://taalanta.github.io/taalanta-visionaries/blog" title="Taalanta Blog"></iframe>
 </section>
 
-<!-- CONTACT / VOLUNTEER -->
-<section id="contact">
-  <h2>Join Us / Contact</h2>
-  <div class="volunteer-form">
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Your name">
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Your email">
-    </div>
-    <div class="form-group">
-      <label for="message">Message / Volunteer Interest</label>
-      <textarea id="message" rows="5" placeholder="Your message"></textarea>
-    </div>
-    <button class="submit-btn">Submit</button>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 Taalanta Visionaries. All Rights Reserved.</p>
-  <div class="footer-social">
-    <a href="#">&#xf09a;</a>
-    <a href="#">&#xf16d;</a>
-  </div>
+    <p>&copy; 2026 Taalanta Visionaries. All rights reserved.</p>
+    <div class="footer-social">
+        <a href="#" target="_blank">FB</a>
+        <a href="#" target="_blank">TW</a>
+        <a href="#" target="_blank">IG</a>
+    </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+    <h2>Admin Panel</h2>
+    <p>Manage content, images, and more from here.</p>
+    <button onclick="toggleAdmin()">Close</button>
+</div>
+
 <script>
-function toggleAdmin(){
-  const panel = document.getElementById('adminPanel');
-  panel.classList.toggle('active');
-}
-function copyText(text){
-  navigator.clipboard.writeText(text).then(()=>alert('Copied: '+text));
-}
-// QR Code generation
-var qr = new QRious({element: document.getElementById('qrcode'), value:'https://taalanta.github.io/taalanta-visionaries/donate', size:200});
+    function toggleAdmin() {
+        const panel = document.getElementById('adminPanel');
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    }
 </script>
 
 </body>
