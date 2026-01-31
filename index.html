@@ -1,1893 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya">
-    <title>Taalanta Visionaries - Empowering Communities</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        nav ul li a:hover {
-            opacity: 0.8;
-        }
-
-        .admin-btn {
-            background: #fff;
-            color: #d32f2f;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            transition: transform 0.3s;
-        }
-
-        .admin-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(rgba(211, 47, 47, 0.8), rgba(56, 142, 60, 0.8)), 
-                        url('https://i.imgur.com/iqlYDeS.jpeg') center/cover;
-            color: white;
-            padding: 8rem 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(211, 47, 47, 0.7), rgba(56, 142, 60, 0.7));
-            z-index: 1;
-        }
-
-        .hero > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #f9a825;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin: 0.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .cta-button.secondary {
-            background: #388e3c;
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #d32f2f;
-        }
-
-        .editable {
-            position: relative;
-            transition: background 0.3s;
-        }
-
-        .editable:hover {
-            background: rgba(249, 168, 37, 0.1);
-            cursor: pointer;
-        }
-
-        .edit-indicator {
-            display: none;
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #f9a825;
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .editable:hover .edit-indicator {
-            display: block;
-        }
-
-        .story-section {
-            background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-        }
-
-        .story-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .founder-message {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-            border-left: 5px solid #f9a825;
-        }
-
-        .founder-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            gap: 1.5rem;
-        }
-
-        .founder-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #d32f2f, #f9a825);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .founder-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .founder-info h3 {
-            color: #d32f2f;
-            font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .founder-info p {
-            color: #666;
-            font-style: italic;
-        }
-
-        .founder-quote {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #333;
-            padding-left: 1rem;
-            border-left: 3px solid #f9a825;
-            font-style: italic;
-        }
-
-        .story-text {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .story-text h3 {
-            color: #388e3c;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .story-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: #555;
-        }
-
-        .problem-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 5px;
-        }
-
-        .problem-box h4 {
-            color: #856404;
-            margin-bottom: 0.5rem;
-        }
-
-        .solution-box {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 5px;
-        }
-
-        .solution-box h4 {
-            color: #155724;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #f9a825;
-        }
-
-        .timeline-year {
-            color: #d32f2f;
-            font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            color: #388e3c;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .impact-stats {
-            background: linear-gradient(135deg, #d32f2f 0%, #388e3c 100%);
-            color: white;
-            padding: 3rem 2rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #f9a825;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .mission-vision {
-            background: #f5f5f5;
-        }
-
-        .mv-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .mv-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 5px solid #f9a825;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .mv-card h3 {
-            color: #388e3c;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: #f0f0f0;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-status {
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .status-ongoing {
-            background: #f9a825;
-            color: white;
-        }
-
-        .status-completed {
-            background: #388e3c;
-            color: white;
-        }
-
-        .project-card h3 {
-            color: #d32f2f;
-            margin-bottom: 0.5rem;
-        }
-
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .program-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .program-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .program-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .program-icon-large {
-            font-size: 5rem;
-        }
-
-        .program-content {
-            padding: 1.5rem;
-        }
-
-        .program-content h3 {
-            color: #d32f2f;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .team-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            background: linear-gradient(135deg, #d32f2f, #f9a825);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            overflow: hidden;
-        }
-
-        .team-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .volunteer-section {
-            background: #f5f5f5;
-        }
-
-        .volunteer-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #d32f2f;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #f9a825;
-            outline: none;
-        }
-
-        .submit-btn {
-            background: #388e3c;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #2e7d32;
-        }
-
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .comments-section {
-            max-width: 800px;
-            margin: 3rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .comment-form {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .comment-item {
-            background: #f9f9f9;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            border-left: 3px solid #f9a825;
-        }
-
-        .comment-author {
-            font-weight: bold;
-            color: #d32f2f;
-            margin-bottom: 0.5rem;
-        }
-
-        .comment-date {
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .donation-section {
-            background: linear-gradient(135deg, #388e3c, #d32f2f);
-            color: white;
-            padding: 4rem 2rem;
-        }
-
-        .donation-section h2 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .donation-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            font-size: 1.2rem;
-        }
-
-        .donation-methods {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .donation-card {
-            background: white;
-            color: #333;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .donation-card h3 {
-            color: #d32f2f;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .donation-details {
-            background: #f5f5f5;
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-
-        .donation-detail-item {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .donation-detail-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .detail-label {
-            font-weight: bold;
-            color: #f9a825;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .detail-value {
-            font-size: 1.1rem;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .copy-btn {
-            background: #388e3c;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-left: 0.5rem;
-            transition: background 0.3s;
-        }
-
-        .copy-btn:hover {
-            background: #2e7d32;
-        }
-
-        .donation-note {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1rem;
-            margin-top: 1.5rem;
-            border-radius: 5px;
-            color: #856404;
-        }
-
-        .qr-section {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: #f5f5f5;
-        }
-
-        .qr-code-container {
-            max-width: 400px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        #qrcode {
-            margin: 1rem auto;
-        }
-
-        #contact {
-            background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
-            color: white;
-        }
-
-        #contact h2 {
-            color: white;
-        }
-
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .footer-social {
-            margin-bottom: 1rem;
-        }
-
-        .footer-social a {
-            color: #f9a825;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            text-decoration: none;
-            transition: transform 0.3s;
-            display: inline-block;
-        }
-
-        .footer-social a:hover {
-            transform: scale(1.2);
-        }
-
-        /* Success Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 10001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-content h3 {
-            color: #388e3c;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .modal-content p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .modal-close-btn {
-            background: #388e3c;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .modal-close-btn:hover {
-            background: #2e7d32;
-        }
-
-        /* ADMIN PANEL STYLES */
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 10000;
-            overflow-y: auto;
-        }
-
-        .admin-panel.active {
-            display: block;
-        }
-
-        .admin-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #f9a825;
-        }
-
-        .close-admin {
-            background: #d32f2f;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .admin-tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 0.8rem 1.2rem;
-            border: none;
-            background: #f0f0f0;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .tab-btn.active {
-            background: #f9a825;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .save-btn {
-            background: #388e3c;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1rem;
-        }
-
-        .save-btn:hover {
-            background: #2e7d32;
-        }
-
-        .warning-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-        }
-
-        .success-box {
-            background: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            color: #155724;
-            display: none;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .founder-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .admin-container {
-                margin: 1rem;
-                padding: 1rem;
-            }
-
-            .admin-tabs {
-                flex-direction: column;
-            }
-
-            .tab-btn {
-                width: 100%;
-            }
-
-            .donation-methods {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya">
+<title>Taalanta Visionaries - Empowering Communities</title>
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#333;}
+header {background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%); color:white; padding:1rem 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+nav {max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center;}
+.logo {font-size:1.8rem; font-weight:bold; text-transform:uppercase;}
+nav ul {list-style:none; display:flex; gap:2rem;}
+nav ul li a {color:white; text-decoration:none; font-weight:500; transition:opacity 0.3s;}
+nav ul li a:hover {opacity:0.8;}
+.admin-btn {background:#fff; color:#d32f2f; padding:0.5rem 1rem; border-radius:5px; font-weight:bold; cursor:pointer; border:none; transition:transform 0.3s;}
+.admin-btn:hover {transform:scale(1.05);}
+.hero {margin-top:70px; background:linear-gradient(rgba(211,47,47,0.8), rgba(56,142,60,0.8)), url('https://i.imgur.com/iqlYDeS.jpeg') center/cover; color:white; padding:8rem 2rem; text-align:center; position:relative;}
+.hero::before {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(rgba(211,47,47,0.7), rgba(56,142,60,0.7)); z-index:1;}
+.hero>* {position:relative; z-index:2;}
+.hero h1 {font-size:3rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+.hero p {font-size:1.3rem; max-width:800px; margin:0 auto 2rem; text-shadow:1px 1px 2px rgba(0,0,0,0.5);}
+.cta-button {display:inline-block; background:#f9a825; color:white; padding:1rem 2rem; text-decoration:none; border-radius:5px; font-weight:bold; margin:0.5rem; transition:transform 0.3s, box-shadow 0.3s;}
+.cta-button:hover {transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.cta-button.secondary {background:#388e3c;}
+section {padding:4rem 2rem; max-width:1200px; margin:0 auto;}
+section h2 {font-size:2.5rem; margin-bottom:2rem; text-align:center; color:#d32f2f;}
+.admin-panel {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; overflow-y:auto; padding:2rem; color:white;}
+.admin-panel.active {display:block;}
+.programs-grid, .projects-grid, .team-grid, .mv-container, .stats-grid {display:grid; gap:2rem;}
+.projects-grid {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.programs-grid {grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.team-grid {grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.mv-container {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.stats-grid {grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.project-card, .program-card, .team-card, .mv-card, .donation-card, .story-text, .founder-message, .qr-code-container, .volunteer-form, .comments-section {background:white; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); overflow:hidden;}
+.project-card:hover, .program-card:hover {transform:translateY(-5px);}
+.project-image, .program-image {width:100%; height:200px; object-fit:cover;}
+.program-image {height:180px; display:flex; align-items:center; justify-content:center;}
+.program-content, .project-content, .mv-card, .team-card, .volunteer-form, .donation-card, .story-text, .founder-message, .qr-code-container, .comments-section {padding:1.5rem;}
+.project-status {display:inline-block; padding:0.3rem 1rem; border-radius:20px; font-size:0.9rem; font-weight:bold;}
+.status-ongoing {background:#f9a825; color:white;}
+.status-completed {background:#388e3c; color:white;}
+.founder-photo {width:100px; height:100px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:2.5rem; color:white;}
+.founder-photo img, .team-photo img {width:100%; height:100%; object-fit:cover;}
+.team-photo {width:150px; height:150px; border-radius:50%; margin:0 auto 1rem; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:3rem; color:white;}
+.volunteer-section {background:#f5f5f5;}
+.donation-section {background:linear-gradient(135deg,#388e3c,#d32f2f); color:white; padding:4rem 2rem;}
+.donation-section h2, #contact h2 {color:white;}
+.copy-btn, .submit-btn, .modal-close-btn {background:#388e3c; color:white; border:none; padding:0.8rem 2rem; border-radius:5px; cursor:pointer; font-weight:bold; transition:background 0.3s;}
+.copy-btn:hover, .submit-btn:hover, .modal-close-btn:hover {background:#2e7d32;}
+.qr-section, .comments-section {text-align:center; padding:3rem 2rem; background:#f5f5f5;}
+footer {background:#222; color:white; text-align:center; padding:2rem;}
+.footer-social a {color:#f9a825; font-size:1.5rem; margin:0 0.5rem; text-decoration:none; transition:transform 0.3s;}
+.footer-social a:hover {transform:scale(1.2);}
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Taalanta Visionaries</div>
-            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#about">Mission & Vision</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="blog/index.html">📝 Blog</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#volunteer">Volunteer</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button class="admin-btn" onclick="openAdmin()">🔧 Admin</button></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <h1 class="editable" data-field="hero-title">Welcome to Taalanta Visionaries</h1>
-        <p class="editable" data-field="hero-subtitle">Empowering youths and communities through talent development, employment creation, and sustainable projects</p>
-        <a href="#story" class="cta-button">Our Story</a>
-        <a href="#donate" class="cta-button secondary">Donate Now</a>
-        <a href="#volunteer" class="cta-button">Join Us</a>
-    </section>
+<header>
+<nav>
+  <div class="logo">Taalanta Visionaries</div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="admin-btn" onclick="toggleAdmin()">Admin</button>
+</nav>
+</header>
 
-    <section id="story" class="story-section">
-        <h2>🌟 Our Story</h2>
-        
-        <div class="story-content">
-            <div class="founder-message">
-                <div class="founder-header">
-                    <div class="founder-photo">BM</div>
-                    <div class="founder-info">
-                        <h3>Benedicto Momanyi</h3>
-                        <p>Founder & Chairman, Taalanta Visionaries</p>
-                    </div>
-                </div>
-                <div class="founder-quote editable" data-field="founder-quote">
-                    "Every young person deserves a chance to discover their potential and contribute positively to society. Taalanta Visionaries was born from witnessing the struggles of our youth and believing in their capacity for greatness."
-                </div>
-            </div>
+<section class="hero" id="hero">
+  <h1>Empowering Communities</h1>
+  <p>We nurture youth talents and empower local communities through sustainable programs and initiatives.</p>
+  <a href="#programs" class="cta-button">Our Programs</a>
+  <a href="#donate" class="cta-button secondary">Donate</a>
+</section>
 
-            <div class="story-text">
-                <h3>💡 How It All Started</h3>
-                <p class="editable" data-field="story-intro">
-                    Taalanta Visionaries was founded when our founder, Mr. Benedicto Momanyi, identified critical challenges facing our community. He witnessed firsthand the devastating cycle of youth dropping out of school, falling into drug abuse, and finding themselves on the wrong side of the law through crime and robbery.
-                </p>
-                
-                <div class="problem-box">
-                    <h4>⚠️ The Challenges We Saw:</h4>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                        <li>High school dropout rates among youth</li>
-                        <li>Increasing drug and substance abuse</li>
-                        <li>Youth involvement in crime and robbery</li>
-                        <li>Lack of positive role models and opportunities</li>
-                        <li>Limited access to skills training and mentorship</li>
-                    </ul>
-                </div>
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <h2>Admin Panel</h2>
+  <p>Manage website content, projects, donations, and more.</p>
+  <button class="cta-button secondary" onclick="toggleAdmin()">Close Admin Panel</button>
+</div>
 
-                <p class="editable" data-field="story-problem">
-                    Mr. Momanyi realized that these young people were not bad—they were simply lost, lacking direction, opportunities, and belief in their own potential. He understood that with the right support, guidance, and opportunities, these same youths could become productive members of society and agents of positive change in their communities.
-                </p>
-            </div>
-
-            <div class="story-text">
-                <h3>✨ Our Solution: Taalanta Visionaries</h3>
-                <p class="editable" data-field="story-solution">
-                    Instead of turning away from the problem, we decided to be part of the solution. Taalanta Visionaries was established to provide a pathway for young people to discover their talents, develop their skills, and create meaningful opportunities for themselves and their communities.
-                </p>
-
-                <div class="solution-box">
-                    <h4>✅ What We Do Differently:</h4>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                        <li>Identify and nurture individual talents in every youth</li>
-                        <li>Provide alternative education and skills training</li>
-                        <li>Create job opportunities through community projects</li>
-                        <li>Offer mentorship and positive role models</li>
-                        <li>Build a supportive community that believes in second chances</li>
-                        <li>Address root causes: poverty, lack of opportunity, and hopelessness</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="story-text">
-                <h3>🚀 Our Journey</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-title">The Beginning</div>
-                        <p>Mr. Benedicto Momanyi identified the challenges and founded Taalanta Visionaries</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2021</div>
-                        <div class="timeline-title">First Programs Launched</div>
-                        <p>Started with youth empowerment and environmental conservation programs</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2022</div>
-                        <div class="timeline-title">Growing Impact</div>
-                        <p>Reached 200+ youths and expanded to 5 different programs</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-title">Community Recognition</div>
-                        <p>Received official CBO registration and community awards</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <div class="timeline-title">Expanding Reach</div>
-                        <p>Now serving 10 communities with 500+ beneficiaries and growing</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="story-text">
-                <h3>🌍 Today and Beyond</h3>
-                <p class="editable" data-field="story-today">
-                    Today, Taalanta Visionaries stands as a beacon of hope in our community. We've helped hundreds of young people redirect their lives, discover their purpose, and become contributing members of society. Many of our beneficiaries have gone on to start their own businesses, return to school, or become mentors themselves.
-                </p>
-                <p class="editable" data-field="story-future">
-                    But our work is far from over. Every day, more young people face the same challenges that inspired our founding. We remain committed to reaching every youth who needs a second chance, a helping hand, or simply someone who believes in them.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="impact-stats">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number editable" data-field="stat-youths">500+</div>
-                <div class="stat-label">Youths Empowered</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number editable" data-field="stat-projects">15</div>
-                <div class="stat-label">Active Projects</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number editable" data-field="stat-volunteers">50+</div>
-                <div class="stat-label">Volunteers</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number editable" data-field="stat-communities">10</div>
-                <div class="stat-label">Communities Served</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="mission-vision">
-        <h2>Our Purpose</h2>
-        <div class="mv-container">
-            <div class="mv-card">
-                <h3>🎯 Our Mission</h3>
-                <p class="editable" data-field="mission-text">To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</p>
-            </div>
-            <div class="mv-card">
-                <h3>🌟 Our Vision</h3>
-                <p class="editable" data-field="vision-text">Empower youths and communities through talent development, employment creation, and sustainable projects.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" style="background: #f5f5f5;">
-        <h2>Our Projects</h2>
-        <div class="projects-grid" id="projects-container">
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600" alt="Community Recycling" class="project-image">
-                <div class="project-content">
-                    <span class="project-status status-ongoing">Ongoing</span>
-                    <h3>Community Recycling Initiative</h3>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Started: January 2024</p>
-                    <p>Creating jobs through waste collection and recycling in 5 neighborhoods. Training 20 youths in waste management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="programs">
-        <h2>Our Programs</h2>
-        <div class="programs-grid">
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/SnjG27Y.jpeg" alt="Integration">
-                </div>
-                <div class="program-content">
-                    <h3>🤝 Integration</h3>
-                    <p class="editable" data-field="program-integration">Building bridges within communities and fostering social cohesion through inclusive programs.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/CQ7xkHL.jpeg" alt="Climate Work">
-                </div>
-                <div class="program-content">
-                    <h3>🌍 Climate Work</h3>
-                    <p class="editable" data-field="program-climate">Taking action against climate change through education and community-based initiatives.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/euX517j.jpeg" alt="Recycling">
-                </div>
-                <div class="program-content">
-                    <h3>♻️ Garbage Collection & Recycling</h3>
-                    <p class="editable" data-field="program-recycling">Promoting environmental sustainability through waste management and recycling programs.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/Yp2qzyD.jpeg" alt="Art and Culture">
-                </div>
-                <div class="program-content">
-                    <h3>🎨 Art & Culture Development</h3>
-                    <p class="editable" data-field="program-art">Preserving and promoting local arts and culture while creating economic opportunities.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/sOt21CT.jpeg" alt="Environment Conservation">
-                </div>
-                <div class="program-content">
-                    <h3>🌱 Environment Conservation</h3>
-                    <p class="editable" data-field="program-environment">Protecting natural resources and promoting sustainable environmental practices.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/vYcQRMB.jpeg" alt="Entrepreneurship">
-                </div>
-                <div class="program-content">
-                    <h3>💼 Entrepreneurship & Sustainability</h3>
-                    <p class="editable" data-field="program-entrepreneurship">Supporting aspiring entrepreneurs with skills and resources for sustainable businesses.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/zp1YDtf.jpeg" alt="Talent Development">
-                </div>
-                <div class="program-content">
-                    <h3>⭐ Talent Development</h3>
-                    <p class="editable" data-field="program-talent">Identifying and nurturing individual talents to unlock potential and create opportunities.</p>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-image">
-                    <img src="https://i.imgur.com/A3Ws7aK.jpeg" alt="Youth Empowerment">
-                </div>
-                <div class="program-content">
-                    <h3>💪 Youth Empowerment</h3>
-                    <p class="editable" data-field="program-youth">Equipping young people with skills, knowledge, and confidence to shape their futures.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="donate" class="donation-section">
-        <h2>💝 Support Our Mission</h2>
-        <div class="donation-intro">
-            <p>Your generous donations help us empower youth, protect the environment, and build stronger communities. Every contribution makes a real difference in transforming lives.</p>
-        </div>
-
-        <div class="donation-methods">
-            <div class="donation-card">
-                <h3>🏦 Bank Transfer</h3>
-                <div class="donation-details">
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Bank Name:</span>
-                        <span class="detail-value">Co-operative Bank</span>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Branch:</span>
-                        <span class="detail-value">Githurai</span>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Account Name:</span>
-                        <span class="detail-value">TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)</span>
-                        <button class="copy-btn" onclick="copyToClipboard('TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)')">📋 Copy</button>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Account Number:</span>
-                        <span class="detail-value">01091096</span>
-                        <button class="copy-btn" onclick="copyToClipboard('01091096')">📋 Copy</button>
-                    </div>
-                </div>
-                <div class="donation-note">
-                    <strong>Note:</strong> Please send us a confirmation message after your transfer.
-                </div>
-            </div>
-
-            <div class="donation-card">
-                <h3>📱 M-Pesa Paybill</h3>
-                <div class="donation-details">
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Paybill Number:</span>
-                        <span class="detail-value">400200</span>
-                        <button class="copy-btn" onclick="copyToClipboard('400200')">📋 Copy</button>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Account Number:</span>
-                        <span class="detail-value">01091096</span>
-                        <button class="copy-btn" onclick="copyToClipboard('01091096')">📋 Copy</button>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Account Name:</span>
-                        <span class="detail-value">TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)</span>
-                    </div>
-                </div>
-                <div class="donation-note">
-                    <strong>How to donate:</strong><br>
-                    1. Go to M-Pesa menu<br>
-                    2. Select Lipa na M-Pesa<br>
-                    3. Select Pay Bill<br>
-                    4. Enter Business No: 400200<br>
-                    5. Enter Account No: 01091096<br>
-                    6. Enter Amount<br>
-                    7. Enter your M-Pesa PIN
-                </div>
-            </div>
-
-            <div class="donation-card">
-                <h3>💳 Direct M-Pesa</h3>
-                <div class="donation-details">
-                    <div class="donation-detail-item">
-                        <span class="detail-label">M-Pesa Number:</span>
-                        <span class="detail-value">0716704347</span>
-                        <button class="copy-btn" onclick="copyToClipboard('0716704347')">📋 Copy</button>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Name:</span>
-                        <span class="detail-value">Benedicto Momanyi (Chairman)</span>
-                    </div>
-                </div>
-                <div class="donation-note">
-                    <strong>For quick donations:</strong><br>
-                    Send money directly via M-Pesa to our Chairman's number. All funds go directly to community projects.
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem; background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <h3 style="color: #f9a825; margin-bottom: 1rem;">🙏 Thank You for Your Support!</h3>
-            <p style="font-size: 1.1rem;">Your donation helps us continue our mission of empowering youth and building sustainable communities. For donation confirmation or any questions, contact us at:</p>
-            <p style="font-size: 1.2rem; font-weight: bold; margin-top: 1rem;">📞 0716704347 | 📧 taalantavisionaries9@gmail.com</p>
-        </div>
-    </section>
-
-    <section id="volunteer" class="volunteer-section">
-        <h2>🤝 Become a Volunteer</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-            Join our team of passionate volunteers making a real difference in the community. Your time and skills can change lives!
-        </p>
-
-        <div class="volunteer-form">
-            <form id="volunteerForm" action="https://formsubmit.co/taalantavisionaries9@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New Volunteer Application - Taalanta Visionaries">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none">
-                
-                <div class="form-group">
-                    <label for="volunteer-name">Full Name *</label>
-                    <input type="text" id="volunteer-name" name="Full_Name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-email">Email Address *</label>
-                    <input type="email" id="volunteer-email" name="Email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-phone">Phone Number *</label>
-                    <input type="tel" id="volunteer-phone" name="Phone_Number" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-location">Your Location *</label>
-                    <input type="text" id="volunteer-location" name="Location" placeholder="e.g., Nairobi, Kibera" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-program">Interested Program *</label>
-                    <select id="volunteer-program" name="Program_Interest" required>
-                        <option value="">Select a program...</option>
-                        <option value="Integration">Integration</option>
-                        <option value="Climate Work">Climate Work</option>
-                        <option value="Garbage Collection & Recycling">Garbage Collection & Recycling</option>
-                        <option value="Art & Culture Development">Art & Culture Development</option>
-                        <option value="Environment Conservation">Environment Conservation</option>
-                        <option value="Entrepreneurship & Sustainability">Entrepreneurship & Sustainability</option>
-                        <option value="Talent Development">Talent Development</option>
-                        <option value="Youth Empowerment">Youth Empowerment</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="volunteer-message">Why do you want to volunteer with us? *</label>
-                    <textarea id="volunteer-message" name="Message" rows="4" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn" id="submitBtn">📩 Submit Application</button>
-            </form>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem; color: #666;">
-            <p>📞 Questions? Call us: <strong>0716704347</strong></p>
-            <p>📧 Email: <strong>taalantavisionaries9@gmail.com</strong></p>
-        </div>
-    </section>
-
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <h3>✅ Application Submitted!</h3>
-            <p>Thank you for your interest in volunteering with Taalanta Visionaries!</p>
-            <p>We've received your application and will contact you shortly at the phone number you provided.</p>
-            <button class="modal-close-btn" onclick="closeModal()">Close</button>
-        </div>
+<!-- PROGRAMS -->
+<section id="programs">
+  <h2>Our Programs</h2>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="program-image">
+        <img src="https://i.imgur.com/0XqRZ7h.jpeg" alt="Youth Empowerment">
+      </div>
+      <div class="program-content">
+        <h3>Youth Empowerment</h3>
+        <p>Training, mentorship and skills development for youth.</p>
+      </div>
     </div>
-
-    <section style="background: #f5f5f5;">
-        <h2>💬 Community Comments</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Share your thoughts, experiences, or ask questions!</p>
-
-        <div class="comments-section">
-            <div class="comment-form">
-                <h3 style="margin-bottom: 1rem;">Leave a Comment</h3>
-                <form id="commentForm">
-                    <div class="form-group">
-                        <label for="comment-name">Your Name *</label>
-                        <input type="text" id="comment-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="comment-text">Your Comment *</label>
-                        <textarea id="comment-text" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Post Comment</button>
-                </form>
-            </div>
-
-            <div id="comments-container">
-                <p style="text-align: center; color: #666;">No comments yet. Be the first to comment!</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="team">
-        <h2>Our Leadership Team</h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="team-photo">BM</div>
-                <h3 class="editable" data-field="team-chair-name">Benedicto Momanyi</h3>
-                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Chairman</div>
-                <p style="margin-bottom: 1rem;" class="editable" data-field="team-chair-desc">Leading Taalanta Visionaries with passion and dedication to community development.</p>
-                <div style="color: #388e3c; font-weight: bold;">📞 0716704347</div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">MM</div>
-                <h3 class="editable" data-field="team-sec-name">Martin Mwenda</h3>
-                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Secretary</div>
-                <p style="margin-bottom: 1rem;" class="editable" data-field="team-sec-desc">Ensuring smooth operations and effective communication.</p>
-                <div style="color: #388e3c; font-weight: bold;">📞 0708884038</div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">MW</div>
-                <h3 class="editable" data-field="team-treas-name">Mercy Mwangi</h3>
-                <div style="color: #f9a825; font-weight: bold; margin-bottom: 1rem;">Treasurer</div>
-                <p style="margin-bottom: 1rem;" class="editable" data-field="team-treas-desc">Managing resources with transparency and accountability.</p>
-                <div style="color: #388e3c; font-weight: bold;">📞 0711141894</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="qr-section">
-        <h2>📱 Scan to Visit Our Website</h2>
-        <p>Share this QR code with your community!</p>
-        <div class="qr-code-container">
-            <div id="qrcode"></div>
-            <p style="margin-top: 1rem; color: #666;" id="website-url"></p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Get In Touch</h2>
-        <div style="text-align: center; font-size: 1.2rem;">
-            <p><strong>Ready to make a difference?</strong></p>
-            <p>Contact us to learn more about our programs or to get involved!</p>
-            <p><strong>Email:</strong> taalantavisionaries9@gmail.com</p>
-            <p style="margin-top: 1rem;"><strong>Chairman:</strong> Benedicto Momanyi - 0716704347</p>
-            <p><strong>Secretary:</strong> Martin Mwenda - 0708884038</p>
-            <p><strong>Treasurer:</strong> Mercy Mwangi - 0711141894</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-social">
-            <a href="https://wa.me/254716704347" target="_blank" title="WhatsApp">💬</a>
-            <a href="https://www.facebook.com/profile.php?id=61586938240649" target="_blank" title="Facebook">📘</a>
-            <a href="https://www.instagram.com/taalantavisionaries" target="_blank" title="Instagram">📷</a>
-            <a href="https://x.com/taalantav" target="_blank" title="X (Twitter)">✖️</a>
-            <a href="https://www.tiktok.com/@taalanta.visionar?_r=1&_t=ZS-93OYRNz9aXI" target="_blank" title="TikTok">🎵</a>
-        </div>
-        <p>&copy; 2024 Taalanta Visionaries CBO. All rights reserved.</p>
-        <p>Empowering Communities | Building Futures | Creating Change</p>
-    </footer>
-
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-container">
-            <div class="admin-header">
-                <h2 style="color: #d32f2f;">🔧 Admin Panel - Edit Website Content</h2>
-                <button class="close-admin" onclick="closeAdmin()">✕ Close</button>
-            </div>
-
-            <div class="success-box" id="successMessage">
-                ✅ Changes saved successfully!
-            </div>
-
-            <div class="warning-box">
-                <strong>💡 How to Edit:</strong> Click on any highlighted text on the website to edit it, or use the forms below to manage content.
-            </div>
-
-            <div class="admin-tabs">
-                <button class="tab-btn active" onclick="showTab('content')">✏️ Edit Content</button>
-                <button class="tab-btn" onclick="showTab('stats')">📊 Update Stats</button>
-                <button class="tab-btn" onclick="showTab('projects')">📁 Add Projects</button>
-                <button class="tab-btn" onclick="showTab('contact')">📞 Contact Info</button>
-                <button class="tab-btn" onclick="showTab('donation')">💰 Donation Info</button>
-            </div>
-
-            <div class="tab-content active" id="tab-content">
-                <h3>Quick Content Editor</h3>
-                <p style="color: #666; margin-bottom: 1rem;">Click on any text with a light yellow highlight on the main page to edit it directly!</p>
-                
-                <div class="form-group">
-                    <label>Hero Title</label>
-                    <input type="text" id="edit-hero-title" value="Welcome to Taalanta Visionaries">
-                    <button class="copy-btn" onclick="updateField('hero-title')">Update</button>
-                </div>
-                
-                <div class="form-group">
-                    <label>Hero Subtitle</label>
-                    <textarea id="edit-hero-subtitle" rows="2">Empowering youths and communities through talent development, employment creation, and sustainable projects</textarea>
-                    <button class="copy-btn" onclick="updateField('hero-subtitle')">Update</button>
-                </div>
-
-                <div class="form-group">
-                    <label>Mission Statement</label>
-                    <textarea id="edit-mission-text" rows="3">To provide opportunities for individuals to develop their skills, create jobs, and contribute to social and economic progress.</textarea>
-                    <button class="copy-btn" onclick="updateField('mission-text')">Update</button>
-                </div>
-
-                <div class="form-group">
-                    <label>Vision Statement</label>
-                    <textarea id="edit-vision-text" rows="3">Empower youths and communities through talent development, employment creation, and sustainable projects.</textarea>
-                    <button class="copy-btn" onclick="updateField('vision-text')">Update</button>
-                </div>
-            </div>
-
-            <div class="tab-content" id="tab-stats">
-                <h3>Update Impact Statistics</h3>
-                
-                <div class="form-group">
-                    <label>Youths Empowered</label>
-                    <input type="text" id="edit-stat-youths" value="500+">
-                    <button class="copy-btn" onclick="updateField('stat-youths')">Update</button>
-                </div>
-                
-                <div class="form-group">
-                    <label>Active Projects</label>
-                    <input type="text" id="edit-stat-projects" value="15">
-                    <button class="copy-btn" onclick="updateField('stat-projects')">Update</button>
-                </div>
-
-                <div class="form-group">
-                    <label>Volunteers</label>
-                    <input type="text" id="edit-stat-volunteers" value="50+">
-                    <button class="copy-btn" onclick="updateField('stat-volunteers')">Update</button>
-                </div>
-
-                <div class="form-group">
-                    <label>Communities Served</label>
-                    <input type="text" id="edit-stat-communities" value="10">
-                    <button class="copy-btn" onclick="updateField('stat-communities')">Update</button>
-                </div>
-            </div>
-
-            <div class="tab-content" id="tab-projects">
-                <h3>Add New Project</h3>
-                
-                <div class="form-group">
-                    <label>Project Title</label>
-                    <input type="text" id="project-title" placeholder="e.g., Tree Planting Drive 2024">
-                </div>
-                
-                <div class="form-group">
-                    <label>Project Status</label>
-                    <select id="project-status">
-                        <option value="ongoing">Ongoing</option>
-                        <option value="completed">Completed</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Start Date</label>
-                    <input type="text" id="project-date" placeholder="e.g., January 2024">
-                </div>
-                
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea id="project-desc" rows="3" placeholder="Describe your project..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Image URL (from Imgur or other image host)</label>
-                    <input type="text" id="project-img" placeholder="https://i.imgur.com/...">
-                </div>
-                
-                <button class="save-btn" onclick="addProject()">➕ Add Project</button>
-            </div>
-
-            <div class="tab-content" id="tab-contact">
-                <h3>Update Contact Information</h3>
-                
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="contact-email" value="taalantavisionaries9@gmail.com">
-                </div>
-                
-                <div class="form-group">
-                    <label>WhatsApp Number</label>
-                    <input type="tel" id="contact-whatsapp" value="254716704347">
-                </div>
-                
-                <div class="form-group">
-                    <label>Facebook Page URL</label>
-                    <input type="text" id="contact-facebook" value="https://www.facebook.com/profile.php?id=61586938240649">
-                </div>
-
-                <div class="form-group">
-                    <label>Instagram URL</label>
-                    <input type="text" id="contact-instagram" value="https://www.instagram.com/taalantavisionaries">
-                </div>
-
-                <div class="form-group">
-                    <label>X (Twitter) URL</label>
-                    <input type="text" id="contact-twitter" value="https://x.com/taalantav">
-                </div>
-
-                <div class="form-group">
-                    <label>TikTok URL</label>
-                    <input type="text" id="contact-tiktok" value="https://www.tiktok.com/@taalanta.visionar?_r=1&_t=ZS-93OYRNz9aXI">
-                </div>
-                
-                <button class="save-btn" onclick="saveContactInfo()">💾 Save Contact Info</button>
-            </div>
-
-            <div class="tab-content" id="tab-donation">
-                <h3>Donation Information</h3>
-                <p style="color: #666; margin-bottom: 1rem;">Current donation details displayed on the website:</p>
-                
-                <div class="donation-details">
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Bank:</span>
-                        <span class="detail-value">Co-operative Bank - Githurai Branch</span>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Account Name:</span>
-                        <span class="detail-value">TAALANTA VISIONARIES COMMUNITY ORGANISATION (CBO)</span>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Account Number:</span>
-                        <span class="detail-value">01091096</span>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">Paybill:</span>
-                        <span class="detail-value">400200</span>
-                    </div>
-                    <div class="donation-detail-item">
-                        <span class="detail-label">M-Pesa:</span>
-                        <span class="detail-value">0716704347</span>
-                    </div>
-                </div>
-
-                <div class="warning-box" style="margin-top: 1rem;">
-                    <strong>✅ All details are correct and displayed on the website!</strong>
-                </div>
-            </div>
-        </div>
+    <div class="program-card">
+      <div class="program-image">
+        <img src="https://i.imgur.com/ZkV4N1T.jpeg" alt="Community Development">
+      </div>
+      <div class="program-content">
+        <h3>Community Development</h3>
+        <p>Projects to uplift local communities and infrastructure.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Our Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="https://i.imgur.com/UX1YxH9.jpeg" alt="Project 1">
+      </div>
+      <div class="project-content">
+        <h3>Solar Water Pumps</h3>
+        <span class="project-status status-ongoing">Ongoing</span>
+        <p>Installing solar-powered water pumps in rural areas.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">
+        <img src="https://i.imgur.com/NhBZbrH.jpeg" alt="Project 2">
+      </div>
+      <div class="project-content">
+        <h3>School Supplies</h3>
+        <span class="project-status status-completed">Completed</span>
+        <p>Distributing learning materials to underprivileged schools.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        let websiteContent = {};
+<!-- DONATIONS & QR -->
+<section id="donate" class="donation-section">
+  <h2>Support Our Mission</h2>
+  <p class="donation-intro">Your contributions help us reach more communities and youth.</p>
+  <div class="donation-methods">
+    <div class="donation-card">
+      <h3>Mobile Money</h3>
+      <div class="donation-details">
+        <div class="donation-detail-item">
+          <span class="detail-label">Paybill Number</span>
+          <span class="detail-value">123456</span>
+        </div>
+        <div class="donation-detail-item">
+          <span class="detail-label">Account Name</span>
+          <span class="detail-value">Taalanta Visionaries</span>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyText('123456')">Copy Paybill</button>
+    </div>
+    <div class="donation-card">
+      <h3>QR Code</h3>
+      <div class="qr-code-container">
+        <div id="qrcode"></div>
+        <p>Scan to donate via mobile money</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadContent();
-            
-            document.querySelectorAll('.editable').forEach(element => {
-                element.style.position = 'relative';
-                const indicator = document.createElement('span');
-                indicator.className = 'edit-indicator';
-                indicator.textContent = '✏️ Click to edit';
-                element.appendChild(indicator);
-                
-                element.addEventListener('click', function(e) {
-                    if (!document.getElementById('adminPanel').classList.contains('active')) {
-                        const field = this.getAttribute('data-field');
-                        const currentText = this.textContent.replace('✏️ Click to edit', '').trim();
-                        const newText = prompt('Edit content:', currentText);
-                        if (newText !== null && newText !== currentText) {
-                            this.childNodes[0].textContent = newText;
-                            websiteContent[field] = newText;
-                            saveContent();
-                            showSuccessMessage();
-                        }
-                    }
-                });
-            });
-        });
+<!-- BLOG -->
+<section id="blog">
+  <h2>Latest Updates & Taalanta Blog</h2>
+  <div class="comments-section">
+    <h3>Embedded Blog Preview</h3>
+    <iframe src="https://taalanta.github.io/taalanta-visionaries/blog" 
+            style="width:100%; height:500px; border:none; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);"></iframe>
+    <p style="text-align:center; margin-top:1rem;">
+      <a href="https://taalanta.github.io/taalanta-visionaries/blog" target="_blank" 
+         class="cta-button secondary" style="padding:0.8rem 1.5rem;">Visit Full Blog</a>
+    </p>
+  </div>
+  <div class="comments-section">
+    <h3>Recent Comments</h3>
+    <div class="comment-item">
+      <div class="comment-author">Admin</div>
+      <div class="comment-date">Jan 31, 2026</div>
+      <div class="comment-text">Welcome to our new website! Stay tuned for updates.</div>
+    </div>
+    <div class="comment-item">
+      <div class="comment-author">Visitor</div>
+      <div class="comment-date">Jan 30, 2026</div>
+      <div class="comment-text">Excited about your community programs!</div>
+    </div>
+  </div>
+</section>
 
-        function saveContent() {
-            localStorage.setItem('taalantaContent', JSON.stringify(websiteContent));
-        }
+<!-- CONTACT / VOLUNTEER -->
+<section id="contact">
+  <h2>Join Us / Contact</h2>
+  <div class="volunteer-form">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your email">
+    </div>
+    <div class="form-group">
+      <label for="message">Message / Volunteer Interest</label>
+      <textarea id="message" rows="5" placeholder="Your message"></textarea>
+    </div>
+    <button class="submit-btn">Submit</button>
+  </div>
+</section>
 
-        function loadContent() {
-            const saved = localStorage.getItem('taalantaContent');
-            if (saved) {
-                websiteContent = JSON.parse(saved);
-                Object.keys(websiteContent).forEach(field => {
-                    const element = document.querySelector(`[data-field="${field}"]`);
-                    if (element) {
-                        element.childNodes[0].textContent = websiteContent[field];
-                    }
-                });
-            }
-        }
+<footer>
+  <p>&copy; 2026 Taalanta Visionaries. All Rights Reserved.</p>
+  <div class="footer-social">
+    <a href="#">&#xf09a;</a>
+    <a href="#">&#xf16d;</a>
+  </div>
+</footer>
 
-        function updateField(field) {
-            const input = document.getElementById(`edit-${field}`);
-            if (input) {
-                const newValue = input.value;
-                const element = document.querySelector(`[data-field="${field}"]`);
-                if (element) {
-                    element.childNodes[0].textContent = newValue;
-                    websiteContent[field] = newValue;
-                    saveContent();
-                    showSuccessMessage();
-                }
-            }
-        }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+function toggleAdmin(){
+  const panel = document.getElementById('adminPanel');
+  panel.classList.toggle('active');
+}
+function copyText(text){
+  navigator.clipboard.writeText(text).then(()=>alert('Copied: '+text));
+}
+// QR Code generation
+var qr = new QRious({element: document.getElementById('qrcode'), value:'https://taalanta.github.io/taalanta-visionaries/donate', size:200});
+</script>
 
-        function showSuccessMessage() {
-            const msg = document.getElementById('successMessage');
-            msg.style.display = 'block';
-            setTimeout(() => {
-                msg.style.display = 'none';
-            }, 3000);
-        }
-
-        function addProject() {
-            const title = document.getElementById('project-title').value;
-            const status = document.getElementById('project-status').value;
-            const date = document.getElementById('project-date').value;
-            const desc = document.getElementById('project-desc').value;
-            const img = document.getElementById('project-img').value;
-
-            if (!title || !desc) {
-                alert('Please fill in at least the title and description!');
-                return;
-            }
-
-            const container = document.getElementById('projects-container');
-            const projectCard = document.createElement('div');
-            projectCard.className = 'project-card';
-            projectCard.innerHTML = `
-                <img src="${img || 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600'}" alt="${title}" class="project-image">
-                <div class="project-content">
-                    <span class="project-status status-${status}">${status === 'ongoing' ? 'Ongoing' : 'Completed'}</span>
-                    <h3>${title}</h3>
-                    ${date ? `<p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Started: ${date}</p>` : ''}
-                    <p>${desc}</p>
-                </div>
-            `;
-            container.appendChild(projectCard);
-
-            document.getElementById('project-title').value = '';
-            document.getElementById('project-desc').value = '';
-            document.getElementById('project-img').value = '';
-            document.getElementById('project-date').value = '';
-
-            showSuccessMessage();
-            alert('✅ Project added successfully!');
-        }
-
-        function saveContactInfo() {
-            showSuccessMessage();
-            alert('✅ Contact information updated!');
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('✅ Copied to clipboard: ' + text);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-            });
-        }
-
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    document.getElementById('nav-menu').classList.remove('active');
-                }
-            });
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const websiteURL = window.location.href.split('?')[0].split('#')[0];
-            document.getElementById('website-url').textContent = websiteURL;
-            
-            new QRCode(document.getElementById('qrcode'), {
-                text: websiteURL,
-                width: 256,
-                height: 256,
-                colorDark: '#d32f2f',
-                colorLight: '#ffffff',
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        });
-
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('comment-name').value;
-            const text = document.getElementById('comment-text').value;
-            const date = new Date().toLocaleDateString();
-            
-            const container = document.getElementById('comments-container');
-            const comment = document.createElement('div');
-            comment.className = 'comment-item';
-            comment.innerHTML = `
-                <div class="comment-author">${name}</div>
-                <div class="comment-date">${date}</div>
-                <div class="comment-text">${text}</div>
-            `;
-            
-            if (container.querySelector('p')) {
-                container.innerHTML = '';
-            }
-            
-            container.insertBefore(comment, container.firstChild);
-            this.reset();
-            alert('✅ Comment posted!');
-        });
-
-        function closeModal() {
-            document.getElementById('successModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('successModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        function openAdmin() {
-            document.getElementById('adminPanel').classList.add('active');
-        }
-
-        function closeAdmin() {
-            document.getElementById('adminPanel').classList.remove('active');
-        }
-
-        function showTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            document.getElementById('tab-' + tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeAdmin();
-            }
-        });
-    </script>
 </body>
 </html>
