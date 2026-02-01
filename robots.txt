@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taalanta.github.io/taalanta-visionaries/sitemap.xml
