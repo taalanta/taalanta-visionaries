@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Support Taalanta Visionaries CBO. Make a donation to empower youth and communities in Githurai 44, Nairobi. Every contribution makes a difference.">
+    <meta name="keywords" content="Donate Kenya, Support CBO, Charity donation Nairobi, Youth empowerment donation, M-Pesa donation">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Donate | Taalanta Visionaries CBO">
+    <meta property="og:description" content="Support our mission to empower youth and transform communities in Githurai 44.">
+    <meta property="og:image" content="https://i.imgur.com/iqlYDeS.jpeg">
+    <meta property="og:url" content="https://taalanta.github.io/taalanta-visionaries/donate.html">
+    
+    <title>Donate & Support | Taalanta Visionaries CBO</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXCMLJ07S8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RXCMLJ07S8');
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/iqlYDeS.jpeg">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-yellow: #F4A200;
+            --primary-green: #2D6A4F;
+            --dark-green: #1B4332;
+            --light-green: #40916C;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --dark-gray: #333333;
+            --medium-gray: #6C757D;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+        }
+
+        .nav-logo-text span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-link {
+            color: var(--dark-gray);
+            text-decoration: none;
+            padding: 10px 18px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 12px 25px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .mobile-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--dark-gray);
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.95), rgba(196, 30, 58, 0.9)), 
+                        url('https://i.imgur.com/A3Ws7aK.jpeg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(244, 162, 0, 0.2);
+            color: var(--primary-yellow);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-yellow);
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary-yellow);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-yellow);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-gray {
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(45, 106, 79, 0.1);
+            color: var(--primary-green);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--primary-green);
+        }
+
+        .section-subtitle {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+        }
+
+        /* Donation Options Grid */
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .donation-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 3px solid transparent;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-green);
+        }
+
+        .donation-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .donation-card.featured .donation-icon {
+            background: linear-gradient(135deg, var(--primary-red), #FF6B6B);
+        }
+
+        .donation-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .donation-details {
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--medium-gray);
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+        }
+
+        .btn-mpesa {
+            background: var(--primary-green);
+            color: white;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-mpesa:hover {
+            background: #1B4332;
+        }
+
+        /* Quick Amounts */
+        .quick-amounts {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .quick-amounts h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+
+        .amount-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .amount-btn {
+            padding: 20px;
+            border: 3px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .amount-btn:hover,
+        .amount-btn.active {
+            background: var(--primary-green);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .custom-amount {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .custom-amount input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-family: inherit;
+        }
+
+        .custom-amount input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        /* Impact Calculator */
+        .impact-calculator {
+            background: linear-gradient(135deg, var(--primary-yellow), #F5B800);
+            padding: 60px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+        }
+
+        .calculator-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-gray);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .impact-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .impact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .impact-amount {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .impact-description {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .payment-methods h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-gray);
+        }
+
+        .payment-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #E9ECEF;
+        }
+
+        .payment-tab {
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            color: var(--medium-gray);
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .payment-tab.active {
+            color: var(--primary-green);
+            border-bottom-color: var(--primary-green);
+        }
+
+        .payment-content {
+            display: none;
+        }
+
+        .payment-content.active {
+            display: block;
+        }
+
+        .mpesa-info {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .mpesa-steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .mpesa-steps li {
+            counter-increment: step-counter;
+            padding: 15px 0;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .mpesa-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 35px;
+            height: 35px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .bank-info {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .bank-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .bank-detail:last-child {
+            border-bottom: none;
+        }
+
+        .copy-btn {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: var(--dark-green);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-gray);
+            border-radius: 15px;
+        }
+
+        .qr-code {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border: 3px solid var(--primary-green);
+            border-radius: 15px;
+        }
+
+        /* Transparency Section */
+        .transparency-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .transparency-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .transparency-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(45, 106, 79, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .transparency-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .transparency-text {
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+
+        /* Donor Wall */
+        .donor-wall {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .donor-wall h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-gray);
+        }
+
+        .donor-levels {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .donor-level {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-gray);
+            border-radius: 15px;
+        }
+
+        .level-badge {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .level-badge.platinum {
+            background: linear-gradient(135deg, #E5E4E2, #BCC6CC);
+        }
+
+        .level-badge.gold {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+        }
+
+        .level-badge.silver {
+            background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+        }
+
+        .level-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        .level-amount {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .donor-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .donor-list li {
+            padding: 8px 0;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .footer-logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: var(--shadow-hover);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                gap: 0;
+                transition: var(--transition);
+                box-shadow: var(--shadow-hover);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+                width: 100%;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .donation-grid,
+            .impact-grid,
+            .transparency-grid,
+            .donor-levels {
+                grid-template-columns: 1fr;
+            }
+
+            .amount-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .payment-tabs {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .quick-amounts,
+            .payment-methods,
+            .donor-wall {
+                padding: 30px 20px;
+            }
+
+            .impact-calculator {
+                padding: 40px 20px;
+            }
+
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries Logo">
+                <span class="nav-logo-text">Taalanta <span>Visionaries</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#programs" class="nav-link">Programs</a></li>
+                <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-link nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-badge">💝 Make a Difference</span>
+            <h1 class="hero-title">Support Our <span>Mission</span></h1>
+            <p class="hero-subtitle">Your donation empowers youth, protects the environment, and transforms communities</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Lives Impacted</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Trees Planted</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Jobs Created</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Ways to Give</span>
+                <h2 class="section-title">Donation <span>Options</span></h2>
+                <p class="section-subtitle">Choose the method that works best for you</p>
+            </div>
+            <div class="donation-grid">
+                <div class="donation-card featured">
+                    <div class="donation-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="donation-title">M-Pesa Paybill</h3>
+                    <div class="donation-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Paybill:</span>
+                            <span class="detail-value">400200</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Account:</span>
+                            <span class="detail-value">01091096</span>
+                        </div>
+                    </div>
+                    <a href="#mpesa-instructions" class="btn btn-mpesa">
+                        <i class="fas fa-info-circle"></i> See Instructions
+                    </a>
+                </div>
+
+                <div class="donation-card">
+                    <div class="donation-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="donation-title">Send Money Direct</h3>
+                    <div class="donation-details">
+                        <div class="detail-item">
+                            <span class="detail-label">M-Pesa:</span>
+                            <span class="detail-value">0716704347</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value">Benedicto M.</span>
+                        </div>
+                    </div>
+                    <a href="tel:+254716704347" class="btn btn-mpesa">
+                        <i class="fas fa-mobile-alt"></i> Call to Donate
+                    </a>
+                </div>
+
+                <div class="donation-card">
+                    <div class="donation-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="donation-title">Bank Transfer</h3>
+                    <div class="donation-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Bank:</span>
+                            <span class="detail-value">Equity Bank</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Account:</span>
+                            <span class="detail-value">Click Below</span>
+                        </div>
+                    </div>
+                    <a href="#bank-transfer" class="btn btn-mpesa">
+                        <i class="fas fa-info-circle"></i> Bank Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Donation Amounts -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="quick-amounts">
+                <h3>🎯 Quick Donation Amounts</h3>
+                <div class="amount-buttons">
+                    <button class="amount-btn" data-amount="500">KSh 500</button>
+                    <button class="amount-btn" data-amount="1000">KSh 1,000</button>
+                    <button class="amount-btn" data-amount="2000">KSh 2,000</button>
+                    <button class="amount-btn" data-amount="5000">KSh 5,000</button>
+                </div>
+                <div class="custom-amount">
+                    <input type="number" id="customAmount" placeholder="Enter custom amount (KSh)" min="100">
+                    <a href="tel:+254716704347" class="btn btn-primary">
+                        <i class="fas fa-heart"></i> Donate Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Calculator -->
+    <section class="section">
+        <div class="container">
+            <div class="impact-calculator">
+                <h2 class="calculator-title">💡 Your Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-icon">🌳</div>
+                        <div class="impact-amount">KSh 500</div>
+                        <p class="impact-description">Plants 10 trees and provides care for 6 months</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">📚</div>
+                        <div class="impact-amount">KSh 1,000</div>
+                        <p class="impact-description">Provides training materials for 1 youth</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">👥</div>
+                        <div class="impact-amount">KSh 2,000</div>
+                        <p class="impact-description">Supports 1 youth through full skills program</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">🛠️</div>
+                        <div class="impact-amount">KSh 5,000</div>
+                        <p class="impact-description">Provides startup tools for 1 entrepreneur</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">🏫</div>
+                        <div class="impact-amount">KSh 10,000</div>
+                        <p class="impact-description">Funds a complete workshop session</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon">🌍</div>
+                        <div class="impact-amount">KSh 20,000+</div>
+                        <p class="impact-description">Sponsors a major community project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="section section-gray" id="mpesa-instructions">
+        <div class="container">
+            <div class="payment-methods">
+                <h3>💳 Payment Methods & Instructions</h3>
+                <div class="payment-tabs">
+                    <button class="payment-tab active" data-tab="mpesa">M-Pesa</button>
+                    <button class="payment-tab" data-tab="bank">Bank Transfer</button>
+                    <button class="payment-tab" data-tab="other">Other Methods</button>
+                </div>
+
+                <!-- M-Pesa Instructions -->
+                <div class="payment-content active" data-content="mpesa">
+                    <div class="mpesa-info">
+                        <h4 style="margin-bottom: 20px; font-weight: 700;">📱 How to Donate via M-Pesa Paybill</h4>
+                        <ol class="mpesa-steps">
+                            <li>Go to M-Pesa menu on your phone</li>
+                            <li>Select "Lipa na M-Pesa" then "Pay Bill"</li>
+                            <li>Enter Business Number: <strong>400200</strong></li>
+                            <li>Enter Account Number: <strong>01091096</strong></li>
+                            <li>Enter the amount you wish to donate</li>
+                            <li>Enter your M-Pesa PIN and confirm</li>
+                            <li>You will receive a confirmation SMS</li>
+                        </ol>
+                    </div>
+                    <div class="mpesa-info">
+                        <h4 style="margin-bottom: 20px; font-weight: 700;">📞 Send Money Directly</h4>
+                        <p style="margin-bottom: 15px;">You can also send money directly to:</p>
+                        <p style="font-size: 1.2rem; font-weight: 700; color: var(--primary-green); margin-bottom: 10px;">0716704347</p>
+                        <a href="tel:+254716704347" class="btn btn-primary">
+                            <i class="fas fa-mobile-alt"></i> Initiate Donation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="payment-content" data-content="bank" id="bank-transfer">
+                    <div class="bank-info">
+                        <h4 style="margin-bottom: 20px; font-weight: 700;">🏦 Bank Account Details</h4>
+                        <div class="bank-detail">
+                            <span><strong>Bank Name:</strong></span>
+                            <span>Equity Bank Kenya</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span><strong>Account Name:</strong></span>
+                            <span>Taalanta Visionaries CBO</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span><strong>Account Number:</strong></span>
+                            <div style="display: flex; gap: 10px; align-items: center;">
+                                <span id="accountNumber">Contact us for details</span>
+                                <button class="copy-btn" onclick="copyAccountNumber()">Copy</button>
+                            </div>
+                        </div>
+                        <div class="bank-detail">
+                            <span><strong>Branch:</strong></span>
+                            <span>Roysambu Branch</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span><strong>Swift Code:</strong></span>
+                            <span>EQBLKENA</span>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: var(--medium-gray); margin-top: 20px;">
+                        <i class="fas fa-info-circle"></i> Please email us at <a href="mailto:taalantavisionaries9@gmail.com" style="color: var(--primary-green); font-weight: 600;">taalantavisionaries9@gmail.com</a> after making a bank transfer
+                    </p>
+                </div>
+
+                <!-- Other Methods -->
+                <div class="payment-content" data-content="other">
+                    <div class="qr-section">
+                        <h4 style="margin-bottom: 20px; font-weight: 700;">📱 Scan QR Code to Visit Website</h4>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://taalanta.github.io/taalanta-visionaries/donate.html" alt="Donation QR Code" class="qr-code">
+                        <p style="color: var(--medium-gray); margin-bottom: 15px;">Scan this code to access our donation page on your phone</p>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=https://taalanta.github.io/taalanta-visionaries/donate.html" download="taalanta-donation-qr.png" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download QR Code
+                        </a>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <h4 style="margin-bottom: 15px; font-weight: 700;">Other Options</h4>
+                        <p style="color: var(--medium-gray); margin-bottom: 20px;">For international donations, corporate sponsorships, or in-kind donations:</p>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a href="mailto:taalantavisionaries9@gmail.com" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Email Us
+                            </a>
+                            <a href="tel:+254716704347" class="btn btn-primary">
+                                <i class="fas fa-phone"></i> Call Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Transparency</span>
+                <h2 class="section-title">How We Use <span>Your Donations</span></h2>
+                <p class="section-subtitle">Every shilling is accounted for and put to good use</p>
+            </div>
+            <div class="transparency-grid">
+                <div class="transparency-card">
+                    <div class="transparency-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="transparency-title">60% Program Activities</h3>
+                    <p class="transparency-text">Direct support to youth empowerment programs, skills training, mentorship, and reintegration initiatives.</p>
+                </div>
+                <div class="transparency-card">
+                    <div class="transparency-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="transparency-title">25% Environmental Projects</h3>
+                    <p class="transparency-text">Tree planting, community clean-ups, recycling programs, and environmental conservation activities.</p>
+                </div>
+                <div class="transparency-card">
+                    <div class="transparency-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="transparency-title">10% Operations</h3>
+                    <p class="transparency-text">Administrative costs, program materials, volunteer support, and organizational development.</p>
+                </div>
+                <div class="transparency-card">
+                    <div class="transparency-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="transparency-title">5% Future Growth</h3>
+                    <p class="transparency-text">Reserve funds for expanding programs, emergency needs, and sustainable long-term development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donor Wall -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="donor-wall">
+                <h3>🏆 Recognition Wall of Honor</h3>
+                <div class="donor-levels">
+                    <div class="donor-level">
+                        <div class="level-badge platinum">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="level-name">Platinum Partners</div>
+                        <div class="level-amount">KSh 50,000+</div>
+                        <ul class="donor-list">
+                            <li>🌟 Anonymous Donor</li>
+                            <li>Your name here!</li>
+                        </ul>
+                    </div>
+                    <div class="donor-level">
+                        <div class="level-badge gold">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="level-name">Gold Supporters</div>
+                        <div class="level-amount">KSh 20,000+</div>
+                        <ul class="donor-list">
+                            <li>🥇 Community Champion</li>
+                            <li>Your name here!</li>
+                        </ul>
+                    </div>
+                    <div class="donor-level">
+                        <div class="level-badge silver">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="level-name">Silver Friends</div>
+                        <div class="level-amount">KSh 10,000+</div>
+                        <ul class="donor-list">
+                            <li>🥈 Local Hero</li>
+                            <li>Your name here!</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 30px; color: var(--medium-gray);">
+                    <i class="fas fa-info-circle"></i> All donors receive a certificate of appreciation and updates on program impact
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries">
+                    <span>Taalanta Visionaries</span>
+                </div>
+                <p class="footer-text">Empowering youth and communities in Githurai 44 through talent development, environmental conservation, and sustainable initiatives.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#programs">Programs</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="donate.html">Donate</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61586938240649" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/taalantav" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=10va3hc7" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@taalanta.visionar" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Taalanta Visionaries CBO. All rights reserved. | Reg. No: DSD/47/279/02/73760</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/254716704347?text=Hello!%20I%20would%20like%20to%20make%20a%20donation%20to%20Taalanta%20Visionaries." target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Quick Amount Buttons
+        const amountBtns = document.querySelectorAll('.amount-btn');
+        const customAmountInput = document.getElementById('customAmount');
+
+        amountBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                amountBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const amount = this.getAttribute('data-amount');
+                customAmountInput.value = amount;
+            });
+        });
+
+        // Payment Tabs
+        const paymentTabs = document.querySelectorAll('.payment-tab');
+        const paymentContents = document.querySelectorAll('.payment-content');
+
+        paymentTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                paymentTabs.forEach(t => t.classList.remove('active'));
+                paymentContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.querySelector(`[data-content="${tabName}"]`).classList.add('active');
+            });
+        });
+
+        // Copy Account Number
+        function copyAccountNumber() {
+            const accountNumber = document.getElementById('accountNumber').textContent;
+            navigator.clipboard.writeText(accountNumber).then(() => {
+                alert('Account number copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animate on Scroll
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.donation-card, .impact-item, .transparency-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            animateOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
