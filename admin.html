@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Taalanta Visionaries CBO</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/iqlYDeS.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2D6A4F, #1B4332);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container.hidden {
+            display: none;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+        }
+
+        .login-container h1 {
+            color: #2D6A4F;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .login-container p {
+            color: #6C757D;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2D6A4F;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: #2D6A4F;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login:hover {
+            background: #1B4332;
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            color: #E63946;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .admin-panel {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E9ECEF;
+        }
+
+        .admin-header h1 {
+            color: #2D6A4F;
+            font-size: 2rem;
+        }
+
+        .btn-logout {
+            padding: 12px 25px;
+            background: #E63946;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-logout:hover {
+            background: #C41E3A;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2D6A4F, #1B4332);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #2D6A4F;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #F4A200;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .action-card {
+            background: #F8F9FA;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #2D6A4F;
+            transition: all 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .action-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .action-card p {
+            color: #6C757D;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #2D6A4F;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            background: #1B4332;
+        }
+
+        .btn-action.secondary {
+            background: #F4A200;
+        }
+
+        .btn-action.secondary:hover {
+            background: #D68F00;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .quick-link {
+            padding: 12px 20px;
+            background: white;
+            border: 2px solid #2D6A4F;
+            color: #2D6A4F;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: #2D6A4F;
+            color: white;
+        }
+
+        .instructions {
+            background: #FFF3CD;
+            border-left: 4px solid #F4A200;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .instructions h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #856404;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .login-container, .admin-panel {
+                padding: 30px 20px;
+            }
+
+            .admin-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container" id="loginContainer">
+        <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries" class="logo">
+        <h1>Admin Login</h1>
+        <p>Taalanta Visionaries CBO</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn-login">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <p class="error-message" id="errorMessage">Invalid username or password</p>
+        </form>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <div>
+                <h1>🎯 Admin Dashboard</h1>
+                <p style="color: #6C757D; margin-top: 5px;">Welcome, <span id="adminName"></span>!</p>
+            </div>
+            <button class="btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <!-- Statistics -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>500+</h3>
+                <p>Youth Empowered</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-tree"></i>
+                <h3>1000+</h3>
+                <p>Trees Planted</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>50+</h3>
+                <p>Jobs Created</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-home"></i>
+                <h3>200+</h3>
+                <p>Families Supported</p>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="section">
+            <h3 class="section-title">
+                <i class="fas fa-link"></i> Quick Access Links
+            </h3>
+            <div class="quick-links">
+                <a href="https://taalanta.github.io/taalanta-visionaries/" target="_blank" class="quick-link">
+                    <i class="fas fa-globe"></i> View Website
+                </a>
+                <a href="https://search.google.com/search-console" target="_blank" class="quick-link">
+                    <i class="fas fa-chart-line"></i> Google Search Console
+                </a>
+                <a href="https://analytics.google.com" target="_blank" class="quick-link">
+                    <i class="fas fa-chart-bar"></i> Google Analytics
+                </a>
+                <a href="https://github.com/Taalanta/taalanta-visionaries" target="_blank" class="quick-link">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+                <a href="https://taalanta.github.io/taalanta-visionaries/blog" target="_blank" class="quick-link">
+                    <i class="fas fa-blog"></i> Blog
+                </a>
+            </div>
+        </div>
+
+        <!-- Website Management -->
+        <div class="section">
+            <h3 class="section-title">
+                <i class="fas fa-edit"></i> Update Website Content
+            </h3>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4><i class="fas fa-code"></i> Edit Homepage</h4>
+                    <p>Update main website content, images, and text</p>
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html" target="_blank" class="btn-action">
+                        <i class="fas fa-edit"></i> Edit index.html
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fas fa-blog"></i> Add Blog Post</h4>
+                    <p>Create new blog posts and updates</p>
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/tree/main/blog" target="_blank" class="btn-action">
+                        <i class="fas fa-plus"></i> Manage Blog
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fas fa-project-diagram"></i> Update Projects</h4>
+                    <p>Add or edit ongoing and completed projects</p>
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html#L1500" target="_blank" class="btn-action">
+                        <i class="fas fa-tasks"></i> Edit Projects
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fas fa-users"></i> Update Team Members</h4>
+                    <p>Add or remove board members and staff</p>
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html#L1600" target="_blank" class="btn-action">
+                        <i class="fas fa-user-edit"></i> Edit Team
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fas fa-images"></i> Upload Images</h4>
+                    <p>Add new photos to your website</p>
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/upload/main" target="_blank" class="btn-action secondary">
+                        <i class="fas fa-upload"></i> Upload Files
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fas fa-envelope"></i> View Form Submissions</h4>
+                    <p>Check contact form messages</p>
+                    <a href="mailto:taalantavisionaries9@gmail.com" class="btn-action secondary">
+                        <i class="fas fa-inbox"></i> Open Gmail
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="section">
+            <h3 class="section-title">
+                <i class="fas fa-share-alt"></i> Social Media Management
+            </h3>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4><i class="fab fa-facebook"></i> Facebook</h4>
+                    <p>Post updates and engage with followers</p>
+                    <a href="https://www.facebook.com/profile.php?id=61586938240649" target="_blank" class="btn-action">
+                        <i class="fab fa-facebook"></i> Open Facebook
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fab fa-instagram"></i> Instagram</h4>
+                    <p>Share photos and stories</p>
+                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=10va3hc7" target="_blank" class="btn-action">
+                        <i class="fab fa-instagram"></i> Open Instagram
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fab fa-tiktok"></i> TikTok</h4>
+                    <p>Create engaging video content</p>
+                    <a href="https://www.tiktok.com/@taalanta.visionar" target="_blank" class="btn-action">
+                        <i class="fab fa-tiktok"></i> Open TikTok
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h4><i class="fab fa-x-twitter"></i> X (Twitter)</h4>
+                    <p>Share quick updates and news</p>
+                    <a href="https://x.com/taalantav" target="_blank" class="btn-action">
+                        <i class="fab fa-x-twitter"></i> Open X
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="section">
+            <h3 class="section-title">
+                <i class="fas fa-question-circle"></i> How to Update Your Website
+            </h3>
+            <div class="instructions">
+                <h4>📝 Quick Guide to Editing Content:</h4>
+                <ol>
+                    <li><strong>Click "Edit index.html"</strong> button above</li>
+                    <li>GitHub will open - look for the <strong>pencil icon ✏️</strong> and click it</li>
+                    <li>Make your changes to the text, images, or content</li>
+                    <li>Scroll down and click <strong>"Commit changes"</strong> (green button)</li>
+                    <li>Your website will update automatically in 1-2 minutes!</li>
+                </ol>
+                <p style="margin-top: 15px;"><strong>💡 Tip:</strong> Always preview your changes before committing. Press <kbd>Ctrl</kbd> + <kbd>F</kbd> to search for specific text you want to change.</p>
+            </div>
+        </div>
+
+        <!-- Important Info -->
+        <div class="section">
+            <h3 class="section-title">
+                <i class="fas fa-info-circle"></i> Important Information
+            </h3>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4>📞 Main Contact</h4>
+                    <p>Phone: <strong>0716704347</strong></p>
+                    <p>Email: <strong>taalantavisionaries9@gmail.com</strong></p>
+                </div>
+
+                <div class="action-card">
+                    <h4>🏦 M-Pesa Donations</h4>
+                    <p>Paybill: <strong>400200</strong></p>
+                    <p>Account: <strong>01091096</strong></p>
+                    <p>Direct: <strong>0716704347</strong></p>
+                </div>
+
+                <div class="action-card">
+                    <h4>📋 Registration</h4>
+                    <p>Reg No: <strong>DSD/47/279/02/73760</strong></p>
+                    <p>Location: <strong>Githurai 44, Roysambu</strong></p>
+                </div>
+
+                <div class="action-card">
+                    <h4>🌐 Website URL</h4>
+                    <p><strong>https://taalanta.github.io/taalanta-visionaries/</strong></p>
+                    <a href="https://taalanta.github.io/taalanta-visionaries/" target="_blank" class="btn-action secondary" style="margin-top: 10px;">
+                        <i class="fas fa-external-link-alt"></i> Visit Site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login credentials (CHANGE THESE TO YOUR OWN!)
+        const ADMIN_USERNAME = "taalanta_admin";
+        const ADMIN_PASSWORD = "Taalanta2025!";
+
+        // Login form handler
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                // Successful login
+                document.getElementById('loginContainer').classList.add('hidden');
+                document.getElementById('adminPanel').classList.add('active');
+                document.getElementById('adminName').textContent = username;
+                
+                // Store login state
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                sessionStorage.setItem('adminName', username);
+            } else {
+                // Failed login
+                errorMessage.classList.add('show');
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 3000);
+            }
+        });
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            sessionStorage.removeItem('adminName');
+            document.getElementById('adminPanel').classList.remove('active');
+            document.getElementById('loginContainer').classList.remove('hidden');
+            document.getElementById('loginForm').reset();
+        }
+
+        // Check if already logged in
+        window.addEventListener('load', function() {
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                document.getElementById('loginContainer').classList.add('hidden');
+                document.getElementById('adminPanel').classList.add('active');
+                document.getElementById('adminName').textContent = sessionStorage.getItem('adminName');
+            }
+        });
+
+        // Auto-logout after 1 hour of inactivity
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(logout, 3600000); // 1 hour
+        }
+
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keypress', resetInactivityTimer);
+        resetInactivityTimer();
+    </script>
+</body>
+</html>
