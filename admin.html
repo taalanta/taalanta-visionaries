@@ -57,6 +57,32 @@
             margin-bottom: 30px;
         }
 
+        .credentials-display {
+            background: #FFF3CD;
+            border: 2px solid #F4A200;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .credentials-display h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .credentials-display p {
+            color: #856404;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        .credentials-display strong {
+            color: #2D6A4F;
+        }
+
         .form-group {
             margin-bottom: 25px;
             text-align: left;
@@ -331,19 +357,27 @@
         <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries" class="logo">
         <h1>Admin Login</h1>
         <p>Taalanta Visionaries CBO</p>
+        
+        <!-- Display Credentials -->
+        <div class="credentials-display">
+            <h4>🔑 Login Credentials</h4>
+            <p>Username: <strong>admin</strong></p>
+            <p>Password: <strong>taalanta123</strong></p>
+        </div>
+
         <form id="loginForm">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter username" required>
+                <input type="text" id="username" placeholder="Enter: admin" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter password" required>
+                <input type="password" id="password" placeholder="Enter: taalanta123" required>
             </div>
             <button type="submit" class="btn-login">
                 <i class="fas fa-sign-in-alt"></i> Login
             </button>
-            <p class="error-message" id="errorMessage">Invalid username or password</p>
+            <p class="error-message" id="errorMessage">❌ Invalid username or password. Please try again.</p>
         </form>
     </div>
 
@@ -432,7 +466,7 @@
                 <div class="action-card">
                     <h4><i class="fas fa-project-diagram"></i> Update Projects</h4>
                     <p>Add or edit ongoing and completed projects</p>
-                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html#L1500" target="_blank" class="btn-action">
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html" target="_blank" class="btn-action">
                         <i class="fas fa-tasks"></i> Edit Projects
                     </a>
                 </div>
@@ -440,7 +474,7 @@
                 <div class="action-card">
                     <h4><i class="fas fa-users"></i> Update Team Members</h4>
                     <p>Add or remove board members and staff</p>
-                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html#L1600" target="_blank" class="btn-action">
+                    <a href="https://github.com/Taalanta/taalanta-visionaries/edit/main/index.html" target="_blank" class="btn-action">
                         <i class="fas fa-user-edit"></i> Edit Team
                     </a>
                 </div>
@@ -558,19 +592,20 @@
     </div>
 
     <script>
-        // Login credentials (CHANGE THESE TO YOUR OWN!)
-        const ADMIN_USERNAME = "taalanta_admin";
-        const ADMIN_PASSWORD = "Taalanta2025!";
+        // Simple login credentials
+        const validUsername = "admin";
+        const validPassword = "taalanta123";
 
         // Login form handler
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
             const errorMessage = document.getElementById('errorMessage');
             
-            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+            // Check credentials
+            if (username === validUsername && password === validPassword) {
                 // Successful login
                 document.getElementById('loginContainer').classList.add('hidden');
                 document.getElementById('adminPanel').classList.add('active');
@@ -582,6 +617,8 @@
             } else {
                 // Failed login
                 errorMessage.classList.add('show');
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
                 setTimeout(() => {
                     errorMessage.classList.remove('show');
                 }, 3000);
