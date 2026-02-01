@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Read the latest news, success stories, and updates from Taalanta Visionaries CBO. Discover how we're transforming lives in Githurai 44, Nairobi.">
+    <meta name="keywords" content="Taalanta blog, Community stories Kenya, Youth empowerment stories, Githurai news, CBO updates">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blog | Taalanta Visionaries CBO">
+    <meta property="og:description" content="Read inspiring stories and updates from our community programs in Githurai 44.">
+    <meta property="og:image" content="https://i.imgur.com/A3Ws7aK.jpeg">
+    <meta property="og:url" content="https://taalanta.github.io/taalanta-visionaries/blog.html">
+    
+    <title>Blog & Stories | Taalanta Visionaries CBO</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXCMLJ07S8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RXCMLJ07S8');
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/iqlYDeS.jpeg">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-yellow: #F4A200;
+            --primary-green: #2D6A4F;
+            --dark-green: #1B4332;
+            --light-green: #40916C;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --dark-gray: #333333;
+            --medium-gray: #6C757D;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+        }
+
+        .nav-logo-text span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-link {
+            color: var(--dark-gray);
+            text-decoration: none;
+            padding: 10px 18px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 12px 25px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .mobile-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--dark-gray);
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, rgba(45, 106, 79, 0.95), rgba(27, 67, 50, 0.9)), 
+                        url('https://i.imgur.com/A3Ws7aK.jpeg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(244, 162, 0, 0.2);
+            color: var(--primary-yellow);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-yellow);
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary-yellow);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-gray {
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #E9ECEF;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--medium-gray);
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .featured-image {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .featured-post:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--primary-red);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .featured-category {
+            display: inline-block;
+            background: rgba(45, 106, 79, 0.1);
+            color: var(--primary-green);
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .featured-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item i {
+            color: var(--primary-green);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-green);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-date {
+            color: var(--medium-gray);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #E9ECEF;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            color: var(--primary-green);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--primary-red);
+            gap: 10px;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+
+        .page-btn {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--primary-green);
+            background: white;
+            color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .page-btn:hover,
+        .page-btn.active {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        /* Sidebar */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #E9ECEF;
+        }
+
+        .popular-post:last-child {
+            border-bottom: none;
+        }
+
+        .popular-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .popular-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .popular-info {
+            flex: 1;
+        }
+
+        .popular-date {
+            color: var(--medium-gray);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .popular-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+            line-height: 1.4;
+        }
+
+        .popular-title:hover {
+            color: var(--primary-green);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: var(--light-gray);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .newsletter-widget {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+        }
+
+        .newsletter-widget .widget-title {
+            color: white;
+        }
+
+        .newsletter-text {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            font-family: inherit;
+        }
+
+        .newsletter-form button {
+            width: 100%;
+            padding: 12px 20px;
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: white;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-yellow), #F5B800);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .footer-logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-gray);
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: var(--shadow-hover);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                gap: 0;
+                transition: var(--transition);
+                box-shadow: var(--shadow-hover);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+                width: 100%;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 300px;
+            }
+
+            .featured-content {
+                padding: 40px 30px;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries Logo">
+                <span class="nav-logo-text">Taalanta <span>Visionaries</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#programs" class="nav-link">Programs</a></li>
+                <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#donate" class="nav-link nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 Latest Updates</span>
+            <h1 class="hero-title">Stories & <span>Updates</span></h1>
+            <p class="hero-subtitle">Read inspiring stories of transformation and community impact</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="section">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <button class="category-btn" data-category="success-stories">Success Stories</button>
+                    <button class="category-btn" data-category="environment">Environment</button>
+                    <button class="category-btn" data-category="programs">Programs</button>
+                    <button class="category-btn" data-category="events">Events</button>
+                    <button class="category-btn" data-category="news">News</button>
+                </div>
+            </div>
+
+            <!-- Blog Layout -->
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Featured Post -->
+                    <div class="featured-post">
+                        <div class="featured-image">
+                            <img src="https://i.imgur.com/CQ7xkHL.jpeg" alt="Turning Githurai Green">
+                        </div>
+                        <div class="featured-content">
+                            <span class="featured-badge">🌟 FEATURED</span>
+                            <span class="featured-category">Environment</span>
+                            <h2 class="featured-title">Turning Githurai Green: A Community Transformation</h2>
+                            <p class="featured-excerpt">Discover how our tree-planting initiative is transforming Githurai 44 into a green, sustainable community. Over 1,000 trees planted and counting!</p>
+                            <div class="featured-meta">
+                                <div class="meta-item">
+                                    <i class="far fa-calendar"></i>
+                                    <span>January 15, 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="far fa-user"></i>
+                                    <span>Martin Mwenda</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">
+                                Read Full Story <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="blog-grid" id="blogGrid">
+                        <!-- Blog Post 1 -->
+                        <article class="blog-card" data-category="success-stories">
+                            <div class="blog-image">
+                                <img src="https://i.imgur.com/SnjG27Y.jpeg" alt="Success Story">
+                                <span class="blog-category">Success Stories</span>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">
+                                    <i class="far fa-calendar"></i> January 10, 2025
+                                </div>
+                                <h3 class="blog-title">From Prison to Purpose: James's Journey</h3>
+                                <p class="blog-excerpt">How our reintegration program helped James transform his life and become a role model in the community...</p>
+                                <div class="blog-footer">
+                                    <div class="blog-author">
+                                        <div class="author-avatar">BM</div>
+                                        <span class="author-name">Benedicto Momanyi</span>
+                                    </div>
+                                    <a href="#" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="blog-card" data-category="programs">
+                            <div class="blog-image">
+                                <img src="https://i.imgur.com/vYcQRMB.jpeg" alt="Skills Training">
+                                <span class="blog-category">Programs</span>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">
+                                    <i class="far fa-calendar"></i> January 5, 2025
+                                </div>
+                                <h3 class="blog-title">Skills Today: 50 Youth Receive Training Certificates</h3>
+                                <p class="blog-excerpt">Our latest cohort graduates with new skills in entrepreneurship, tailoring, and computer literacy...</p>
+                                <div class="blog-footer">
+                                    <div class="blog-author">
+                                        <div class="author-avatar">MM</div>
+                                        <span class="author-name">Martin Mwenda</span>
+                                    </div>
+                                    <a href="#" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="blog-card" data-category="events">
+                            <div class="blog-image">
+                                <img src="https://i.imgur.com/A3Ws7aK.jpeg" alt="Community Event">
+                                <span class="blog-category">Events</span>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">
+                                    <i class="far fa-calendar"></i> December 28, 2024
+                                </div>
+                                <h3 class="blog-title">Community Clean-Up Day: A Huge Success!</h3>
+                                <p class="blog-excerpt">Over 200 volunteers joined us for our biggest community clean-up event, collecting 2 tons of waste...</p>
+                                <div class="blog-footer">
+                                    <div class="blog-author">
+                                        <div class="author-avatar">EO</div>
+                                        <span class="author-name">Edwin Omondi</span>
+                                    </div>
+                                    <a href="#" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 4 -->
+                        <article class="blog-card" data-category="environment">
+                            <div class="blog-image">
+                                <img src="https://i.imgur.com/sOt21CT.jpeg" alt="Tree Planting">
+                                <span class="blog-category">Environment</span>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">
+                                    <i class="far fa-calendar"></i> December 20, 2024
+                                </div>
+                                <h3 class="blog-title">1,000 Trees Milestone: Environmental Impact Report</h3>
+                                <p class="blog-excerpt">We've reached a major milestone in our tree planting initiative. Here's the environmental impact...</p>
+                                <div class="blog-footer">
+                                    <div class="blog-author">
+                                        <div class="author-avatar">PM</div>
+                                        <span class="author-name">Phyllis Muthoni</span>
+                                    </div>
+                                    <a href="#" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 5 -->
+                        <article class="blog-card" data-category="news">
+                            <div class="blog-image">
+                                <img src="https://i.imgur.com/Yp2qzyD.jpeg" alt="Art Program">
+                                <span class="blog-category">News</span>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">
+                                    <i class="far fa-calendar"></i> December 15, 2024
+                                </div>
+                                <h3 class="blog-title">New Art & Culture Program Launches in 2025</h3>
+                                <p class="blog-excerpt">We're excited to announce our new art and culture program aimed at nurturing creative talent...</p>
+                                <div class="blog-footer">
+                                    <div class="blog-author">
+                                        <div class="author-avatar">AA</div>
+                                        <span class="author-name">Alex Asava</span>
+                                    </div>
+                                    <a href="#" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 6 -->
+                        <article class="blog-card" data-category="success-stories">
+                            <div class="blog-image">
+                                <img src="https://i.imgur.com/euX517j.jpeg" alt="Recycling Success">
+                                <span class="blog-category">Success Stories</span>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">
+                                    <i class="far fa-calendar"></i> December 10, 2024
+                                </div>
+                                <h3 class="blog-title">Recycling Business Empowers 10 Youth Entrepreneurs</h3>
+                                <p class="blog-excerpt">Meet the young entrepreneurs who turned waste into opportunity through our recycling program...</p>
+                                <div class="blog-footer">
+                                    <div class="blog-author">
+                                        <div class="author-avatar">MW</div>
+                                        <span class="author-name">Mercy Mwangi</span>
+                                    </div>
+                                    <a href="#" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3 class="widget-title">📧 Stay Updated</h3>
+                        <p class="newsletter-text">Subscribe to receive the latest stories and updates from our community.</p>
+                        <form class="newsletter-form" id="sidebarNewsletterForm">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i> Subscribe
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Popular Posts Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">🔥 Popular Posts</h3>
+                        <div class="popular-post">
+                            <div class="popular-thumb">
+                                <img src="https://i.imgur.com/SnjG27Y.jpeg" alt="Popular Post">
+                            </div>
+                            <div class="popular-info">
+                                <div class="popular-date">Jan 10, 2025</div>
+                                <a href="#" class="popular-title">From Prison to Purpose: James's Journey</a>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="popular-thumb">
+                                <img src="https://i.imgur.com/CQ7xkHL.jpeg" alt="Popular Post">
+                            </div>
+                            <div class="popular-info">
+                                <div class="popular-date">Jan 15, 2025</div>
+                                <a href="#" class="popular-title">Turning Githurai Green Initiative</a>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="popular-thumb">
+                                <img src="https://i.imgur.com/vYcQRMB.jpeg" alt="Popular Post">
+                            </div>
+                            <div class="popular-info">
+                                <div class="popular-date">Jan 5, 2025</div>
+                                <a href="#" class="popular-title">50 Youth Receive Training</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">🏷️ Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">Youth Empowerment</a>
+                            <a href="#" class="tag">Environment</a>
+                            <a href="#" class="tag">Skills Training</a>
+                            <a href="#" class="tag">Community</a>
+                            <a href="#" class="tag">Reintegration</a>
+                            <a href="#" class="tag">Sustainability</a>
+                            <a href="#" class="tag">Volunteering</a>
+                            <a href="#" class="tag">Recycling</a>
+                            <a href="#" class="tag">Tree Planting</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h2 class="cta-title">Want to Share Your Story?</h2>
+                <p class="cta-text">Have an inspiring story or experience with our programs? We'd love to feature it on our blog!</p>
+                <a href="mailto:taalantavisionaries9@gmail.com?subject=Blog Story Submission" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Submit Your Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries">
+                    <span>Taalanta Visionaries</span>
+                </div>
+                <p class="footer-text">Empowering youth and communities in Githurai 44 through talent development, environmental conservation, and sustainable initiatives.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#programs">Programs</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="index.html#donate">Donate</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61586938240649" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/taalantav" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=10va3hc7" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@taalanta.visionar" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Taalanta Visionaries CBO. All rights reserved. | Reg. No: DSD/47/279/02/73760</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/254716704347?text=Hello!%20I%20have%20a%20question%20about%20Taalanta%20Visionaries." target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Category Filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+
+                // Filter blog cards
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Newsletter Form
+        const newsletterForm = document.getElementById('sidebarNewsletterForm');
+        
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:taalantavisionaries9@gmail.com?subject=Newsletter Subscription&body=Please subscribe me to your newsletter. My email is: ${email}`;
+            
+            window.location.href = mailtoLink;
+            
+            alert('Thank you for subscribing! Your email client has been opened to complete the subscription.');
+            
+            this.reset();
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animate on Scroll
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.blog-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            animateOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
