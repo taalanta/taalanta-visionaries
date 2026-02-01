@@ -63,7 +63,6 @@
             overflow-x: hidden;
         }
 
-        /* Loader */
         .loader {
             position: fixed;
             top: 0;
@@ -106,7 +105,6 @@
             50% { transform: scale(1.1); opacity: 0.8; }
         }
 
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -220,7 +218,6 @@
             background: var(--dark-gray);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, rgba(45, 106, 79, 0.95), rgba(27, 67, 50, 0.9)), 
@@ -414,7 +411,6 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Section Styles */
         .section {
             padding: 100px 0;
         }
@@ -485,7 +481,6 @@
             color: rgba(255,255,255,0.8);
         }
 
-        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -574,7 +569,6 @@
             color: var(--dark-gray);
         }
 
-        /* History Section */
         .history-section {
             background: linear-gradient(135deg, var(--primary-yellow), #F5B800);
             padding: 80px 0;
@@ -655,7 +649,6 @@
             color: var(--medium-gray);
         }
 
-        /* Mission Vision Values */
         .mvv-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -753,7 +746,6 @@
             color: var(--dark-gray);
         }
 
-        /* Programs Section */
         .programs-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -836,7 +828,6 @@
             font-size: 0.9rem;
         }
 
-        /* Impact Section */
         .impact-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -884,7 +875,6 @@
             font-size: 1rem;
         }
 
-        /* Team Section */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -962,7 +952,6 @@
             color: var(--primary-green);
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1050,105 +1039,6 @@
             gap: 12px;
         }
 
-        /* Events Section */
-        .events-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-        }
-
-        .events-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .event-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            display: flex;
-            gap: 25px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .event-card:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .event-date {
-            min-width: 80px;
-            text-align: center;
-            padding: 15px;
-            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
-            border-radius: 15px;
-            color: white;
-        }
-
-        .event-day {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-        }
-
-        .event-month {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .event-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 8px;
-        }
-
-        .event-content p {
-            color: var(--medium-gray);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .event-meta {
-            display: flex;
-            gap: 20px;
-        }
-
-        .event-meta span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--medium-gray);
-            font-size: 0.9rem;
-        }
-
-        .event-meta i {
-            color: var(--primary-green);
-        }
-
-        .calendar-widget {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-
-        .calendar-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .calendar-header h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-        }
-
-        /* Donate Section */
         .donate-section {
             background: linear-gradient(135deg, var(--primary-red), #C41E3A);
             padding: 80px 0;
@@ -1239,25 +1129,6 @@
             font-size: 1.1rem;
         }
 
-        .qr-code {
-            margin-top: 40px;
-        }
-
-        .qr-code img {
-            width: 150px;
-            height: 150px;
-            background: white;
-            padding: 10px;
-            border-radius: 15px;
-        }
-
-        .qr-code p {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Volunteer Section */
         .volunteer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1323,7 +1194,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Blog Section */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1411,7 +1281,6 @@
             color: var(--primary-red);
         }
 
-        /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -1554,7 +1423,6 @@
             transform: translateY(-5px);
         }
 
-        /* Footer */
         .footer {
             background: var(--dark-gray);
             color: white;
@@ -1707,7 +1575,6 @@
             font-size: 0.9rem;
         }
 
-        /* Back to Top */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -1739,7 +1606,6 @@
             transform: translateY(-5px);
         }
 
-        /* Responsive */
         @media (max-width: 1200px) {
             .programs-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1775,10 +1641,6 @@
             
             .impact-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .events-container {
-                grid-template-columns: 1fr;
             }
             
             .nav-menu {
@@ -1880,7 +1742,6 @@
     </style>
 </head>
 <body>
-    <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-content">
             <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries" class="loader-logo">
@@ -1888,7 +1749,6 @@
         </div>
     </div>
 
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
@@ -1913,7 +1773,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
@@ -1963,7 +1822,6 @@
         </div>
     </section>
 
-    <!-- History Section -->
     <section class="history-section">
         <div class="container">
             <div class="history-content">
@@ -1987,7 +1845,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -2032,7 +1889,6 @@
         </div>
     </section>
 
-    <!-- Mission Vision Values -->
     <section class="section section-gray">
         <div class="container">
             <div class="section-header">
@@ -2075,7 +1931,6 @@
         </div>
     </section>
 
-    <!-- Programs Section -->
     <section class="section" id="programs">
         <div class="container">
             <div class="section-header">
@@ -2192,7 +2047,6 @@
         </div>
     </section>
 
-    <!-- Impact Section -->
     <section class="section section-green">
         <div class="container">
             <div class="section-header">
@@ -2233,7 +2087,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="section section-gray" id="projects">
         <div class="container">
             <div class="section-header">
@@ -2285,7 +2138,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="section" id="team">
         <div class="container">
             <div class="section-header">
@@ -2418,7 +2270,6 @@
         </div>
     </section>
 
-    <!-- Donate Section -->
     <section class="donate-section" id="donate">
         <div class="container">
             <div class="donate-content">
@@ -2445,14 +2296,10 @@
                         <p><span class="highlight">taalantavisionaries9@gmail.com</span></p>
                     </div>
                 </div>
-                <div class="qr-code">
-                    <p>Scan to donate or visit our page</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Volunteer Section -->
     <section class="section section-gray">
         <div class="container">
             <div class="volunteer-grid">
@@ -2496,7 +2343,6 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
     <section class="section" id="blog">
         <div class="container">
             <div class="section-header">
@@ -2562,7 +2408,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section section-gray" id="contact">
         <div class="container">
             <div class="section-header">
@@ -2652,7 +2497,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -2715,20 +2559,17 @@
         </div>
     </footer>
 
-    <!-- Back to Top -->
     <a href="#home" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
-        // Loader
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.getElementById('loader').classList.add('hidden');
             }, 1500);
         });
 
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
@@ -2738,7 +2579,6 @@
             }
         });
 
-        // Mobile menu toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
         
@@ -2746,14 +2586,12 @@
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
             });
         });
 
-        // Back to top button
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 500) {
@@ -2763,7 +2601,6 @@
             }
         });
 
-        // Counter animation
         function animateCounters() {
             const counters = document.querySelectorAll('[data-count]');
             
@@ -2787,7 +2624,6 @@
             });
         }
 
-        // Intersection Observer for counter animation
         const observerOptions = {
             threshold: 0.5
         };
@@ -2805,7 +2641,6 @@
             observer.observe(section);
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
