@@ -351,6 +351,16 @@
             transform: translateY(-3px);
         }
 
+        .btn-mpesa {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-mpesa:hover {
+            background: #1B4332;
+            transform: translateY(-3px);
+        }
+
         .hero-image {
             position: relative;
         }
@@ -1047,7 +1057,7 @@
         }
 
         .donate-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -1086,6 +1096,7 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
         .donate-option {
@@ -1127,6 +1138,57 @@
             color: var(--primary-green);
             font-weight: 700;
             font-size: 1.1rem;
+        }
+
+        .qr-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+
+        .qr-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .qr-code-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .qr-code {
+            width: 250px;
+            height: 250px;
+            padding: 15px;
+            background: white;
+            border: 3px solid var(--primary-green);
+            border-radius: 15px;
+        }
+
+        .qr-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .qr-download:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
         }
 
         .volunteer-grid {
@@ -1797,6 +1859,9 @@
                     <a href="#donate" class="btn btn-primary">
                         <i class="fas fa-heart"></i> Support Our Cause
                     </a>
+                    <a href="tel:+254716704347" class="btn btn-mpesa">
+                        <i class="fas fa-mobile-alt"></i> Send Money Now
+                    </a>
                     <a href="https://forms.gle/DSnV4D5Abr1oi79w7" target="_blank" class="btn btn-secondary">
                         <i class="fas fa-hands-helping"></i> Become a Volunteer
                     </a>
@@ -1830,14 +1895,14 @@
                 </div>
                 <h2 class="history-title">Our Story</h2>
                 <p class="history-text">
-                    Taalanta Visionaries CBO was founded when <strong>Mr. Benedicto Momangi</strong> identified the growing challenges facing youth in the Githurai 44 community. He witnessed young people dropping out of school, falling into drug abuse, and finding themselves on the wrong side of the law—often engaging in criminal activities that affected both their lives and the community at large.
+                    Taalanta Visionaries CBO was founded when <strong>Mr. Benedicto Mumanyi</strong> identified the growing challenges facing youth in the Githurai 44 community. He witnessed young people dropping out of school, falling into drug abuse, and finding themselves on the wrong side of the law—often engaging in criminal activities that affected both their lives and the community at large.
                     <br><br>
                     Driven by a passion to create change, Mr. Ben brought together like-minded individuals to establish an organization that would provide these youth with opportunities, mentorship, and a path toward a brighter future. Today, Taalanta Visionaries continues to transform lives through skills development, job creation, and community integration programs.
                 </p>
                 <div class="history-founder">
                     <div class="founder-avatar">BM</div>
                     <div class="founder-info">
-                        <div class="founder-name">Benedicto Momangi</div>
+                        <div class="founder-name">Benedicto Mumanyi</div>
                         <div class="founder-title">Founder & Chairman</div>
                     </div>
                 </div>
@@ -2151,7 +2216,7 @@
                         <div class="team-avatar">BM</div>
                     </div>
                     <div class="team-content">
-                        <h4 class="team-name">Benedicto Momangi</h4>
+                        <h4 class="team-name">Benedicto Mumanyi</h4>
                         <p class="team-role">Chairman</p>
                         <a href="tel:+254716704347" class="team-phone">
                             <i class="fas fa-phone"></i> 0716704347
@@ -2184,10 +2249,10 @@
                 </div>
                 <div class="team-card">
                     <div class="team-image">
-                        <div class="team-avatar">KM</div>
+                        <div class="team-avatar">EM</div>
                     </div>
                     <div class="team-content">
-                        <h4 class="team-name">Kidward K. Mwangi</h4>
+                        <h4 class="team-name">Edward K. Mwangi</h4>
                         <p class="team-role">Board Member</p>
                         <a href="tel:+254726870427" class="team-phone">
                             <i class="fas fa-phone"></i> 0726870427
@@ -2247,7 +2312,7 @@
                         <div class="team-avatar">MM</div>
                     </div>
                     <div class="team-content">
-                        <h4 class="team-name">Mariam Muwangi</h4>
+                        <h4 class="team-name">Mariam Mwangi</h4>
                         <p class="team-role">Board Member</p>
                         <a href="tel:+254708776552" class="team-phone">
                             <i class="fas fa-phone"></i> 0708776552
@@ -2283,9 +2348,17 @@
                         <div class="donate-option-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h4>M-Pesa</h4>
+                        <h4>M-Pesa Paybill</h4>
                         <p>Paybill: <span class="highlight">400200</span></p>
                         <p>Account: <span class="highlight">01091096</span></p>
+                    </div>
+                    <div class="donate-option">
+                        <div class="donate-option-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Send Money Direct</h4>
+                        <p>M-Pesa: <span class="highlight">0716704347</span></p>
+                        <p><a href="tel:+254716704347" class="btn btn-mpesa" style="margin-top: 10px; padding: 10px 20px; font-size: 0.9rem;">Send Now</a></p>
                     </div>
                     <div class="donate-option">
                         <div class="donate-option-icon">
@@ -2294,6 +2367,18 @@
                         <h4>Contact Us</h4>
                         <p>Email us for other donation options</p>
                         <p><span class="highlight">taalantavisionaries9@gmail.com</span></p>
+                    </div>
+                </div>
+
+                <div class="qr-section">
+                    <h3>🌐 Visit Our Website</h3>
+                    <div class="qr-code-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://taalanta.github.io/taalanta-visionaries/" alt="Website QR Code" class="qr-code">
+                        <p style="color: var(--dark-gray); margin: 10px 0;">Scan to visit our website</p>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=https://taalanta.github.io/taalanta-visionaries/" download="taalanta-visionaries-qr.png" class="qr-download">
+                            <i class="fas fa-download"></i> Download QR Code
+                        </a>
+                        <p style="color: var(--medium-gray); font-size: 0.85rem; margin-top: 10px;">Perfect for printing on posters, flyers, and business cards!</p>
                     </div>
                 </div>
             </div>
