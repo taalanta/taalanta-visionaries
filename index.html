@@ -1,226 +1,976 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taalanta Visionaries CBO - Empowering youths and communities in Kenya">
-    <title>Taalanta Visionaries - Empowering Communities</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    <!-- Google Analytics (replace YOUR-GA-ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR-GA-ID');
-    </script>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    header {
+        background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-<!-- Header -->
-<header>
-  <nav>
-    <div class="logo">
-      <img src="https://i.imgur.com/iqlYDeS.jpeg" alt="Taalanta Visionaries Logo" width="120">
-    </div>
-    <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#programs">Programs</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#volunteer">Volunteer</a></li>
-      <li><a href="#donate">Donate</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Empowering Communities, Transforming Lives</h1>
-  <p>We provide opportunities for youths to develop their skills, create jobs, and build a brighter future.</p>
-  <a href="#donate" class="cta-button">Donate Now</a>
-  <a href="#volunteer" class="cta-button secondary">Volunteer</a>
-</section>
+    .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 
-<!-- About Section -->
-<section id="about">
-  <h2>About Taalanta Visionaries</h2>
-  <p>Taalanta Visionaries was founded after Mr. Ben identified challenges in the Githurai community: youths dropping out of school, falling into drug abuse, and crime. Our mission is to empower the next generation through skill development, sustainable projects, and community integration.</p>
-</section>
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
 
-<!-- Programs Section -->
-<section id="programs">
-  <h2>Our Programs</h2>
-  <div class="programs-grid">
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/zp1YDtf.jpeg" alt="Talent Development">
-      </div>
-      <div class="program-content">
-        <h3>Talent Development</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/vYcQRMB.jpeg" alt="Entrepreneurship and Sustainability">
-      </div>
-      <div class="program-content">
-        <h3>Entrepreneurship & Sustainability</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/SnjG27Y.jpeg" alt="Integration">
-      </div>
-      <div class="program-content">
-        <h3>Integration</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/CQ7xkHL.jpeg" alt="Climate Work">
-      </div>
-      <div class="program-content">
-        <h3>Climate Work</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/Yp2qzyD.jpeg" alt="Art & Culture">
-      </div>
-      <div class="program-content">
-        <h3>Art & Culture Development</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/euX517j.jpeg" alt="Recycling & Garbage Collection">
-      </div>
-      <div class="program-content">
-        <h3>Recycling & Garbage Collection</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/A3Ws7aK.jpeg" alt="Youth Empowerment">
-      </div>
-      <div class="program-content">
-        <h3>Youth Empowerment</h3>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-image">
-        <img src="https://i.imgur.com/sOt21CT.jpeg" alt="Environmental Conservation">
-      </div>
-      <div class="program-content">
-        <h3>Environmental Conservation</h3>
-      </div>
-    </div>
-  </div>
-</section>
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s;
+    }
 
-<!-- Donation Section -->
-<section id="donate">
-  <h2>Support Our Cause</h2>
-  <p>Donate via M-Pesa Paybill or scan the QR code below:</p>
-  <div class="qr-code-container">
-    <img src="A_composite_digital_digital_assets_features_a_Taal.png" alt="Taalanta QR Code & Favicon" width="300">
-  </div>
-  <p>Paybill: 400200 | Account: 01091096</p>
-</section>
+    nav ul li a:hover {
+        opacity: 0.8;
+    }
 
-<!-- Volunteer Section -->
-<section id="volunteer">
-  <h2>Become a Volunteer</h2>
-  <p>Join us in creating a brighter future for the Githurai community.</p>
-  <a href="https://forms.gle/DSnV4D5Abr1oi79w7" class="cta-button">Sign Up Here</a>
-</section>
+    .admin-btn {
+        background: #fff;
+        color: #d32f2f;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        transition: transform 0.3s;
+    }
 
-<!-- Blog Section -->
-<section id="blog">
-  <h2>Our Blog</h2>
-  <a href="https://taalanta.github.io/taalanta-visionaries/blog" target="_blank" class="cta-button secondary">Visit Blog</a>
-</section>
+    .admin-btn:hover {
+        transform: scale(1.05);
+    }
 
-<!-- Team Section -->
-<section id="team">
-  <h2>Our Board Members</h2>
-  <div class="team-grid">
-    <div class="team-card">
-      <h3>Benedicto Momanyi</h3>
-      <p>Chairman</p>
-      <p>0716704347</p>
-    </div>
-    <div class="team-card">
-      <h3>Simon Ngigi</h3>
-      <p>Board Member</p>
-      <p>0792962026</p>
-    </div>
-    <div class="team-card">
-      <h3>Alex Asava</h3>
-      <p>Board Member</p>
-      <p>072393710</p>
-    </div>
-    <div class="team-card">
-      <h3>Kidward K. Mwangi</h3>
-      <p>Board Member</p>
-      <p>0726870427</p>
-    </div>
-    <div class="team-card">
-      <h3>Martin Mwenda</h3>
-      <p>Secretary</p>
-      <p>0708854038</p>
-    </div>
-    <div class="team-card">
-      <h3>Mercy Mwangi</h3>
-      <p>Treasurer</p>
-      <p>0711141894</p>
-    </div>
-    <div class="team-card">
-      <h3>Edwin Omondi</h3>
-      <p>Board Member</p>
-      <p>0700149779</p>
-    </div>
-    <div class="team-card">
-      <h3>Phyllis Muthoni</h3>
-      <p>Board Member</p>
-      <p>0702722587</p>
-    </div>
-    <div class="team-card">
-      <h3>Mariam Mwangi</h3>
-      <p>Board Member</p>
-      <p>0708776552</p>
-    </div>
-    <div class="team-card">
-      <h3>Edwin Maina</h3>
-      <p>Board Member</p>
-    </div>
-  </div>
-</section>
+    .hero {
+        margin-top: 70px;
+        background: linear-gradient(rgba(211, 47, 47, 0.8), rgba(56, 142, 60, 0.8)), 
+                    url('https://i.imgur.com/iqlYDeS.jpeg') center/cover;
+        color: white;
+        padding: 8rem 2rem;
+        text-align: center;
+        position: relative;
+    }
 
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:taalantavisionaries9@gmail.com">taalantavisionaries9@gmail.com</a></p>
-  <p>Phone: +254716704347</p>
-  <p>Location: Githurai 44, Roysambu, Nairobi</p>
-</section>
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(211, 47, 47, 0.7), rgba(56, 142, 60, 0.7));
+        z-index: 1;
+    }
 
-<footer>
-  <p>&copy; 2026 Taalanta Visionaries CBO | Registration: DSD/47/279/02/73760</p>
-  <div class="footer-social">
-    <a href="https://www.tiktok.com/@taalanta.visionar?_r=1&_t=ZS-93OYRNz9aXI" target="_blank">TikTok</a>
-    <a href="https://x.com/taalantav-" target="_blank">X</a>
-    <a href="https://www.facebook.com/profile.php?id=61586938240649" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=10va3hc7" target="_blank">Instagram</a>
-  </div>
-</footer>
+    .hero > * {
+        position: relative;
+        z-index: 2;
+    }
 
-</body>
-</html>
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: #f9a825;
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin: 0.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .cta-button.secondary {
+        background: #388e3c;
+    }
+
+    section {
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #d32f2f;
+    }
+
+    .editable {
+        position: relative;
+        transition: background 0.3s;
+    }
+
+    .editable:hover {
+        background: rgba(249, 168, 37, 0.1);
+        cursor: pointer;
+    }
+
+    .edit-indicator {
+        display: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #f9a825;
+        color: white;
+        padding: 0.3rem 0.6rem;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .editable:hover .edit-indicator {
+        display: block;
+    }
+
+    .story-section {
+        background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+    }
+
+    .story-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .founder-message {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        margin-bottom: 3rem;
+        border-left: 5px solid #f9a825;
+    }
+
+    .founder-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .founder-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d32f2f, #f9a825);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    .founder-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .founder-info h3 {
+        color: #d32f2f;
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .founder-info p {
+        color: #666;
+        font-style: italic;
+    }
+
+    .founder-quote {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        padding-left: 1rem;
+        border-left: 3px solid #f9a825;
+        font-style: italic;
+    }
+
+    .story-text {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+    }
+
+    .story-text h3 {
+        color: #388e3c;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .story-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        color: #555;
+    }
+
+    .problem-box {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+    }
+
+    .problem-box h4 {
+        color: #856404;
+        margin-bottom: 0.5rem;
+    }
+
+    .solution-box {
+        background: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+    }
+
+    .solution-box h4 {
+        color: #155724;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .timeline-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        border-left: 4px solid #f9a825;
+    }
+
+    .timeline-year {
+        color: #d32f2f;
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+        color: #388e3c;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .impact-stats {
+        background: linear-gradient(135deg, #d32f2f 0%, #388e3c 100%);
+        color: white;
+        padding: 3rem 2rem;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .stat-card {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #f9a825;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+
+    .mission-vision {
+        background: #f5f5f5;
+    }
+
+    .mv-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .mv-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 5px solid #f9a825;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .mv-card h3 {
+        color: #388e3c;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #f0f0f0;
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-status {
+        display: inline-block;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .status-ongoing {
+        background: #f9a825;
+        color: white;
+    }
+
+    .status-completed {
+        background: #388e3c;
+        color: white;
+    }
+
+    .project-card h3 {
+        color: #d32f2f;
+        margin-bottom: 0.5rem;
+    }
+
+    .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .program-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+
+    .program-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .program-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .program-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .program-icon-large {
+        font-size: 5rem;
+    }
+
+    .program-content {
+        padding: 1.5rem;
+    }
+
+    .program-content h3 {
+        color: #d32f2f;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .team-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .team-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        background: linear-gradient(135deg, #d32f2f, #f9a825);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+        overflow: hidden;
+    }
+
+    .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .volunteer-section {
+        background: #f5f5f5;
+    }
+
+    .volunteer-form {
+        max-width: 600px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #d32f2f;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #f9a825;
+        outline: none;
+    }
+
+    .submit-btn {
+        background: #388e3c;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: #2e7d32;
+    }
+
+    .submit-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+
+    .comments-section {
+        max-width: 800px;
+        margin: 3rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .comment-form {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #f0f0f0;
+    }
+
+    .comment-item {
+        background: #f9f9f9;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border-left: 3px solid #f9a825;
+    }
+
+    .comment-author {
+        font-weight: bold;
+        color: #d32f2f;
+        margin-bottom: 0.5rem;
+    }
+
+    .comment-date {
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+
+    .donation-section {
+        background: linear-gradient(135deg, #388e3c, #d32f2f);
+        color: white;
+        padding: 4rem 2rem;
+    }
+
+    .donation-section h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+
+    .donation-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.2rem;
+    }
+
+    .donation-methods {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .donation-card {
+        background: white;
+        color: #333;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .donation-card h3 {
+        color: #d32f2f;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .donation-details {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .donation-detail-item {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .donation-detail-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #f9a825;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    .detail-value {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .copy-btn {
+        background: #388e3c;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+        transition: background 0.3s;
+    }
+
+    .copy-btn:hover {
+        background: #2e7d32;
+    }
+
+    .donation-note {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+        color: #856404;
+    }
+
+    .qr-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: #f5f5f5;
+    }
+
+    .qr-code-container {
+        max-width: 400px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    #qrcode {
+        margin: 1rem auto;
+    }
+
+    #contact {
+        background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
+        color: white;
+    }
+
+    #contact h2 {
+        color: white;
+    }
+
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .footer-social {
+        margin-bottom: 1rem;
+    }
+
+    .footer-social a {
+        color: #f9a825;
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+        text-decoration: none;
+        transition: transform 0.3s;
+        display: inline-block;
+    }
+
+    .footer-social a:hover {
+        transform: scale(1.2);
+    }
+
+    /* Success Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10001;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 2rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .modal-content h3 {
+        color: #388e3c;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .modal-content p {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .modal-close-btn {
+        background: #388e3c;
+        color: white;
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .modal-close-btn:hover {
+        background: #2e7d32;
+    }
+
+    /* ADMIN PANEL STYLES */
+    .admin-panel {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 10000;
+        overflow-y: auto;
+    }
+
+    .admin-panel.active {
+        display: block;
+    }
+
+    .admin-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+    }
+
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f9a825;
+    }
+
+    .close-admin {
+        background: #d32f2f;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .admin-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        padding: 0.8rem 1.2rem;
+        border: none;
+        background: #f0f0f0;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+        font-size: 0.9rem;
+    }
+
+    .tab-btn.active {
+        background: #f9a825;
+        color: white;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    .save-btn {
+        background: #388e3c;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .save-btn:hover {
+        background: #2e7d32;
+    }
+
+    .warning-box {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+    }
+
+    .success-box {
+        background: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        color: #155724;
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        nav ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #d32f2f 0%, #f9a825 50%, #388e3c 100%);
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        nav ul.active {
+            display: flex;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .founder-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .admin-container {
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+        .admin-tabs {
+            flex-direction: column;
+        }
+
+        .tab-btn {
+            width: 100%;
+        }
+
+        .donation-methods {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
